@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.e4.ui.css.swt.theme">
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui"
+            label="MoonRise">
+      </theme>
+   </extension>
+
+</plugin>
