@@ -239,6 +239,10 @@ Button {
     background-color: #3f4447;
     color: #EEEEEE;
 }
+#org-eclipse-jdt-ui-JavadocView .MPart, #org-eclipse-jdt-ui-JavadocView .MPart Browser, #org-eclipse-jdt-ui-JavadocView .MPart OleFrame {
+    background-color: #3f4447;
+    color: #EEEEEE;
+}
 #org-eclipse-pde-runtime-LogView FilteredTree Composite{
     background-color: #262B2D;
 }
@@ -246,7 +250,33 @@ Button {
     background-color: #333;
     color: #F4F7F7;
 }
-
+#org-eclipse-jdt-ui-SourceView .MPart > Label, #org-eclipse-ui-console-ConsoleView .MPart > Label {
+    background-color: #3f4447;
+    color: #EEEEEE;
+}
+#org-eclipse-jdt-ui-SourceView .MPart > Composite {
+    background-color: #4D565B;
+    color: #EEEEEE;
+}
+#org-eclipse-ui-console-ConsoleView .MPart > Composite, #org-eclipse-ui-console-ConsoleView .MPart StyledText {
+    background-color: #333;
+    color: #EEEEEE;
+}
+#com-android-ide-eclipse-ddms-views-LogCatView .MPart {
+    background-color: #3f4447;
+    color: #EEEEEE;
+}
+#com-android-ide-eclipse-ddms-views-LogCatView .MPart Label {
+    color: #EEEEEE;
+}
+#com-android-ide-eclipse-ddms-views-LogCatView .MPart Table {
+    background-color: #555;
+    color: #EEEEEE;
+}
+#com-android-ide-eclipse-ddms-views-LogCatView .MPart Combo, #com-android-ide-eclipse-ddms-views-LogCatView .MPart Text {
+    background-color: #333;
+    color: #EEEEEE;
+}
 
 /* #################### Bottom Status Bar ######################## */
 
