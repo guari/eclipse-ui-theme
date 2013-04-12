@@ -15,7 +15,7 @@ Installation
 
 Download the JAR package and put it into your Eclipse ```dropins``` folder:
 
-[com.github.eclipsecolortheme.themes_0.6.2.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipsecolortheme.themes_1.0.0.201303011045.jar?raw=true)
+[com.github.eclipsecolortheme.themes_0.6.2.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipsecolortheme.themes_0.6.2.jar?raw=true)
 
 Restart Eclipse and go to *Preferences > General > Appearance* and choose *MoonRise*
 
