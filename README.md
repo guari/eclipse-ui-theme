@@ -13,7 +13,7 @@ Requirements
 Installation
 ------------
 
-Download the JAR package and put it into your Eclipse ```dropins``` folder:
+Download the JAR package and put it into your Eclipse ```\dropins\plugins\``` folder:
 
 [com.github.eclipsecolortheme.themes_0.6.2.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipsecolortheme.themes_0.6.2.jar?raw=true)
 
