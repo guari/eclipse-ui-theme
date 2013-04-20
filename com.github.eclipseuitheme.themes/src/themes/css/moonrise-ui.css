@@ -182,6 +182,18 @@ Button {
     background-color: inherit;
 }
 
+PageSiteComposite, PageSiteComposite > CImageLabel {
+    color: #EEEEEE;
+}
+PageSiteComposite > PropertyTable {
+    background-color: #333;
+    color: #EEEEEE;
+}
+
+FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite CLabel {
+    background-color: #3f4447;
+    color: #EEEEEE;
+}
 
 /* ###################### Top Toolbar ########################## */
 
@@ -220,10 +232,15 @@ Button {
 #org-eclipse-e4-ui-compatibility-editor CTabItem {
     color: #EEEEEE;
     font-weight: normal;
+    font-family: 'Calibri';
 }
-#org-eclipse-e4-ui-compatibility-editor CTabItem.active {
-    background-color: #0A0A0A;
+#org-eclipse-e4-ui-compatibility-editor CTabItem:selected {
+    background-color: #262626;
     font-weight: bold;
+    font-family: 'Calibri';
+}
+#org-eclipse-e4-ui-compatibility-editor .MPart {
+    color: #EEEEEE;
 }
 
 /* ------------------------------------------------------------- */
@@ -277,6 +294,7 @@ Button {
     background-color: #333;
     color: #EEEEEE;
 }
+
 
 /* #################### Bottom Status Bar ######################## */
 

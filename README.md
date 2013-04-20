@@ -3,7 +3,8 @@ MoonRise UI Theme
 
 An early version of a dark UI theme for Eclipse 4+.
 
-![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/screenshot.png)
+![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/screenshot-ubuntu.png)
+![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/screenshot-windows.png)
 
 Requirements
 ------------
@@ -13,11 +14,15 @@ Requirements
 Installation
 ------------
 
-Download the JAR package and put it into your Eclipse ```\dropins\plugins\``` folder:
+* Download the JAR package and put it into your Eclipse ```\dropins\plugins\``` folder:
 
-[com.github.eclipseuitheme.themes_0.6.2.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.themes_0.6.2.jar?raw=true)
+[com.github.eclipseuitheme.moonrise_0.6.3.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.6.3.jar?raw=true)
 
-Restart Eclipse and go to *Preferences > General > Appearance* and choose *MoonRise*
+* Install *Eclipse 4 Chrome Theme* from marketplace or from [here](https://github.com/jeeeyul/eclipse-themes) for better tabs decoration;
+
+* Restart Eclipse and go to *Preferences > General > Appearance* and choose *MoonRise*;
+
+* Rest your eyes ;)
 
 - - -
 ### Notes:
@@ -34,6 +39,7 @@ References
 * http://wiki.eclipse.org/E4
 * http://wiki.eclipse.org/E4/CSS/SWT_Mapping
 * https://github.com/eclipse-color-theme/eclipse-ui-themes
+* https://github.com/jeeeyul/eclipse-themes
 * http://www.vogella.com/articles/Eclipse4CSS/article.html
 
 License
