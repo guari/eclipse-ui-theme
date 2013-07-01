@@ -20,7 +20,7 @@ Installation
 
 * Install *Eclipse 4 Chrome Theme* from marketplace or from [here](https://github.com/jeeeyul/eclipse-themes) for better tabs decoration;
 
-* Restart Eclipse and go to *Preferences > General > Appearance* and choose *MoonRise*;
+* Restart Eclipse and go to *Preferences > General > Appearance* and select *MoonRise*;
 
 * Rest your eyes ;)
 
@@ -30,7 +30,7 @@ Installation
 Tested on the following Eclipse release:
 
 * Juno (4.2.x)
-* Kepler (4.3 M6)
+* Kepler (4.3)
 
 Works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly in Eclipse (eg. button, scrollbar, dialog window, etc.) and a dark color scheme for the Eclipse code editor (you can create your own or download one from http://www.eclipsecolorthemes.org/).
 
