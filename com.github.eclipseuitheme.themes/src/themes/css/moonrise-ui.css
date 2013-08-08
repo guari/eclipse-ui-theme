@@ -8,6 +8,7 @@
 }
 
 .MPartStack {
+    background-color: #3f4447;
     font-size: 9;
     font-family: 'Calibri';
     swt-simple: true;
@@ -35,6 +36,7 @@
 }
 
 .MPartStack.active {
+    background-color: #1D1D1B;
     swt-inner-keyline-color: #FFFFFF;
     swt-tab-outline: #6a6c71;
     swt-outer-keyline-color: #6a6c71;
@@ -242,6 +244,12 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
 #org-eclipse-e4-ui-compatibility-editor .MPart {
     color: #EEEEEE;
 }
+
+/*Workaround for CDT folding column bug (styles aren't inherited)*/
+#org-eclipse-e4-ui-compatibility-editor > Composite > Composite >
+ Composite > Canvas > * > * {
+    background-color: #333333;
+ }
 
 /* ------------------------------------------------------------- */
 

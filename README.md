@@ -16,7 +16,7 @@ Installation
 
 * Download the JAR package and put it into your Eclipse ```\dropins\plugins\``` folder:
 
-[com.github.eclipseuitheme.moonrise_0.6.3.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.6.3.jar?raw=true)
+[com.github.eclipseuitheme.moonrise_0.6.4.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.6.4.jar?raw=true)
 
 * Install *Eclipse 4 Chrome Theme* from marketplace or from [here](https://github.com/jeeeyul/eclipse-themes) for better tabs decoration;
 
