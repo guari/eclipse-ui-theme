@@ -8,6 +8,10 @@
             id="com.github.eclipseuitheme.themes.moonrise-ui"
             label="MoonRise">
       </theme>
+      <property
+            name="applicationCSSResources"
+            value="platform:/plugin/com.github.eclipseuitheme.themes/themes.images/">
+      </property>
    </extension>
 
 </plugin>

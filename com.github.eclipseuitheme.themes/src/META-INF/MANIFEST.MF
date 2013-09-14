@@ -3,11 +3,11 @@ Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.e4
  .ui.css.swt.theme;bundle-version="0.9.2"
 Bundle-Vendor: Andrea Guarinoni
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 0.6.4
+Bundle-Version: 0.8.2
 Bundle-Name: MoonRise UI Theme
 Bundle-Activator: com.github.eclipseuitheme.themes.Activator
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: com.github.eclipseuitheme.themes;singleton:=tr
+Bundle-SymbolicName: com.github.eclipseuitheme.themes.moonrise-ui;singleton:=tr
  ue
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

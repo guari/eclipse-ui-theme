@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<colorTheme id="20025" name="Rainbow Drops" modified="2013-09-12 19:39:08" author="Andrea Guarinoni">
+    <searchResultIndication color="#D8D8D8" />
+    <filteredSearchResultIndication color="#D8D8D8" />
+    <occurrenceIndication color="#484848" />
+    <writeOccurrenceIndication color="#335A72" />
+    <findScope color="#1E789B" />
+    <deletionIndication color="#863C43" />
+    <sourceHoverBackground color="#444444" />
+    <singleLineComment color="#626262" />
+    <multiLineComment color="#626262" />
+    <commentTaskTag color="#626262" bold="true" />
+    <javadoc color="#626262" italic="true" />
+    <javadocLink color="#A99C8C" />
+    <javadocTag color="#1E789B" bold="true" italic="true" />
+    <javadocKeyword color="#9A8C7C" />
+    <class color="#1290C3" bold="true" />
+    <interface color="#80F2F6" />
+    <method color="#A7EC21" />
+    <methodDeclaration color="#0DD140" bold="true" />
+    <bracket color="#F9FAF4" />
+    <number color="#6897BB" />
+    <string color="#17C6A3" italic="true" />
+    <operator color="#E6E6FA" />
+    <keyword color="#DD2867" />
+    <annotation color="#BFBFBF" />
+    <staticMethod color="#96EC3F" />
+    <localVariable color="#FFBF26" />
+    <localVariableDeclaration color="#ED7F48" />
+    <field color="#66E1F8" />
+    <staticField color="#8DDAF8" />
+    <staticFinalField color="#8DDAF8" />
+    <deprecatedMember color="#AB1F36" underline="false" strikethrough="true" />
+    <enum color="#CC81BA" italic="true" />
+    <inheritedMethod color="#CDF668" />
+    <abstractMethod color="#80F6A7" />
+    <parameterVariable color="#79ABFF" />
+    <typeArgument color="#D7837F" />
+    <typeParameter color="#BFA4A4" />
+    <constant color="#9876AA" />
+    <background color="#202020" />
+    <currentLine color="#363636" />
+    <foreground color="#D9E8F7" />
+    <lineNumber color="#626262" />
+    <selectionBackground color="#3E515D" />
+    <selectionForeground color="#44CEEF" />
+</colorTheme>
