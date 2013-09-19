@@ -42,14 +42,14 @@
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <ul>
-<li><p>Download this JAR package (<a href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2_standalone.jar?raw=true">moonrise_0.8.2_standalone.jar</a>) and put it into your Eclipse <code>\dropins\plugins\</code> folder;</p></li>
+<li><p>Download <a href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2_standalone.jar?raw=true">moonrise_0.8.2_standalone.jar</a> package and put it into your Eclipse <code>\dropins\plugins\</code> folder;</p></li>
 <li><p>Restart Eclipse and go to <code>Window &gt; Preferences &gt; General &gt; Appearance</code> and select <em>MoonRise</em>;</p></li>
 <li><p>Rest your eyes ;)</p></li>
-</ul><h4>
-<a name="or-for-a-little-better-tabs-decoration" class="anchor" href="#or-for-a-little-better-tabs-decoration"><span class="octicon octicon-link"></span></a>OR (for a little better tabs decoration):</h4>
+</ul><h5>
+<a name="or-for-a-little-better-tabs-decoration" class="anchor" href="#or-for-a-little-better-tabs-decoration"><span class="octicon octicon-link"></span></a>OR (for a little better tabs decoration):</h5>
 
 <ul>
-<li><p>Download this JAR package (<a href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2.jar?raw=true">moonrise_0.8.2.jar</a>) and put it into your Eclipse <code>\dropins\plugins\</code> folder:</p></li>
+<li><p>Download <a href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2.jar?raw=true">moonrise_0.8.2.jar</a> package and put it into your Eclipse <code>\dropins\plugins\</code> folder;</p></li>
 <li><p>Install <em>Eclipse 4 Chrome Theme</em> from marketplace or from <a href="https://github.com/jeeeyul/eclipse-themes">here</a>;</p></li>
 <li><p>Restart Eclipse and go to <code>Window &gt; Preferences &gt; General &gt; Appearance</code> and select <em>MoonRise</em>;</p></li>
 </ul><hr><h3>
@@ -76,7 +76,7 @@
 <h5>
 <a name="change-the-colors-for-javadoc" class="anchor" href="#change-the-colors-for-javadoc"><span class="octicon octicon-link"></span></a>Change the colors for Javadoc:</h5>
 
-<p>Go to <code>Window &gt; Preferences &gt; General &gt; Appearance &gt; Colors and Fonts</code> then change the colors for <code>Java &gt; Javadoc view background</code>
+<p>Go to <code>Window &gt; Preferences &gt; General &gt; Appearance &gt; Colors and Fonts</code> then change the colors for <code>Java &gt; Javadoc view background</code>.
 Note that the foreground color cannot be changed and depends on system font color.</p>
 </li>
 </ul><hr><h3>
@@ -90,11 +90,19 @@ Note that the foreground color cannot be changed and depends on system font colo
 <tbody>
 <tr>
 <td>The font of the title of the tabs is different</td>
-<td>Ensure that on your machine is installed <code>Segoe Print</code> font</td>
+<td>Ensure that on your machine is installed <code>Segoe Print</code> font.</td>
+</tr>
+<tr>
+<td>The size of the title of the tabs is different</td>
+<td>Eclipse does not scale it with a DPI-Aware policy. Open the jar package downloaded with a file archiver, open <code>/themes/css/moonrise-ui.css</code>, search for <code>font-size</code> property and modify its value according to your needs.</td>
 </tr>
 <tr>
 <td>The label of the checkboxes has a color difficult to read</td>
-<td>It's related to a SWT bug, use a system theme that has lighter font color for buttons</td>
+<td>It's related to a SWT bug, use a system theme that has lighter font color for buttons.</td>
+</tr>
+<tr>
+<td>The text of the buttons has a color difficult to read (MAC-OSX)</td>
+<td>It's related to a SWT bug, try <a href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2_OSX.jar?raw=true">this</a> 'patched' version if you have this issue.</td>
 </tr>
 </tbody>
 </table><hr><h3>
@@ -106,8 +114,14 @@ Note that the foreground color cannot be changed and depends on system font colo
 <li>Luna (4.4)</li>
 <li>Kepler (4.3)</li>
 <li>Juno (4.2.x)</li>
-</ul><p>Works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly in Eclipse (eg. scrollbar, table header, button etc.) and a dark color scheme for the Eclipse code editor (you can create your own or download one from <a href="http://www.eclipsecolorthemes.org/">http://www.eclipsecolorthemes.org/</a>).
-You can find the one used in the screenshot here:</p>
+</ul><p>Works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly in Eclipse (eg. scrollbar, table header, button etc.) and a dark color scheme for the Eclipse code editor (you can create your own or download one from <a href="http://www.eclipsecolorthemes.org/">http://www.eclipsecolorthemes.org/</a>).</p>
+
+<h4>
+<a name="syntax-highlighting-scheme" class="anchor" href="#syntax-highlighting-scheme"><span class="octicon octicon-link"></span></a>Syntax highlighting scheme:</h4>
+
+<p><img src="https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/sources_syntax_colors.png" alt="screenshot"></p>
+
+<p>You can find the one used in the screenshot here:</p>
 
 <ul>
 <li><p><a href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/color-scheme/RainbowDrops.epf?raw=true">RainbowDrops.epf</a> (download and import it with Eclipse built-in Preferences import: <code>File &gt; Import...</code> then select <code>General &gt; Preferences</code>);</p></li>
