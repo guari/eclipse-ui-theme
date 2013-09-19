@@ -68,9 +68,9 @@ Works best with a dark system theme since currently the look of some GUI widgets
 
 #### Syntax highlighting scheme:
 
-You can find the one used in the screenshot here:
-
 ![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/sources_syntax_colors.png)
+
+You can find the one used in the screenshot here:
 
 * [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/color-scheme/RainbowDrops.epf?raw=true) (download and import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
 
