@@ -14,7 +14,7 @@
 .MPartStack {
     background-color: #313538;
     color: #f7f8f8;
-    font-size: 8;
+    font-size: 9;
     font-family: 'Segoe Print';
     swt-simple: true;
     swt-tab-renderer:
@@ -328,7 +328,7 @@ WebSite {
 CTabFolder {
     background-color: #222;
     color: #f7f8f8;
-    font-size: 8;
+    font-size: 9;
     font-family: 'Segoe Print';
     swt-simple: true;
     swt-tab-renderer:
