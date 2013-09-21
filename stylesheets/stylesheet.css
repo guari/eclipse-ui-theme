@@ -195,13 +195,8 @@ blockquote {
   border-left: 3px solid #bbb;
 }
 
-ul, ol, dl {
+ol, dl {
   margin-bottom: 15px
-}
-
-ul li {
-  list-style: inside;
-  padding-left: 20px;
 }
 
 ul {
@@ -211,8 +206,12 @@ ul {
     padding: 0;
 }
 
-li {
+ul li {
     margin: 0 0 1em 0;
+}
+
+ul li p {
+    display: inline;
 }
 
 ol li {
@@ -324,13 +323,8 @@ Full-Width Styles
   margin: 0 10px;
   font-size: 44px;
   font-weight: 700;
-
-  background-color: #293033;
-  color: rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
+  color: rgba(141,150,151,0.7);
+  text-shadow: rgba(0,0,0,0.4) -1px 0, rgba(0,0,0,0.25) 0 -1px, rgba(255,255,255,0.35) 0 1px, rgba(0,0,0,0.25) -1px -2px;
 }
 
 #project_tagline {
@@ -338,14 +332,9 @@ Full-Width Styles
   margin: auto 10px auto 10px;
   font-size: 24px;
   font-weight: 300;
-  background: none;
-
-  background-color: #2D3B40;
-  color: rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 1px rgba(255,255,255,0.35);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
+  background : none;
+  color: rgba(141,150,151,0.35);
+  text-shadow: rgba(0,0,0,0.35) -1px 0, rgba(0,0,0,0.25) 0 -1px, rgba(255,255,255,0.20) 0 1px, rgba(0,0,0,0.25) -1px 0;
 }
 
 #header_wrap {
