@@ -4,6 +4,7 @@ Slate Theme for GitHub Pages
 by Jason Costello, @jsncostello
 *******************************************************************************/
 
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic);
 @import url(pygment_trac.css);
 
 /*******************************************************************************
@@ -56,45 +57,51 @@ body {
   box-sizing: border-box;
   color:#373737;
   background: #212121;
-  font-size: 16px;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-family: 'Source Sans Pro', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-weight: 300;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
-  font-weight: 700;
-  color:#222222;
-  font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color:rgb(70, 120, 160);
+  font-family: 'Source Sans Pro', 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
 
 h1 {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 46px;
+  font-weight: 600;
+  color: rgb(56, 87, 122);
+  margin: 0.5em 0 0.7em 0;
 }
 
 h2 {
   padding-bottom: 10px;
-  font-size: 32px;
-  background: url('../images/bg_hr.png') repeat-x bottom;
+  font-size: 34px;
+  color: rgb(56, 87, 122);
+  background: url("../images/bg_hr.png") repeat-x bottom;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 26px;
+  color:rgb(70, 118, 168);
 }
 
 h4 {
-  font-size: 21px;
+  font-size: 23px;
+  color:rgb(70, 118, 168);
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 p {
@@ -102,7 +109,7 @@ p {
 }
 
 footer p {
-  color: #f2f2f2;
+  color: #aaaaaa;
 }
 
 a {
@@ -142,17 +149,9 @@ strong {
 
 img {
   position: relative;
-  margin: 0 auto;
   max-width: 739px;
   padding: 5px;
   margin: 10px 0 10px 0;
-  border: 1px solid #ebebeb;
-
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
 pre, code {
@@ -160,8 +159,8 @@ pre, code {
   color: #222;
   background-color: #fff;
 
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 14px;
+  font-family: Monaco, Consolas, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 16px;
 
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -225,10 +224,14 @@ dl p {
 }
 
 hr {
-  height: 1px;
-  margin-bottom: 5px;
-  border: none;
-  background: url('../images/bg_hr.png') repeat-x center;
+    height: 1px;
+    margin: 23px 0;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
+    background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
+    background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
+    background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
+    background-image: linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
+    border: 0;
 }
 
 table {
@@ -238,7 +241,7 @@ table {
  }
 
 th {
-  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
   background: #373737;
   color: #fff;
@@ -281,41 +284,72 @@ Full-Width Styles
   right: 10px;
   z-index: 10;
   padding: 10px 50px 10px 10px;
-  color: #fff;
-  background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
+  color: #51C1FF;
+  background: url('../images/blacktocat.png') #007EDF no-repeat 95% 50%;
   font-weight: 700;
   box-shadow: 0 0 10px rgba(0,0,0,.5);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
 
+#forkme_banner:hover {
+  color: #99CCFF;
+  background: url('../images/blacktocat.png') #1298FF no-repeat 95% 50%;
+}
+
+.screenshot {
+  overflow-y: hidden ! important;
+  overflow-x: hidden ! important;
+  background: #ccc;
+  background-image: url("../images/screenshot_bg.jpg");
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 #header_wrap {
   background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
+  background: rgba(33,33,33,0.8);
+  background: -moz-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: -webkit-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: -ms-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: -o-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
 #header_wrap .inner {
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 15px 10px;
 }
 
 #project_title {
-  margin: 0;
-  color: #fff;
-  font-size: 42px;
+  display: inline;
+  margin: 0 10px;
+  font-size: 44px;
   font-weight: 700;
-  text-shadow: #111 0px 0px 10px;
+
+  background-color: #293033;
+  color: rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
 
 #project_tagline {
-  color: #fff;
+  display: inline-block;
+  margin: auto 10px auto 10px;
   font-size: 24px;
   font-weight: 300;
   background: none;
-  text-shadow: #111 0px 0px 10px;
+
+  background-color: #2D3B40;
+  color: rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.35);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
 
 #downloads {
@@ -369,6 +403,7 @@ Full-Width Styles
 
 #footer_wrap {
   background: #212121;
+  font-size: 16px;
 }
 
 
@@ -376,10 +411,33 @@ Full-Width Styles
 /*******************************************************************************
 Small Device Styles
 *******************************************************************************/
+@media only screen and (max-width: 800px) {
+  #project_title {
+    display: block;
+    font-size: 34px;
+  }
 
-@media screen and (max-width: 480px) {
+  #project_tagline {
+    display: block;
+    font-size: 22px;
+  }
+
+  #header_wrap .inner {
+    padding-bottom: 10px;
+  }
+
+  .screenshot {
+    background-image: url("../images/screenshot_bg_800px.jpg");
+  }
+}
+
+@media only screen and (max-width: 480px) {
   body {
-    font-size:14px;
+    font-size:16px;
+  }
+
+  .screenshot {
+    background-image: url("../images/screenshot_bg_480px.jpg");
   }
 
   #downloads {
@@ -389,40 +447,53 @@ Small Device Styles
   .inner {
     min-width: 320px;
     max-width: 480px;
+    padding: 10px 10px;
+  }
+
+  #header_wrap .inner {
+    padding-bottom: 5px;
   }
 
   #project_title {
-  font-size: 32px;
+    font-size: 32px;
+  }
+
+  #project_tagline {
+    font-size: 20px;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   h3 {
-    font-size: 21px;
+    font-size: 23px;
   }
 
   h4 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   h5 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   h6 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   code, pre {
     min-width: 320px;
     max-width: 480px;
-    font-size: 11px;
+    font-size: 13px;
+  }
+
+  #footer_wrap {
+    font-size: 14px;
   }
 
 }
