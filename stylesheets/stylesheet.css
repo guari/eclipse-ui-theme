@@ -204,6 +204,17 @@ ul li {
   padding-left: 20px;
 }
 
+ul {
+    list-style-position: outside;
+    list-style-type: disc;
+    margin: 0 0 0 1.1em;
+    padding: 0;
+}
+
+li {
+    margin: 0 0 1em 0;
+}
+
 ol li {
   list-style: decimal inside;
   padding-left: 20px;
@@ -308,21 +319,6 @@ Full-Width Styles
   background-repeat: no-repeat;
 }
 
-#header_wrap {
-  background: #212121;
-  background: rgba(33,33,33,0.8);
-  background: -moz-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
-  background: -webkit-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
-  background: -ms-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
-  background: -o-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
-  background: linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
-}
-
-#header_wrap .inner {
-  padding: 10px 10px 15px 10px;
-}
-
 #project_title {
   display: inline;
   margin: 0 10px;
@@ -350,6 +346,21 @@ Full-Width Styles
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
+}
+
+#header_wrap {
+  background: #212121;
+  background: rgba(33,33,33,0.8);
+  background: -moz-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: -webkit-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: -ms-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: -o-linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+  background: linear-gradient(top, rgba(33,33,33,0.8), rgba(33,33,33,0.7));
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+#header_wrap .inner {
+  padding: 10px 10px 15px 10px;
 }
 
 #downloads {
@@ -432,9 +443,6 @@ Small Device Styles
 }
 
 @media only screen and (max-width: 480px) {
-  body {
-    font-size:16px;
-  }
 
   .screenshot {
     background-image: url("../images/screenshot_bg_480px.jpg");
@@ -463,37 +471,37 @@ Small Device Styles
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 35px;
   }
 
   h2 {
-    font-size: 26px;
+    font-size: 30px;
   }
 
   h3 {
-    font-size: 23px;
+    font-size: 25px;
   }
 
   h4 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   h5 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   h6 {
-    font-size: 14px;
+    font-size: 19px;
   }
 
   code, pre {
     min-width: 320px;
     max-width: 480px;
-    font-size: 13px;
+    font-size: 16px;
   }
 
   #footer_wrap {
-    font-size: 14px;
+    font-size: 16px;
   }
 
 }
