@@ -13,6 +13,7 @@ function addListener(element, type, callback) {
 }
 
 addListener(window, 'load', function(){
+	_gaq.push(['_trackPageview']);
     var links = document.getElementsByTagName('a');
     for (var i = 0; i < links.length; i++){
         addListener(links[i], 'click', function() {
