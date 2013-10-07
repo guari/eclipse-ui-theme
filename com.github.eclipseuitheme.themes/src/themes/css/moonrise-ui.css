@@ -357,10 +357,10 @@ CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
     /* Need to restore a native renderer or the bottom inner tabs won't be displayed */
     swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 }
-CTabFolder > * {
-    font-size: default;   /* ignored */
-    font-family: default; /* ignored */
-}
+/*CTabFolder > * {
+/*    font-size: default;   /* ignored */
+/*    font-family: default; /* ignored */
+/*}*/
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
