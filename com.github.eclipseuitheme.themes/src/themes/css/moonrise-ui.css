@@ -1,6 +1,6 @@
 /**
  * @author Andrea Guarinoni
- * @version: 0.8.2
+ * @version: 0.8.3
  */
 
 
@@ -127,7 +127,7 @@ ViewForm > ToolBar, /* SWT-BUG: ToolBar do not inherit rules from ViewForm */
 Shell [style~='SWT.DROP_DOWN'] > GradientCanvas, /* ignored */
 /* SWT-BUG dirty workaround: a generic rule (eg: Composite > *) needed to catch an
    element without a CSS id, a CSS class and a seekable Widget name, cannot be overridden
-   by a subsequent more specific rule used to correct the style for seekable elements: */
+   by a subsequent more specific rule used to correct the style for seekable elements (<1>): */
 TabFolder > Composite > *, /* Composite > CommitSearchPage$... */
 TabFolder > Composite > * > * /* [style~='SWT.NO_BACKGROUND'] <- generate E4 non-sense bugs in apparently not related other rules */, /* Composite > ContentMergeViewer$... > TextMergeViewer$... */
 DocCommentOwnerComposite > Group > *, /* Group > DocCommentOwnerComposite$... */
@@ -136,7 +136,7 @@ Shell > Composite > Composite > *, /* Composite > StatusDialog$MessageLine (SWT-
 Composite > Composite > Composite > ToolBar, /* Window->Preference (top toolbar) */
 Composite > Composite > Composite > Group > *, /* Group > CreateRefactoringScriptWizardPage$... */
 Shell > Composite > Composite > Composite > *, /* Composite > FilteredPreferenceDialog$... */
-ScrolledComposite > Composite > Composite > Composite > *, /* Composite > NewKeysPreferencePage$... (<1>) */
+ScrolledComposite > Composite > Composite > Composite > *, /* Composite > NewKeysPreferencePage$... */
 Shell > Composite > Composite > Composite > Composite > Composite > *, /* Composite > ShowRefactoringHistoryWizardPage$... */
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > *, /* Composite > RefactoringWizardDialog$... */
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > * /* Composite > RefactoringWizardDialog$... */ {
@@ -416,22 +416,22 @@ Form > LayoutComposite > LayoutComposite > * {
     color: #EEEEEE;
 }
 
-FormText {
-    background-color: inherit;
-    color: inherit;
-}
-
-LayoutComposite, LayoutComposite > FormText, LayoutComposite > Label, LayoutComposite > Button {
+LayoutComposite, LayoutComposite > FormText,
+LayoutComposite > Label,
+LayoutComposite > Button,
+LayoutComposite > * > LayoutComposite > Section > LayoutComposite > * /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/{
     background-color: #4F5355;
     color: #F4F7F7;
 }
 
-LayoutComposite ScrolledPageBook, LayoutComposite Sash {
+LayoutComposite ScrolledPageBook,
+LayoutComposite Sash {
     background-color: #4F5355;
     color: #F4F7F7;
 }
 
-LayoutComposite > Text, LayoutComposite > Combo {
+LayoutComposite > Text,
+LayoutComposite > Combo {
     background-color: #414445;
     color: #F4F7F7;
 }
@@ -446,7 +446,6 @@ Twistie {
 }
 
 #SearchField {
-    background-color: inherit;
     /* background-image: url('./searchbox.png'); */
     /* SWT-BUG: textures are applied as a label over the native ones, */
     /* in this way textures with alpha color are not usable; */
@@ -462,7 +461,7 @@ Twistie {
 /* } */
 
 /* Button[style~='SWT.CHECK'] { */
-    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
+    /* currently, Button object isn't consistent (eg. also a checkbox/radio is seen as Button) */
     /* so, css rules applied to Button have to be overridden for non-Button matches */
 /* } */
 
@@ -499,8 +498,11 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
 
 #org-eclipse-jdt-ui-PackageExplorer.MPart {
     background-color: #313538;
-    color: #EEEEEE;
+    color: #DDDDDD;
 }
+
+/* ------------------------------------------------------------- */
+
 #org-eclipse-jdt-ui-TypeHierarchy Label, #org-eclipse-jdt-ui-TypeHierarchy CLabel {
     background-color: #313538;
     color: #DDDDDD;
@@ -512,12 +514,9 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
 
 /* ------------------------------------------------------------- */
 
-#org-eclipse-ui-views-ContentOutline {
+#org-eclipse-ui-views-ContentOutline.MPart {
     background-color: #313538;
     color: #DDDDDD;
-}
-#org-eclipse-ui-views-ContentOutline.MToolBar {
-    background-color: inherit;
 }
 #org-eclipse-ui-views-ContentOutline Label { /* SWT-BUG workaround: 'color' is not inherited */
     background-color: #333;
@@ -610,12 +609,9 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
 
 /* ------------------------------------------------------------- */
 
-#org-eclipse-pde-runtime-LogView {
+#org-eclipse-pde-runtime-LogView.MPart {
     background-color: #313538;
     color: #DDDDDD;
-}
-#org-eclipse-pde-runtime-LogView.MToolBar {
-    background-color: inherit;
 }
 #org-eclipse-pde-runtime-LogView .MPart > Label,
 #org-eclipse-ui-views-ProblemView .MPart > Label,
