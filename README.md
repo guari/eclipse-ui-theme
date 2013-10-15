@@ -14,7 +14,7 @@ Requirements
 Installation
 ------------
 
-* Download [moonrise_0.8.2_standalone.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2_standalone.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
+* Download [moonrise_0.8.3_standalone.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_standalone.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
 * Restart Eclipse and go to ```Window > Preferences > General > Appearance``` and select *MoonRise*;
 
@@ -22,7 +22,7 @@ Installation
 
 ##### OR (for a little better tabs decoration):
 
-* Download [moonrise_0.8.2.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
+* Download [moonrise_0.8.3.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
 * Install *Eclipse 4 Chrome Theme* from marketplace or from [here](https://github.com/jeeeyul/eclipse-themes);
 
@@ -53,7 +53,7 @@ Note that the foreground color cannot be changed and depends on system font colo
 | The font of the title of the tabs is different | Ensure that on your machine is installed ```Segoe Print``` font. |
 | The size of the title of the tabs is different | Eclipse does not scale it with a DPI-Aware policy. Open the jar package downloaded with a file archiver, open ```/themes/css/moonrise-ui.css```, search for ```font-size``` property and modify its value according to your needs. |
 | The label of the checkboxes has a color difficult to read | It's related to a SWT bug, use a system theme that has lighter font color for buttons. |
-| The text of the buttons has a color difficult to read (MAC-OSX) | It's related to a SWT bug, try [this](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.2_OSX.jar?raw=true) 'patched' version if you have this issue. |
+| The text of the buttons has a color difficult to read (MAC-OSX) | It's related to a SWT bug, try [this](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_OSX.jar?raw=true) 'patched' version if you have this issue. |
 
 - - -
 ### Notes:
