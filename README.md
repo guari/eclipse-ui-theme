@@ -58,13 +58,15 @@ Note that the foreground color cannot be changed and depends on system font colo
 - - -
 ### Notes:
 
-Tested on the following Eclipse release:
+Currently this theme uses the CSS-SWT engine introduced in the 4.2 version of the Eclipse Platform and should provide a dark style for each GUI widget that can be handled with the last version of the Eclipse SDK.
+This plugin has been tested with the main Eclipse Development Tool packages on Linux distributions, Windows and OSX and with the following Eclipse releases:
 
 * Luna (4.4)
 * Kepler (4.3)
 * Juno (4.2.x)
 
-Works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly in Eclipse (eg. scrollbar, table header, button etc.) and a dark color scheme for the Eclipse code editor (you can create your own or download one from http://www.eclipsecolorthemes.org/).
+It works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly in Eclipse. The more noticeable issues related to SWT are the `ScrollBar` widgets, the `Table` headers/lines and the arrows to fold/unfold contents that cannot be styled. As minor issues there are `Button` background color on Windows and OSX that cannot be customized (on Windows checkboxes/radio controls do not inherit font color) and some other little bugs related to the CSS engine that makes the customizations harder and unwieldy.
+Aside from that, the theme currently might not look perfect on each platform, but should be fully useable on all of them. The Eclipse CSS engine is still under improvement.
 
 #### Syntax highlighting scheme:
 
@@ -77,6 +79,11 @@ You can find the one used in the screenshot here:
 * or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/color-scheme/RainbowDrops.xml?raw=true) (download and import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
 
 * or [here](http://eclipsecolorthemes.org/?view=theme&id=20025);
+
+Debugging and improvements
+--------------------------
+
+Use *CSS Spy* to inspect widgets properties and *CSS Scratchpad* or *Lightweight CSS Editor* to apply a quick customization. To test what elements can be modified or not with CSS, drop a line like this one: `* { background-color:red; color:white; }` into *CSS Scratchpad* (restart Eclipse to reset the theme).
 
 #### Old releases:
 The packages previously uploaded can be found into ```/com.github.eclipseuitheme.themes/bin/``` folder.
@@ -92,6 +99,6 @@ References
 License
 -------
 
-Copyright (c) 2012
+Copyright (c) 2013
 
 This is open source software, licensed under the Eclipse Public License. See the file COPYING for details.
