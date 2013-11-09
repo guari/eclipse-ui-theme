@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <modelVersion>4.0.0</modelVersion>
+        <parent>
+                <groupId>com.github.eclipseuitheme.themes</groupId>
+                <artifactId>com.github.eclipseuitheme.themes.parent</artifactId>
+                <relativePath>../pom.xml</relativePath>
+                <version>0.8.4-SNAPSHOT</version>
+        </parent>
+        <groupId>com.github.eclipseuitheme.themes</groupId>
+        <artifactId>com.github.eclipseuitheme.themes.updatesite</artifactId>
+        <version>0.8.4-SNAPSHOT</version>
+        <packaging>eclipse-repository</packaging>
+        <repositories>
+                <repository>
+                        <id>juno</id>
+                        <url>http://download.eclipse.org/releases/juno/</url>
+                        <layout>p2</layout>
+                </repository>
+        </repositories>
+        <build>
+                <plugins>
+                        <plugin>
+                                <groupId>org.eclipse.tycho</groupId>
+                                <artifactId>tycho-maven-plugin</artifactId>
+                                <version>0.17.0</version>
+                                <extensions>true</extensions>
+                        </plugin>
+                </plugins>
+        </build>
+</project>

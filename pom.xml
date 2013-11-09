@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.github.eclipseuitheme.themes</groupId>
+        <artifactId>com.github.eclipseuitheme.themes.parent</artifactId>
+        <version>0.8.4-SNAPSHOT</version>
+        <packaging>pom</packaging>
+        <modules>
+                <module>com.github.eclipseuitheme.themes.plugin</module>
+                <module>com.github.eclipseuitheme.themes.feature</module>
+                <module>com.github.eclipseuitheme.themes.updatesite</module>
+        </modules>
+</project>
