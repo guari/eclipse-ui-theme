@@ -1,0 +1,11 @@
+/**
+ * ====================================================================
+ * @title: Eclipse MoonRise UI Theme (standalone)
+ * @author: Andrea Guarinoni
+ * @version: 0.8.4
+ * @target-platform: OSX
+ * @style-type: Main
+ * ====================================================================
+ */
+@import url("moonrise-ui-standalone.css");
+@import url("moonrise-ui_[OSX-patch].css");

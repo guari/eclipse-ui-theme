@@ -1,0 +1,77 @@
+/**
+ * ====================================================================
+ * @title: Eclipse MoonRise UI Theme
+ * @author: Andrea Guarinoni
+ * @version: 0.8.4
+ * @target-platform: OSX
+ * @style-type: Patch
+ * ====================================================================
+ */
+
+/* ###################### Global Styles ########################## */
+
+/* ++++++ Remove these to have ONLY the main IDE shell dark ++++++ */
+
+TabFolder, Button,
+Composite > Button,
+TabFolder > Composite > Button,
+TabFolder > Composite > * > Button,
+DocCommentOwnerComposite > Group > Button,
+TabFolder > Composite > ScrolledComposite > Button,
+Shell > Composite > Composite > Button,
+Composite > Composite > Composite > Group > Button,
+Shell > Composite > Composite > Composite > Button,
+ScrolledComposite > Composite > Composite > Composite > Button,
+Shell > Composite > Composite > Composite > Composite > Composite > Button {
+    /* background-color is not applyed to the whole button,
+       but text color is changed, so it appear light on light */
+    background-color: #515658;
+    color: #222;
+}
+Button[style~='SWT.CHECK'] {
+    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
+    /* so, css rules applied to Button have to be overridden for non-Button matches */
+    color: #ddd;
+}
+Button[style~='SWT.RADIO'],
+Group > Button[style~='SWT.RADIO'],
+DocCommentOwnerComposite > Group > Button[style~='SWT.RADIO'],
+Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'] {
+    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
+    /* so, css rules applied to Button have to be overridden for non-Button matches */
+    color: #ddd;
+}
+Combo,
+Composite > Combo,
+TabFolder > Composite > Combo,
+TabFolder > Composite > * > Combo,
+DocCommentOwnerComposite > Group > Combo,
+TabFolder > Composite > ScrolledComposite > Combo,
+Shell > Composite > Composite > Combo,
+Composite > Composite > Composite > Group > Combo,
+Shell > Composite > Composite > Composite > Combo,
+ScrolledComposite > Composite > Composite > Composite > Combo,
+Shell > Composite > Composite > Composite > Composite > Composite > Combo {
+    background-color: #41464A; /* ignored */
+    color: #222;
+}
+Combo:selected,
+Composite > Combo:selected,
+TabFolder > Composite > Combo:selected,
+TabFolder > Composite > * > Combo:selected,
+DocCommentOwnerComposite > Group > Combo:selected,
+TabFolder > Composite > ScrolledComposite > Combo:selected,
+Shell > Composite > Composite > Combo:selected,
+Composite > Composite > Composite > Group > Combo:selected,
+Shell > Composite > Composite > Composite > Combo:selected,
+ScrolledComposite > Composite > Composite > Composite > Combo:selected,
+Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected {
+    background-color: #41464A;
+    color: #FFF;
+}
+Text[style~='SWT.SEARCH'] {
+    /* search boxes */
+    color: #333;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */

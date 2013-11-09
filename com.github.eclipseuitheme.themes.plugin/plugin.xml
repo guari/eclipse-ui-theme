@@ -4,9 +4,76 @@
    <extension
          point="org.eclipse.e4.ui.css.swt.theme">
       <theme
+            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
+            label="MoonRise (standalone)"
+            os="win32">
+      </theme>
+      <theme
             basestylesheeturi="themes/css/moonrise-ui.css"
             id="com.github.eclipseuitheme.themes.moonrise-ui"
-            label="MoonRise">
+            label="MoonRise"
+            os="win32">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
+            label="MoonRise (standalone)"
+            os="linux">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui"
+            label="MoonRise"
+            os="linux">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui-standalone_OSX.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
+            label="MoonRise (standalone)"
+            os="macosx">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui_OSX.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui"
+            label="MoonRise"
+            os="macosx">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
+            label="MoonRise (standalone)"
+            os="solaris">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui"
+            label="MoonRise"
+            os="solaris">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
+            label="MoonRise (standalone)"
+            os="aix">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui"
+            label="MoonRise"
+            os="aix">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
+            label="MoonRise (standalone)"
+            os="hpux">
+      </theme>
+      <theme
+            basestylesheeturi="themes/css/moonrise-ui.css"
+            id="com.github.eclipseuitheme.themes.moonrise-ui"
+            label="MoonRise"
+            os="hpux">
       </theme>
       <property
             name="applicationCSSResources"

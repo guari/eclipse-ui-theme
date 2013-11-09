@@ -1,0 +1,12 @@
+/**
+ * ====================================================================
+ * @title: Eclipse MoonRise UI Theme
+ * @author: Andrea Guarinoni
+ * @version: 0.8.4
+ * @target-platform: OSX
+ * @style-type: Main
+ * @requires: Eclipse Chrome Theme by Jeeeyul Lee
+ * ====================================================================
+ */
+@import url("moonrise-ui.css");
+@import url("moonrise-ui_[OSX-patch].css");
