@@ -3,8 +3,8 @@ MoonRise UI Theme
 
 An early version of a dark UI theme for Eclipse 4+.
 
-![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/screenshot-ubuntu_v0.8.2.png)
-![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/screenshot-windows_v0.8.2.png)
+![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/screenshot-ubuntu_v0.8.2.png)
+![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/screenshot-windows_v0.8.2.png)
 
 Requirements
 ------------
@@ -14,19 +14,17 @@ Requirements
 Installation
 ------------
 
-* Download [moonrise_0.8.3_standalone.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_standalone.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
+* #### Manual:
+Download [moonrise_0.8.4.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.4.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
-* Restart Eclipse and go to ```Window > Preferences > General > Appearance``` and select *MoonRise*;
+* #### Update site:
+Or download this plugin by using ```Help > Install New Software...``` and add the update site: <pre>http://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre>
+
+* Restart Eclipse and go to ```Window > Preferences > General > Appearance```;
+
+* Select *MoonRise (standalone)* or, for a little better tabs decoration, install *Eclipse 4 Chrome Theme* from marketplace or from [here](https://github.com/jeeeyul/eclipse-themes) and select *MoonRise*;
 
 * Rest your eyes ;)
-
-##### OR (for a little better tabs decoration):
-
-* Download [moonrise_0.8.3.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
-
-* Install *Eclipse 4 Chrome Theme* from marketplace or from [here](https://github.com/jeeeyul/eclipse-themes);
-
-* Restart Eclipse and go to ```Window > Preferences > General > Appearance``` and select *MoonRise*;
 
 - - -
 ### Fine-tuning:
@@ -51,9 +49,10 @@ Note that the foreground color cannot be changed and depends on system font colo
 | Problem | Solution |
 | ------- | -------- |
 | The font of the title of the tabs is different | Ensure that on your machine is installed ```Segoe Print``` font. |
-| The size of the title of the tabs is different | Eclipse does not scale it with a DPI-Aware policy. Open the jar package downloaded with a file archiver, open ```/themes/css/moonrise-ui.css```, search for ```font-size``` property and modify its value according to your needs. |
+| The size of the title of the tabs is different | Eclipse does not scale it with a DPI-Aware policy. Open the downloaded jar package with an archive explorer, open ```/themes/css/moonrise-ui-standalone.css```, search for ```font-size``` property and modify its value according to your needs then save the file. |
 | The label of the checkboxes has a color difficult to read | It's related to a SWT bug, use a system theme that has lighter font color for buttons. |
-| The text of the buttons has a color difficult to read (MAC-OSX) | It's related to a SWT bug, try [this](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_OSX.jar?raw=true) 'patched' version if you have this issue. |
+| The text of the buttons has a color difficult to read (MAC-OSX) | It's related to a SWT bug, try [this](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_OSX.jar?raw=true) 'patched' version if you have this issue (no more needed for v0.8.4+). |
+| After updating the plugin, it isn't loaded as expected | Eclipse seems to use some sorts of internal resources caching that don't work always very well. To ensure that it's not an issue related to the new plugin version, create a new workspace and import your projects here, or try with a freshly downloaded Eclipse release |
 
 - - -
 ### Notes:
@@ -70,13 +69,13 @@ Aside from that, the theme currently might not look perfect on each platform, bu
 
 #### Syntax highlighting scheme:
 
-![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/sources_syntax_colors.png)
+![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/sources_syntax_colors.png)
 
 You can find the one used in the screenshot here:
 
-* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/color-scheme/RainbowDrops.epf?raw=true) (download and import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
+* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (download and import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
 
-* or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/color-scheme/RainbowDrops.xml?raw=true) (download and import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
+* or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true) (download and import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
 
 * or [here](http://eclipsecolorthemes.org/?view=theme&id=20025);
 
@@ -86,7 +85,7 @@ Debugging and improvements
 Use *CSS Spy* to inspect widgets properties and *CSS Scratchpad* or *Lightweight CSS Editor* to apply a quick customization. To test what elements can be modified or not with CSS, drop a line like this one: `* { background-color:red; color:white; }` into *CSS Scratchpad* (restart Eclipse to reset the theme).
 
 #### Old releases:
-The packages previously uploaded can be found into ```/com.github.eclipseuitheme.themes/bin/``` folder.
+The packages previously uploaded can be found into ```/com.github.eclipseuitheme.themes.plugin/bin/``` folder.
 
 References
 ----------
@@ -99,6 +98,6 @@ References
 License
 -------
 
-Copyright (c) 2013
+Copyright (c) 2012, 2013
 
 This is open source software, licensed under the Eclipse Public License. See the file COPYING for details.
