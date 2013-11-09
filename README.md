@@ -18,7 +18,7 @@ Installation
 Download [moonrise_0.8.4.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.4.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
 * #### Update site:
-Or download this plugin by using ```Help > Install New Software...``` and add the update site: <pre>http://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre>
+Or download this plugin by using ```Help > Install New Software...``` and add the update site: <pre>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre>
 
 * Restart Eclipse and go to ```Window > Preferences > General > Appearance```;
 
