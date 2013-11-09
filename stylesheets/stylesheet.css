@@ -56,7 +56,7 @@ Theme Styles
 body {
   box-sizing: border-box;
   color:#373737;
-  background: #212121;
+  background: #f2f2f2;
   font-size: 18px;
   font-family: 'Source Sans Pro', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -167,8 +167,9 @@ pre, code {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
 
-
-
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 pre {
@@ -434,6 +435,10 @@ Small Device Styles
 
 @media only screen and (max-width: 480px) {
 
+  body {
+    min-width: 350px;
+  }
+
   .screenshot {
     background-image: url("../images/screenshot_bg_480px.jpg");
   }
@@ -458,6 +463,10 @@ Small Device Styles
 
   #project_tagline {
     font-size: 20px;
+  }
+
+  #forkme_banner {
+    font-size: 75%;
   }
 
   h1 {
