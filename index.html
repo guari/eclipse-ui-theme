@@ -37,7 +37,7 @@
         </div>
         <section class="inner">
             <p>
-                <img src="https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/screenshot-ubuntu_v0.8.2.png"
+                <img src="https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/screenshot-ubuntu_v0.8.2.png"
                      alt="screenshot"></p>
         </section>
     </div>
@@ -56,27 +56,30 @@
         </h2>
 
         <ul>
-            <li><p>Download <a
-                    href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_standalone.jar?raw=true">moonrise_0.8.3_standalone.jar</a>
-                package and put it into your Eclipse <code>\dropins\plugins\</code> folder;</p></li>
-            <li><p>Restart Eclipse and go to <code>Window &gt; Preferences &gt; General &gt; Appearance</code> and
-                select <em>MoonRise</em>;</p></li>
+            <li>
+                <h5>
+                    Manual:
+                </h5>
+                <p>Download <a
+                        href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.4.jar?raw=true">moonrise_0.8.4.jar</a>
+                    package and put it into your Eclipse <code>\dropins\plugins\</code> folder;</p>
+            </li>
+            <li>
+                <h5>
+                    Update site:
+                </h5>
+                <p>Or download this plugin by using <code>Help &gt; Install New Software...</code> and add the update site:
+                <pre>http://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre></p>
+            </li>
+            <li>
+                <p>Restart Eclipse and go to <code>Window &gt; Preferences &gt; General &gt; Appearance</code>;</p>
+            </li>
+            <li>
+                <p>Select <em>MoonRise (standalone)</em> or, for a little better tabs decoration, install <em>Eclipse 4 Chrome Theme</em> from marketplace or from <a href="https://github.com/jeeeyul/eclipse-themes">here</a> and select <em>MoonRise</em>;</p>
+            </li>
             <li><p>Rest your eyes ;)</p></li>
         </ul>
-        <h5>
-            <a name="or-for-a-little-better-tabs-decoration" class="anchor"
-               href="#or-for-a-little-better-tabs-decoration"><span class="octicon octicon-link"></span></a>OR (for a
-            little better tabs decoration):</h5>
 
-        <ul>
-            <li><p>Download <a
-                    href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3.jar?raw=true">moonrise_0.8.3.jar</a>
-                package and put it into your Eclipse <code>\dropins\plugins\</code> folder;</p></li>
-            <li><p>Install <em>Eclipse 4 Chrome Theme</em> from marketplace or from <a
-                    href="https://github.com/jeeeyul/eclipse-themes">here</a>;</p></li>
-            <li><p>Restart Eclipse and go to <code>Window &gt; Preferences &gt; General &gt; Appearance</code> and
-                select <em>MoonRise</em>;</p></li>
-        </ul>
         <hr>
         <h3>
             <a name="fine-tuning" class="anchor" href="#fine-tuning"><span class="octicon octicon-link"></span></a>Fine-tuning:
@@ -147,9 +150,13 @@
             <tr>
                 <td>The text of the buttons has a color difficult to read (MAC-OSX)</td>
                 <td>It's related to a SWT bug, try <a
-                        href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_OSX.jar?raw=true">this</a>
-                    'patched' version if you have this issue.
+                        href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.3_OSX.jar?raw=true">this</a>
+                    'patched' version if you have this issue (no more needed for v0.8.4+).
                 </td>
+            </tr>
+            <tr>
+                <td>After updating the plugin, it isn't loaded as expected</td>
+                <td>Eclipse seems to use some sorts of internal resources caching that don't work always very well. To ensure that it's not an issue related to the new plugin version, create a new workspace and import your projects here, or try with a freshly downloaded Eclipse release.</td>
             </tr>
             </tbody>
         </table>
@@ -157,16 +164,18 @@
         <h3>
             <a name="notes" class="anchor" href="#notes"><span class="octicon octicon-link"></span></a>Notes:</h3>
 
-        <p>Tested on the following Eclipse release:</p>
+        <p>Currently this theme uses the CSS-SWT engine introduced in the 4.2 version of the Eclipse Platform and should provide a dark style for each GUI widget that can be handled with the last version of the Eclipse SDK.
+        This plugin has been tested with the main Eclipse Development Tool packages on Linux distributions, Windows and OSX and with the following Eclipse releases:</p>
 
         <ul>
             <li>Luna (4.4)</li>
             <li>Kepler (4.3)</li>
             <li>Juno (4.2.x)</li>
         </ul>
-        <p>Works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly
-            in Eclipse (eg. scrollbar, table header, button etc.) and a dark color scheme for the Eclipse code editor
-            (you can create your own or download one from <a href="http://www.eclipsecolorthemes.org/">http://www.eclipsecolorthemes.org/</a>).
+
+        <p>
+        It works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly in Eclipse. The more noticeable issues related to SWT are the <code>ScrollBar</code> widgets, the <code>Table</code> headers/lines and the arrows to fold/unfold contents that cannot be styled. As minor issues there are <code>Button</code> background color on Windows and OSX that cannot be customized (on Windows checkboxes/radio controls do not inherit font color) and some other little bugs related to the CSS engine that makes the customizations harder and unwieldy.
+        Aside from that, the theme currently might not look perfect on each platform, but should be fully useable on all of them. The Eclipse CSS engine is still under improvement.
         </p>
 
         <h4>
@@ -174,18 +183,18 @@
                     class="octicon octicon-link"></span></a>Syntax highlighting scheme:</h4>
 
         <p>
-            <img src="https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes/screenshot/sources_syntax_colors.png"
+            <img src="https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/sources_syntax_colors.png"
                  alt="screenshot"></p>
 
         <p>You can find the one used in the screenshot here:</p>
 
         <ul>
             <li><p><a
-                    href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/color-scheme/RainbowDrops.epf?raw=true">RainbowDrops.epf</a>
+                    href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true">RainbowDrops.epf</a>
                 (download and import it with Eclipse built-in Preferences import: <code>File &gt; Import...</code> then
                 select <code>General &gt; Preferences</code>);</p></li>
             <li><p>or <a
-                    href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/color-scheme/RainbowDrops.xml?raw=true">RainbowDrops.xml</a>
+                    href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true">RainbowDrops.xml</a>
                 (download and import it with <a href="http://eclipsecolorthemes.org/?view=plugin">Eclipse Color Theme
                     Plugin</a>);</p></li>
             <li><p>or <a href="http://eclipsecolorthemes.org/?view=theme&amp;id=20025">here</a>;</p></li>
