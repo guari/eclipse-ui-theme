@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme (standalone)
  * @author: Andrea Guarinoni
- * @version: 0.8.4
+ * @version: 0.8.5
  * @target-platform: Generic
  * @style-type: Main
  * ====================================================================
@@ -19,7 +19,7 @@
     background-color: #313538;
     color: #f7f8f8;
     font-size: 9;
-    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
     swt-simple: true;
     swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 
@@ -300,7 +300,7 @@ CTabFolder {
     background-color: #222;
     color: #f7f8f8;
     font-size: 9;
-    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
     swt-simple: true;
     swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 
@@ -322,10 +322,6 @@ CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
     /* Need to restore a native renderer or the bottom inner tabs won't be displayed */
     swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 }
-/*CTabFolder > * {
-/*    font-size: default;   /* ignored */
-/*    font-family: default; /* ignored */
-/*}*/
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
@@ -510,12 +506,12 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
 #org-eclipse-e4-ui-compatibility-editor CTabItem {
     color: #EEEEEE;
     font-weight: normal;
-    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
 }
 #org-eclipse-e4-ui-compatibility-editor CTabItem:selected {
     background-color: #262626;
     font-weight: bold;
-    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
 }
 #org-eclipse-e4-ui-compatibility-editor .MPart {
     color: #EEEEEE;

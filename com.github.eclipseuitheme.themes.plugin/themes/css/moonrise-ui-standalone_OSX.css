@@ -2,10 +2,781 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme (standalone)
  * @author: Andrea Guarinoni
- * @version: 0.8.4
+ * @version: 0.8.5
  * @target-platform: OSX
  * @style-type: Main
  * ====================================================================
  */
-@import url("moonrise-ui-standalone.css");
-@import url("moonrise-ui_[OSX-patch].css");
+/* @import url("moonrise-ui-standalone.css"); */
+/* @import url("moonrise-ui_[OSX-patch].css"); */
+
+/* SWT-BUG [Eclipse Bug 423744]: 
+ * Importing a local resource throws a MalformedURLException because the
+ * resource directory is hard-coded to point to 'platform:/plugin/org.eclipse.platform/'
+ * Basic workaround for stylesheet imports: copy-pasting the whole content of the file that should be imported */
+
+/* >>>>>>>>>>>>> content of 'moonrise-ui-standalone.css' >>>>>>>>>>>>>>>>>> */
+	
+	/**
+	 * ====================================================================
+	 * @title: Eclipse MoonRise UI Theme (standalone)
+	 * @author: Andrea Guarinoni
+	 * @version: 0.8.5
+	 * @target-platform: Generic
+	 * @style-type: Main
+	 * ====================================================================
+	 */
+	
+	.MTrimmedWindow.topLevel {
+	    margin-top: 6px;
+	    margin-bottom: 2px;
+	    margin-left: 2px;
+	    margin-right: 2px;
+	}
+	
+	.MPartStack {
+	    background-color: #313538;
+	    color: #f7f8f8;
+	    font-size: 9;
+	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+	    swt-simple: true;
+	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
+	
+	    padding: 2px 7px 9px 7px; /* top left bottom right */
+	    swt-tab-outline: #3B4042; /* border color for selected tab */
+	    swt-outer-keyline-color: #515658; /* border color for whole tabs container */
+	    swt-unselected-tabs-color: #515658 #464649 #313538 99% 100%; /* title background for unselected tab */
+	    swt-shadow-visible: true;
+	
+	    swt-selected-tab-fill: #313538; /* title background for selected tab (gradient bottom color) */
+	
+	    swt-shadow-color: #0b0b0b;
+	
+	    swt-mru-visible: true;
+	
+	    swt-corner-radius: 16px;
+	}
+	
+	.MPartStack.active {
+	    background-color: #292929;   /* ignored (<2>) */
+	    swt-inner-keyline-color: #FFFFFF;
+	    swt-tab-outline: #484848; /* border color for selected tab */
+	    swt-outer-keyline-color: #4B4C4F; /* border color for whole tabs container */
+	    swt-unselected-tabs-color: #494A4D #404043 #272727 99% 100%; /* title background for unselected tab */
+	
+	    swt-selected-tab-fill: #292929; /* title background for selected tab (gradient bottom color) */
+	}
+	.MPartStack.active > * {
+	    /* Workaround for (<2>) to set the color of the inner border for the active tab */
+	    background-color: #292929;
+	}
+	
+	.MPartStack.empty {
+	    swt-unselected-tabs-color: #515658 #4F5456 #4F5456 99% 100%; /* title background for unselected tab */
+	    swt-tab-outline: #535354; /* border color for selected tab */
+	    swt-outer-keyline-color: #515658; /* border color for whole tabs container */
+	}
+	
+	.MTrimmedWindow {
+	    margin-top: 5px;
+	    margin-bottom: 2px;
+	    margin-left: 0px;
+	    margin-right: 0px;
+	    background-color: #515658;
+	}
+	
+	.MTrimBar {
+	    background-color: #515658;
+	}
+	
+	/* .MTrimBar#org-eclipse-ui-main-toolbar {
+	    background-color: #676767 #6b6b6b;
+	} */
+	
+	CTabFolder.MArea .MPartStack,CTabFolder.MArea .MPartStack.active {
+	    swt-shadow-visible: false;
+	}
+	
+	.MToolControl.TrimStack {
+	    frame-cuts: 5px 1px 5px 16px;
+	}
+	
+	
+	/* ###################### Global Styles ########################## */
+	
+	/* ++++++ Remove these to have ONLY the main IDE shell dark ++++++ */
+	
+	Composite, ScrolledComposite, ExpandableComposite, TabFolder, CLabel, Label,
+	ToolItem, Sash, Group, Hyperlink, RefactoringLocationControl, Link, FilteredTree,
+	ProxyEntriesComposite, NonProxyHostsComposite, DelayedFilterCheckboxTree,
+	Splitter, ScrolledPageContent, ViewForm, LaunchConfigurationFilteredTree,
+	ContainerSelectionGroup, BrowseCatalogItem, EncodingSettings, MessageLine,
+	ProgressMonitorPart, DocCommentOwnerComposite,
+	Button /* SWT-BUG: checkbox inner label font color is not accessible */,
+	ViewForm > ToolBar, /* SWT-BUG: ToolBar do not inherit rules from ViewForm */
+	Shell [style~='SWT.DROP_DOWN'] > GradientCanvas, /* ignored */
+	/* SWT-BUG dirty workaround [Eclipse Bug 419482]: a generic rule (eg: Composite > *) needed to catch an
+	   element without a CSS id, a CSS class and a seekable Widget name, cannot be overridden
+	   by a subsequent more specific rule used to correct the style for seekable elements (<1>): */
+	TabFolder > Composite > *, /* Composite > CommitSearchPage$... */
+	TabFolder > Composite > * > * /* [style~='SWT.NO_BACKGROUND'] <- generate E4 non-sense bugs in apparently not related other rules */, /* Composite > ContentMergeViewer$... > TextMergeViewer$... */
+	DocCommentOwnerComposite > Group > *, /* Group > DocCommentOwnerComposite$... */
+	TabFolder > Composite > ScrolledComposite > *, /* ScrolledComposite > ControlListViewer$... */
+	Shell > Composite > Composite > *, /* Composite > StatusDialog$MessageLine (SWT-BUG: ignored) */
+	Composite > Composite > Composite > ToolBar, /* Window->Preference (top toolbar) */
+	Composite > Composite > Composite > Group > *, /* Group > CreateRefactoringScriptWizardPage$... */
+	Shell > Composite > Composite > Composite > *, /* Composite > FilteredPreferenceDialog$... */
+	ScrolledComposite > Composite > Composite > Composite > *, /* Composite > NewKeysPreferencePage$... */
+	Shell > Composite > Composite > Composite > Composite > Composite > *, /* Composite > ShowRefactoringHistoryWizardPage$... */
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > *, /* Composite > RefactoringWizardDialog$... */
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > * /* Composite > RefactoringWizardDialog$... */ {
+	    background-color:#515658;
+	    color:#eeeeee;
+	}
+	
+	Combo, List,
+	/* It might be useless but currently it's needed due to a strange priority
+	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
+	Composite > List,
+	TabFolder > Composite > List,
+	TabFolder > Composite > * > List,
+	DocCommentOwnerComposite > Group > List,
+	TabFolder > Composite > ScrolledComposite > List,
+	Shell > Composite > Composite > List,
+	Composite > Composite > Composite > Group > List,
+	Shell > Composite > Composite > Composite > List,
+	ScrolledComposite > Composite > Composite > Composite > List,
+	Shell > Composite > Composite > Composite > Composite > Composite > List {
+	    background-color: #41464A;
+	    color: #dddddd;
+	}
+	
+	Text {
+	    background-color: #515658;
+	    color: #cccccc;
+	}
+	Text[style~='SWT.DROP_DOWN'] {
+	    /* search boxes and input fields */
+	    background-color: #41464A;
+	    color: #dddddd;
+	}
+	Text[style~='SWT.SEARCH'],
+	Text[style~='SWT.SEARCH'] + Label /* SWT-BUG: adjacent sibling selector is ignored (CSS2.1) */ {
+	    /* search boxes */
+	    background-color: #949DA5;
+	    color: #ffffff;
+	}
+	Text[style~='SWT.POP_UP'] {
+	    background-color: #34383B;
+	    color: #dddddd;
+	}
+	Text[style~='SWT.READ_ONLY'] {
+	    background-color: #515658;
+	    color: #bbbbbb;
+	}
+	/* Text[style~='SWT.POP_UP'][style~='SWT.ERROR_MENU_NOT_POP_UP'][style~='SWT.ICON_WARNING'] {
+	      /* Dirty way to catch error popup labels
+	        (currently it's impossible since there's no difference
+	        at all from some other Text elements) */
+	/*    background-color: #742025;
+	      color: #FF9997;
+	} */
+	
+	StyledText {
+	    background-color: #383C3E;
+	    color: #dddddd;
+	}
+	
+	Composite > StyledText,
+	Shell [style~='SWT.DROP_DOWN'] > StyledText, /* for eg. folded code popup (but it's ignored) */
+	/* It might be useless but currently it's needed due to a strange priority
+	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
+	ScrolledComposite > Composite > Composite > Composite > StyledText {
+	    background-color: #252525;
+	    color: #dddddd;
+	}
+	
+	ScrolledFormText, FormText {
+	    background-color: #687174;
+	    color: #eeeeee;
+	}
+	
+	Table,
+	/* It might be useless but currently it's needed due to a strange priority
+	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
+	Composite > Table,
+	TabFolder > Composite > Table,
+	TabFolder > Composite > * > Table,
+	DocCommentOwnerComposite > Group > Table,
+	TabFolder > Composite > ScrolledComposite > Table,
+	Shell > Composite > Composite > Table,
+	Composite > Composite > Composite > Group > Table,
+	Shell > Composite > Composite > Composite > Table,
+	ScrolledComposite > Composite > Composite > Composite > Table,
+	Shell > Composite > Composite > Composite > Composite > Composite > Table {
+	    background-color: #35393C;
+	    color: #dddddd;
+	}
+	
+	Tree,
+	/* It might be useless but currently it's needed due to a strange priority
+	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
+	Composite > Tree,
+	TabFolder > Composite > Tree,
+	TabFolder > Composite > * > Tree,
+	DocCommentOwnerComposite > Group > Tree,
+	TabFolder > Composite > ScrolledComposite > Tree,
+	Shell > Composite > Composite > Tree,
+	Composite > Composite > Composite > Group > Tree,
+	Shell > Composite > Composite > Composite > Tree,
+	ScrolledComposite > Composite > Composite > Composite > Tree,
+	Shell > Composite > Composite > Composite > Composite > Composite > Tree {
+	    background-color: #2F2F2F;
+	    color: #CCC;
+	}
+	
+	/* prevent CSS Spy red borders to be grayed with a generic Shell selector */
+	Shell[style~='SWT.SHADOW_ETCHED_OUT'], Shell[style~='SWT.SHADOW_ETCHED_IN'],
+	Shell[style~='SWT.CHECK'], Shell[style~='SWT.TITLE'], Shell[style~='SWT.OK'],
+	Shell[style~='SWT.CANCEL'], Shell[style~='SWT.ABORT'], Shell[style~='SWT.DROP_DOWN'],
+	Shell[style~='SWT.ARROW'], Shell[style~='SWT.RADIO'], Shell[style~='SWT.SINGLE'],
+	Shell[style~='SWT.SHADOW_IN'], Shell[style~='SWT.TOOL'], Shell[style~='SWT.RESIZE'],
+	Shell[style~='SWT.SHELL_TRIM'], Shell[style~='SWT.FILL'], Shell[style~='SWT.ALPHA']{
+	    background-color: #515658;
+	    color: #cccccc;
+	}
+	Shell > Composite > Table[style~='SWT.DROP_DOWN'] {
+	    background-color: #35393C;
+	    color: #dddddd;
+	}
+	
+	Shell[style~='SWT.DROP_DOWN'][style~='SWT.SHADOW_IN'][style~='SWT.SHADOW_ETCHED_IN'] > Composite,
+	Shell[style~='SWT.DROP_DOWN'][style~='SWT.SHADOW_IN'][style~='SWT.SHADOW_ETCHED_IN'] > Composite Composite,
+	Shell[style~='SWT.DROP_DOWN'][style~='SWT.SHADOW_IN'][style~='SWT.SHADOW_ETCHED_IN'] > Composite ScrolledComposite,
+	Shell[style~='SWT.DROP_DOWN'][style~='SWT.SHADOW_IN'][style~='SWT.SHADOW_ETCHED_IN'] > Composite Canvas,
+	Shell[style~='SWT.DROP_DOWN'][style~='SWT.SHADOW_IN'][style~='SWT.SHADOW_ETCHED_IN'] > Composite StyledText,
+	Shell[style~='SWT.DROP_DOWN'][style~='SWT.SHADOW_IN'][style~='SWT.SHADOW_ETCHED_IN'] > Composite Label {
+	/* Error information popup */
+	    background-color: #2F2F2F;
+	    color: #CCC;
+	}
+	
+	TextSearchControl {
+	    background-color: #41464A;
+	    color: #dddddd;
+	}
+	
+	DrillDownComposite,
+	DrillDownComposite > ToolBar {
+	    background-color: #232323;
+	    color: #CCC;
+	}
+	
+	ProgressInfoItem,
+	CompareViewerPane,
+	CompareViewerPane > * {
+	    background-color: #333;
+	    color: #eeeeee;
+	}
+	
+	ProgressIndicator {
+	    background-color: #777;
+	    color: #eeeeee;
+	}
+	
+	DiscoveryItem,
+	DiscoveryItem Label,
+	DiscoveryItem Composite {
+	    background-color: #383C3E;
+	    color: #dddddd;
+	}
+	DiscoveryItem StyledText {
+	    background-color: #383C3E;
+	    color: #aaaaaa;
+	}
+	DiscoveryItem Link {
+	    background-color: #383C3E;
+	    color: #8B9498;
+	}
+	
+	CatalogSwitcher,
+	CatalogSwitcher > ScrolledComposite > Composite > Composite /* ignored because hard-coded */,
+	CategoryItem {
+	    background-color: #515658;
+	    color: #dddddd;
+	}
+	CategoryItem > GradientCanvas > Label { /* SWT-BUG: GradientCanvas styles are ignored */
+	    background-color: #fafafa;
+	    color: #333333;
+	}
+	
+	WebSite {
+	    background-color: #41464A;
+	    color: #dddddd;
+	}
+	
+	CTabFolder {
+	    background-color: #222;
+	    color: #f7f8f8;
+	    font-size: 9;
+	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+	    swt-simple: true;
+	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
+	
+	    padding: 2px 7px 9px 7px; /* top left bottom right */
+	    swt-tab-outline: #484848; /* border color for selected tab */
+	    swt-outer-keyline-color: #4B4C4F; /* border color for whole tabs container */
+	    swt-unselected-tabs-color: #494A4D #404043 #272727 99% 100%; /* title background for unselected tab */
+	    swt-shadow-visible: true;
+	
+	    swt-selected-tab-fill: #292929; /* title background for selected tab (gradient bottom color) */
+	
+	    swt-shadow-color: #0b0b0b;
+	
+	    swt-mru-visible: true;
+	
+	    swt-corner-radius: 16px;
+	}
+	CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
+	    /* Need to restore a native renderer or the bottom inner tabs won't be displayed */
+	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
+	}
+	
+	/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	
+	CTabFolder Tree, CTabFolder Canvas {
+	    background-color: #2F2F2F;
+	    color: #CCC;
+	}
+	.MPartStack.active Tree,
+	.MPartStack.active CTabFolder Canvas {
+	    background-color: #262626;
+	    color: #CCC;
+	}
+	
+	.MPartStack.active Table{
+	    background-color: #2F2F2F;
+	    color: #CCC;
+	}
+	
+	.View {
+	    background-color: #313538;
+	    color: #F5F5F5;
+	}
+	/* not triggered
+	.View.active {
+	    background-color: #333;
+	} */
+	
+	CTabItem,
+	CTabItem CLabel{
+	    background-color: #333;
+	    color: #BBB;
+	}
+	CTabItem:selected,
+	CTabItem:selected CLabel {
+	    color: #FFF;
+	}
+	
+	Form,
+	TitleRegion,
+	TitleRegion > * {
+	    background-color: #505F70;
+	    color: #9AC9D8;
+	}
+	
+	Section {
+	    background-color: #4F5355;
+	    color: #AEBED0;
+	}
+	
+	Form > LayoutComposite > LayoutComposite > * {
+	    background-color: #515658;
+	    color: #EEEEEE;
+	}
+	
+	LayoutComposite, LayoutComposite > FormText,
+	LayoutComposite > Label,
+	LayoutComposite > Button,
+	LayoutComposite > * > LayoutComposite > Section > LayoutComposite > * /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/{
+	    background-color: #4F5355;
+	    color: #F4F7F7;
+	}
+	
+	LayoutComposite ScrolledPageBook,
+	LayoutComposite Sash {
+	    background-color: #4F5355;
+	    color: #F4F7F7;
+	}
+	
+	LayoutComposite > Text,
+	LayoutComposite > Combo {
+	    background-color: #414445;
+	    color: #F4F7F7;
+	}
+	
+	LayoutComposite > Table {
+	    background-color: #333;
+	    color: #FFF;
+	}
+	
+	Twistie {
+	    color: #E8E4DF;
+	}
+	
+	#SearchField {
+	    /* background-image: url('./searchbox.png'); */
+	    /* SWT-BUG: textures are applied as a label over the native ones, */
+	    /* in this way textures with alpha color are not usable; */
+	    /* default margins and padding cannot be modified and textures are not */
+	    /* scaled properly to fit the container size: this makes the result ugly, */
+	    /* moreover a texture is drawn over the widget, so also the text is covered */
+	    color: #f0f0f0;
+	}
+	
+	/* Button {
+	      background-color: inherit;  /* ignored */
+	      /* background-image: url('./button_bg.png') */
+	/* } */
+	
+	/* Button[style~='SWT.CHECK'] { */
+	    /* currently, Button object isn't consistent (eg. also a checkbox/radio is seen as Button) */
+	    /* so, css rules applied to Button have to be overridden for non-Button matches */
+	/* } */
+	
+	.MPartSashContainer {
+	    background-color: #515658;
+	    color: #EEEEEE;
+	}
+	
+	PageSiteComposite, PageSiteComposite > CImageLabel {
+	    color: #EEEEEE;
+	}
+	PageSiteComposite > PropertyTable {
+	    background-color: #333;
+	    color: #EEEEEE;
+	}
+	
+	FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite CLabel {
+	    background-color: #3f4447;
+	    color: #EEEEEE;
+	}
+	
+	/* ###################### Top Toolbar ########################## */
+	
+	#org-eclipse-ui-main-toolbar, #PerspectiveSwitcher {
+	    eclipse-perspective-keyline-color: #585858;
+	    background-color: #515658 #515658 100%;
+	    handle-image: none;
+	    color: #EBE8E4;
+	}
+	
+	
+	/* ######################### Views ############################# */
+	
+	#org-eclipse-jdt-ui-PackageExplorer.MPart {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	
+	/* ------------------------------------------------------------- */
+	
+	#org-eclipse-jdt-ui-TypeHierarchy Label, #org-eclipse-jdt-ui-TypeHierarchy CLabel {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-jdt-ui-TypeHierarchy Table {
+	    background-color: #333;
+	    color: #DDDDDD;
+	}
+	
+	/* ------------------------------------------------------------- */
+	
+	#org-eclipse-ui-views-ContentOutline.MPart {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-ui-views-ContentOutline Label { /* SWT-BUG workaround: 'color' is not inherited */
+	    background-color: #333;
+	    color: #DDDDDD;
+	}
+	
+	/* ------------------------------------------------------------- */
+	
+	/* not triggered */
+	/*.MPartStack.active #org-eclipse-e4-primaryDataStack {
+	    background-color: #202020;
+	} */
+	#org-eclipse-e4-ui-compatibility-editor Canvas,
+	#org-eclipse-e4-ui-compatibility-editor Canvas > *,
+	/* Workaround for CDT folding column SWT-BUG (styles aren't inherited) */
+	#org-eclipse-e4-ui-compatibility-editor Canvas > * > * {
+	    background-color: #262626;
+	    /* SWT-BUG: background-color rule for LineNumberRulerColumn is ignored */
+	}
+	.MPartStack.active #org-eclipse-e4-ui-compatibility-editor Canvas,
+	.MPartStack.active #org-eclipse-e4-ui-compatibility-editor Canvas > *,
+	/* Workaround for CDT folding column SWT-BUG (styles aren't inherited) */
+	.MPartStack.active #org-eclipse-e4-ui-compatibility-editor Canvas > * > * {
+	    background-color: #202020;
+	    /* SWT-BUG: background-color rule for LineNumberRulerColumn is ignored */
+	}
+	#org-eclipse-e4-ui-compatibility-editor CTabItem {
+	    color: #EEEEEE;
+	    font-weight: normal;
+	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+	}
+	#org-eclipse-e4-ui-compatibility-editor CTabItem:selected {
+	    background-color: #262626;
+	    font-weight: bold;
+	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+	}
+	#org-eclipse-e4-ui-compatibility-editor .MPart {
+	    color: #EEEEEE;
+	}
+	#org-eclipse-e4-ui-compatibility-editor PaletteControl ScrolledComposite > Composite > * {
+	    background-color: #515658;
+	    color: #eeeeee;
+	}
+	#org-eclipse-e4-ui-compatibility-editor PaletteControl CLabel {
+	    background-color: #383838;
+	    color: #dddddd;
+	}
+	#org-eclipse-e4-ui-compatibility-editor PaletteControl CLabel :hover {
+	/* SWT-BUG: The event is never triggered so the native rule cannot be overridden (for hover event) */
+	    background-color: #252525;
+	    color: #dddddd;
+	}
+	#org-eclipse-e4-ui-compatibility-editor FlyoutControlComposite > Composite {
+	    background-color: #3f4447;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-e4-ui-compatibility-editor LayoutCanvas {
+	    background-color: #252525;
+	    color: #CCCCCC;
+	}
+	
+	#org-eclipse-help-ui-HelpView Composite,
+	#org-eclipse-help-ui-HelpView LayoutComposite,
+	#org-eclipse-help-ui-HelpView Label,
+	#org-eclipse-help-ui-HelpView Hyperlink,
+	#org-eclipse-help-ui-HelpView ScrolledForm,
+	#org-eclipse-help-ui-HelpView Form,
+	#org-eclipse-help-ui-HelpView FormHeading,
+	#org-eclipse-help-ui-HelpView Section,
+	#org-eclipse-help-ui-HelpView FormText {
+	    background-color: #2F2F2F;
+	    color: #CCC;
+	}
+	.MPartStack.active #org-eclipse-help-ui-HelpView Composite,
+	.MPartStack.active #org-eclipse-help-ui-HelpView LayoutComposite,
+	.MPartStack.active #org-eclipse-help-ui-HelpView Label,
+	.MPartStack.active #org-eclipse-help-ui-HelpView Hyperlink,
+	.MPartStack.active #org-eclipse-help-ui-HelpView ScrolledForm,
+	.MPartStack.active #org-eclipse-help-ui-HelpView Form,
+	.MPartStack.active #org-eclipse-help-ui-HelpView FormHeading,
+	.MPartStack.active #org-eclipse-help-ui-HelpView Section,
+	.MPartStack.active #org-eclipse-help-ui-HelpView FormText{
+	    background-color: #262626;
+	    color: #CCC;
+	}
+	
+	/* ------------------------------------------------------------- */
+	
+	#org-eclipse-pde-runtime-LogView.MPart {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-pde-runtime-LogView .MPart > Label,
+	#org-eclipse-ui-views-ProblemView .MPart > Label,
+	#org-eclipse-ui-views-TaskList .MPart > Label{
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-jdt-ui-JavadocView .MPart,
+	#org-eclipse-jdt-ui-JavadocView .MPart Browser,
+	#org-eclipse-jdt-ui-JavadocView .MPart OleFrame {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-pde-runtime-LogView FilteredTree Composite {
+	    background-color: #262B2D;
+	}
+	#org-eclipse-pde-runtime-LogView Text {
+	    background-color: #333;
+	    color: #F4F7F7;
+	}
+	#org-eclipse-jdt-ui-SourceView .MPart > Label,
+	#org-eclipse-ui-console-ConsoleView .MPart > Label {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-jdt-ui-SourceView .MPart > Composite {
+	    background-color: #4D565B;
+	    color: #EEEEEE;
+	}
+	#org-eclipse-jdt-ui-SourceView StyledText {
+	    background-color: #252525;
+	}
+	#org-eclipse-ui-console-ConsoleView .MPart > Composite,
+	#org-eclipse-ui-console-ConsoleView .MPart StyledText,
+	#org-eclipse-ui-console-ConsoleView .MPart PageBook Label {
+	    background-color: #333;
+	    color: #EEEEEE;
+	}
+	#org-eclipse-ui-views-ProgressView Composite,
+	#org-eclipse-ui-views-ProgressView ScrolledComposite,
+	#org-eclipse-ui-views-ProgressView Composite Text,
+	#org-eclipse-ui-views-ProgressView ScrolledComposite ProgressInfoItem,
+	#org-eclipse-ui-views-ProgressView ScrolledComposite Label,
+	#org-eclipse-ui-views-ProgressView ScrolledComposite ToolBar,
+	#org-eclipse-ui-views-ProgressView ScrolledComposite Link {
+	    background-color: #333;
+	    color: #EEEEEE;
+	}
+	#org-eclipse-search-ui-views-SearchView Composite,
+	#org-eclipse-search-ui-views-SearchView Composite Link {
+	    background-color: #333;
+	    color: #EEEEEE
+	}
+	#org-eclipse-ui-texteditor-TemplatesView CLabel {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#org-eclipse-debug-ui-VariableView Label, #org-eclipse-debug-ui-VariableView StyledText,
+	#org-eclipse-debug-ui-BreakpointView Label, #org-eclipse-debug-ui-BreakpointView StyledText {
+	    background-color: #3f4447;
+	    color: #EEEEEE;
+	}
+	#org-eclipse-debug-ui-VariableView SashForm, #org-eclipse-debug-ui-VariableView Sash,
+	#org-eclipse-debug-ui-BreakpointView SashForm, #org-eclipse-debug-ui-BreakpointView Sash {
+	    background-color: #333;
+	    color: #EEEEEE;
+	}
+	#com-android-ide-eclipse-ddms-views-LogCatView .MPart {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Label {
+	    color: #EEEEEE;
+	}
+	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Table {
+	    background-color: #555;
+	    color: #EEEEEE;
+	}
+	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Combo,
+	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Text {
+	    background-color: #333;
+	    color: #EEEEEE;
+	}
+	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Composite,
+	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Sash {
+	    background-color: #444;
+	    color: #DDDDDD;
+	}
+	.MPartStack.active #com-android-ide-eclipse-ddms-views-LogCatView .MPart Composite,
+	.MPartStack.active #com-android-ide-eclipse-ddms-views-LogCatView .MPart Sash {
+	    background-color: #313538;
+	    color: #DDDDDD;
+	}
+	
+	
+	/* #################### Bottom Status Bar ######################## */
+	
+	#org-eclipse-ui-StatusLine,
+	#org-eclipse-ui-ProgressBar,
+	#org-eclipse-ui-ProgressBar Canvas {
+	    color: #CCCCCC;
+	}
+	#org-eclipse-ui-StatusLine CLabel {
+	    color: #BDBAB7;
+	}
+	
+	StatusLine, ImageBasedFrame{
+	    color: #BDBAB7;
+	}
+
+/* <<<<<<<<<<<< end of content of 'moonrise-ui-standalone.css' <<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>> content of 'moonrise-ui_[OSX-patch].css' >>>>>>>>>>>>>>>>> */
+
+	/**
+	 * ====================================================================
+	 * @title: Eclipse MoonRise UI Theme
+	 * @author: Andrea Guarinoni
+	 * @version: 0.8.5
+	 * @target-platform: OSX
+	 * @style-type: Patch
+	 * ====================================================================
+	 */
+	
+	/* ###################### Global Styles ########################## */
+	
+	/* ++++++ Remove these to have ONLY the main IDE shell dark ++++++ */
+	
+	TabFolder, Button,
+	Composite > Button,
+	TabFolder > Composite > Button,
+	TabFolder > Composite > * > Button,
+	DocCommentOwnerComposite > Group > Button,
+	TabFolder > Composite > ScrolledComposite > Button,
+	Shell > Composite > Composite > Button,
+	Composite > Composite > Composite > Group > Button,
+	Shell > Composite > Composite > Composite > Button,
+	ScrolledComposite > Composite > Composite > Composite > Button,
+	Shell > Composite > Composite > Composite > Composite > Composite > Button {
+	    /* background-color is not applyed to the whole button,
+	       but text color is changed, so it appear light on light */
+	    background-color: #515658;
+	    color: #222;
+	}
+	Button[style~='SWT.CHECK'] {
+	    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
+	    /* so, css rules applied to Button have to be overridden for non-Button matches */
+	    color: #ddd;
+	}
+	Button[style~='SWT.RADIO'],
+	Group > Button[style~='SWT.RADIO'],
+	DocCommentOwnerComposite > Group > Button[style~='SWT.RADIO'],
+	Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'] {
+	    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
+	    /* so, css rules applied to Button have to be overridden for non-Button matches */
+	    color: #ddd;
+	}
+	Combo,
+	Composite > Combo,
+	TabFolder > Composite > Combo,
+	TabFolder > Composite > * > Combo,
+	DocCommentOwnerComposite > Group > Combo,
+	TabFolder > Composite > ScrolledComposite > Combo,
+	Shell > Composite > Composite > Combo,
+	Composite > Composite > Composite > Group > Combo,
+	Shell > Composite > Composite > Composite > Combo,
+	ScrolledComposite > Composite > Composite > Composite > Combo,
+	Shell > Composite > Composite > Composite > Composite > Composite > Combo {
+	    background-color: #41464A; /* ignored */
+	    color: #222;
+	}
+	Combo:selected,
+	Composite > Combo:selected,
+	TabFolder > Composite > Combo:selected,
+	TabFolder > Composite > * > Combo:selected,
+	DocCommentOwnerComposite > Group > Combo:selected,
+	TabFolder > Composite > ScrolledComposite > Combo:selected,
+	Shell > Composite > Composite > Combo:selected,
+	Composite > Composite > Composite > Group > Combo:selected,
+	Shell > Composite > Composite > Composite > Combo:selected,
+	ScrolledComposite > Composite > Composite > Composite > Combo:selected,
+	Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected {
+	    background-color: #41464A;
+	    color: #FFF;
+	}
+	Text[style~='SWT.SEARCH'] {
+	    /* search boxes */
+	    color: #333;
+	}
+	
+	/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* <<<<<<<<<<< end of content of 'moonrise-ui_[OSX-patch].css' <<<<<<<<<<<< */
