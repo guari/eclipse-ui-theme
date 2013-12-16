@@ -15,10 +15,10 @@ Installation
 ------------
 
 * #### Manual:
-Download [moonrise_0.8.4.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.4.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
+Download [moonrise_0.8.5.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.5.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
 * #### Update site:
-Or download this plugin by using ```Help > Install New Software...``` and add the update site: 
+Or download this plugin by using ```Help > Install New Software...``` and add the update site:
 <pre>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre>
 
 * Restart Eclipse and go to ```Window > Preferences > General > Appearance```;
@@ -49,7 +49,7 @@ Note that the foreground color cannot be changed and depends on system font colo
 
 | Problem | Solution |
 | ------- | -------- |
-| The font of the title of the tabs is different | Ensure that on your machine is installed ```Segoe Print``` font. |
+| The font of the title of the tabs is different | Ensure that on your machine is installed ```Segoe Print``` font then open the downloaded jar package with an archive explorer, open ```/themes/css/moonrise-ui-standalone.css```, search for any occurrencies of ```font-family``` property and change its value to ```Segoe Print``` (or what ever you prefer), then save/update the jar archive. |
 | The size of the title of the tabs is different | Eclipse does not scale it with a DPI-Aware policy. Open the downloaded jar package with an archive explorer, open ```/themes/css/moonrise-ui-standalone.css```, search for ```font-size``` property and modify its value according to your needs then save the file. |
 | The label of the checkboxes has a color difficult to read | It's related to a SWT bug, use a system theme that has lighter font color for buttons. |
 | The text of the buttons has a color difficult to read (MAC-OSX) | It's related to a SWT bug, try [this](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes/bin/com.github.eclipseuitheme.moonrise_0.8.3_OSX.jar?raw=true) 'patched' version if you have this issue (no more needed for v0.8.4+). |
@@ -74,7 +74,7 @@ Aside from that, the theme currently might not look perfect on each platform, bu
 
 You can find the one used in the screenshot here:
 
-* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (download and import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
+* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (most accurate, download and import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
 
 * or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true) (download and import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
 
