@@ -1,7 +1,6 @@
 /*******************************************************************************
-Modified version of
-Slate Theme for GitHub Pages
-by Jason Costello, @jsncostello
+  Heavily modified version of
+  Slate Theme for GitHub Pages
 *******************************************************************************/
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic);
@@ -289,24 +288,68 @@ Full-Width Styles
   margin: 0 auto;
 }
 
-#forkme_banner {
+#container_banner {
   display: block;
   position: absolute;
   top:0;
   right: 10px;
   z-index: 10;
-  padding: 10px 50px 10px 10px;
-  color: #51C1FF;
-  background: url('../images/blacktocat.png') #007EDF no-repeat 95% 50%;
+}
+
+#container_banner > a {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
   font-weight: 700;
   box-shadow: 0 0 10px rgba(0,0,0,.5);
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#container_banner span {
+    display: inline-block;
+    width: 0;
+    height: 30px;
+    opacity: 0;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-transition: width 0.8s ease, opacity 0.6s ease;
+    -moz-transition:    width 0.8s ease, opacity 0.6s ease;
+    -ms-transition:     width 0.8s ease, opacity 0.6s ease;
+    -o-transition:      width 0.8s ease, opacity 0.6s ease;
+    transition:         width 0.8s ease, opacity 0.6s ease;
+}
+
+#container_banner > a:hover > span {
+    width: 130px;
+    opacity: 1;
+}
+
+#flattr_banner {
+  color: #A0FFAE;
+  background-color: #25A46F;
+}
+
+#flattr_banner:hover {
+  color: #AFFFC1;
+  background-color: #2BCE90;
+}
+
+#forkme_banner {
+  color: #51C1FF;
+  background-color: #007EDF;
 }
 
 #forkme_banner:hover {
   color: #99CCFF;
-  background: url('../images/blacktocat.png') #1298FF no-repeat 95% 50%;
+  background-color: #1298FF;
+}
+
+.banner_icon {
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    margin: 0;
 }
 
 .screenshot {
@@ -465,8 +508,12 @@ Small Device Styles
     font-size: 20px;
   }
 
-  #forkme_banner {
+  #container_banner {
     font-size: 75%;
+  }
+
+  #container_banner > a:hover > span {
+    width: 100px;
   }
 
   h1 {
