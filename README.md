@@ -102,3 +102,6 @@ License
 Copyright (c) 2012, 2013
 
 This is open source software, licensed under the Eclipse Public License. See the file COPYING for details.
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=guari&url=http://github.com/guari/eclipse-ui-theme&title=EclipseUITheme&language=&tags=github&category=software)
+
