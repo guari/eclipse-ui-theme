@@ -21,7 +21,10 @@
         <!-- HEADER -->
         <div id="header_wrap" class="outer">
             <header class="inner">
-                <a id="forkme_banner" href="https://github.com/guari/eclipse-ui-theme">View on GitHub</a>
+                <div id="container_banner">
+                    <a id="forkme_banner" href="https://github.com/guari/eclipse-ui-theme"><span>View on GitHub</span><img class="banner_icon" src="images/blacktocat.png" ></a>
+                    <a id="flattr_banner" href="http://flattr.com/thing/2048156/guarieclipse-ui-theme-on-GitHub" target="_blank"><span>Flattr this</span><img class="banner_icon" src="images/flattr.png"></a>
+                </div>
 
                 <h1 id="project_title">MoonRise UI</h1>
 
@@ -61,7 +64,7 @@
                     Manual:
                 </h5>
                 <p>Download <a
-                        href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.4.jar?raw=true">moonrise_0.8.4.jar</a>
+                        href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.5.jar?raw=true">moonrise_0.8.5.jar</a>
                     package and put it into your Eclipse <code>\dropins\plugins\</code> folder;</p>
             </li>
             <li>
@@ -134,7 +137,10 @@
             <tbody>
             <tr>
                 <td>The font of the title of the tabs is different</td>
-                <td>Ensure that on your machine is installed <code>Segoe Print</code> font.</td>
+                <td>Ensure that on your machine is installed <code>Segoe Print</code> font then open the downloaded jar package
+                    with an archive explorer, open <code>/themes/css/moonrise-ui-standalone.css</code>, search for any occurrencies
+                    of <code>font-family</code> property and change its value to <code>Segoe Print</code> (or what ever you prefer),
+                    then save/update the jar archive.</td>
             </tr>
             <tr>
                 <td>The size of the title of the tabs is different</td>
@@ -191,7 +197,7 @@
         <ul>
             <li><p><a
                     href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true">RainbowDrops.epf</a>
-                (download and import it with Eclipse built-in Preferences import: <code>File &gt; Import...</code> then
+                (most accurate, download and import it with Eclipse built-in Preferences import: <code>File &gt; Import...</code> then
                 select <code>General &gt; Preferences</code>);</p></li>
             <li><p>or <a
                     href="https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true">RainbowDrops.xml</a>
