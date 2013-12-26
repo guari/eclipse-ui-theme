@@ -105,3 +105,7 @@ Copyright (c) 2012, 2013
 
 This is open source software, licensed under the Eclipse Public License. See the file COPYING for details.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/guari/eclipse-ui-theme/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
