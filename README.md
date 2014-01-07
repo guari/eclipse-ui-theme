@@ -23,6 +23,22 @@ Download [moonrise_0.8.5.jar](https://github.com/guari/eclipse-ui-theme/blob/mas
 Or download this plugin by using ```Help > Install New Software...``` and add the update site:
 <pre>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre>
 
+* #### Eclipse Marketplace:
+<table style="border: none;">
+  <tbody>
+    <tr style="border:none;">
+      <td style="vertical-align: middle; padding-top: 10px; border: none;">
+        <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1403812" title="Drag and drop into a running Eclipse Indigo workspace to install Eclipse Moonrise UI Theme">
+          <img src="http://marketplace.eclipse.org/sites/all/modules/custom/marketplace/images/installbutton.png"/>
+        </a>
+      </td>
+      <td style="vertical-align: middle; text-align: left; border: none;">
+        ← Or drag this button to your Eclipse workbench to install;
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 * Restart Eclipse and go to ```Window > Preferences > General > Appearance```;
 
 * Select *MoonRise (standalone)* or, for a little better tabs decoration, install *Eclipse 4 Chrome Theme* from marketplace or from [here](https://github.com/jeeeyul/eclipse-themes) and select *MoonRise*;
