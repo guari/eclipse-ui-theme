@@ -98,6 +98,8 @@ You can find the one used in the screenshot here:
 
 * or [here](http://eclipsecolorthemes.org/?view=theme&id=20025);
 
+**WARNING:** Take a backup of your preferences before importing so you can safely restore them if you need (```File > Export...``` then select ```General > Preferences```);
+
 Debugging and improvements
 --------------------------
 
