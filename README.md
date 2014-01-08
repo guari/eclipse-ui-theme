@@ -90,15 +90,15 @@ Aside from that, the theme currently might not look perfect on each platform, bu
 
 ![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/sources_syntax_colors.png)
 
-You can find the one used in the screenshot here:
+You can find the one used in the screenshot below:
+
+**WARNING:** Take a backup of your preferences before importing so you can safely restore them if you need (```File > Export...``` then select ```General > Preferences```);
 
 * [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (most accurate, download and import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
 
 * or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true) (download and import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
 
 * or [here](http://eclipsecolorthemes.org/?view=theme&id=20025);
-
-**WARNING:** Take a backup of your preferences before importing so you can safely restore them if you need (```File > Export...``` then select ```General > Preferences```);
 
 Debugging and improvements
 --------------------------
