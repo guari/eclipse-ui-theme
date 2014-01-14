@@ -18,7 +18,7 @@ Installation
 ------------
 
 * #### Manual:
-Download [moonrise_0.8.5.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.5.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
+Download [moonrise_0.8.6.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.6.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
 * #### Update site:
 Or download this plugin by using ```Help > Install New Software...``` and add the update site:
@@ -120,7 +120,7 @@ References
 License
 -------
 
-Copyright (c) 2012, 2013
+Copyright (c) 2012-2014
 
 This is open source software, licensed under the Eclipse Public License. See the file COPYING for details.
 
