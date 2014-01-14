@@ -3,7 +3,7 @@
    <description name="Eclipse Moonrise UI Theme" url="http://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite">
       Dark UI theme for Eclipse 4+.
    </description>
-   <feature url="features/com.github.eclipseuitheme.themes.feature_0.8.5.jar" id="com.github.eclipseuitheme.themes.feature" version="0.8.5">
+   <feature url="features/com.github.eclipseuitheme.themes.feature_0.8.6.jar" id="com.github.eclipseuitheme.themes.feature" version="0.8.6">
       <category name="com.github.eclipseuitheme.themes"/>
    </feature>
    <category-def name="com.github.eclipseuitheme.themes" label="Eclipse UI themes">

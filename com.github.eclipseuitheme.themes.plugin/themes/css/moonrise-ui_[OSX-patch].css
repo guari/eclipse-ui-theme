@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme
  * @author: Andrea Guarinoni
- * @version: 0.8.5
+ * @version: 0.8.6
  * @target-platform: OSX
  * @style-type: Patch
  * ====================================================================
@@ -12,7 +12,24 @@
 
 /* ++++++ Remove these to have ONLY the main IDE shell dark ++++++ */
 
-TabFolder, Button,
+TabFolder,
+TabFolder > Composite > TabFolder,
+TabFolder > Composite > * > TabFolder,
+DocCommentOwnerComposite > Group > TabFolder,
+TabFolder > Composite > ScrolledComposite > TabFolder,
+Shell > Composite > Composite > TabFolder,
+Composite > Composite > Composite > Group > TabFolder,
+Shell > Composite > Composite > Composite > TabFolder,
+ScrolledComposite > Composite > Composite > Composite > TabFolder,
+Shell > Composite > Composite > Composite > Composite > Composite > TabFolder,
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > TabFolder, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > TabFolder {
+    /* background-color is not applied to the whole button,
+       but text color is changed, so it appear light on light */
+    background-color: #515658;
+    color: #222;
+}
+Button,
 Composite > Button,
 TabFolder > Composite > Button,
 TabFolder > Composite > * > Button,
@@ -22,21 +39,40 @@ Shell > Composite > Composite > Button,
 Composite > Composite > Composite > Group > Button,
 Shell > Composite > Composite > Composite > Button,
 ScrolledComposite > Composite > Composite > Composite > Button,
-Shell > Composite > Composite > Composite > Composite > Composite > Button {
-    /* background-color is not applyed to the whole button,
+Shell > Composite > Composite > Composite > Composite > Composite > Button,
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button {
+    /* background-color is not applied to the whole button,
        but text color is changed, so it appear light on light */
     background-color: #515658;
     color: #222;
 }
-Button[style~='SWT.CHECK'] {
+Button[style~='SWT.CHECK'],
+Composite > Button[style~='SWT.CHECK'],
+TabFolder > Composite > Button[style~='SWT.CHECK'],
+TabFolder > Composite > * > Button[style~='SWT.CHECK'],
+DocCommentOwnerComposite > Group > Button[style~='SWT.CHECK'],
+TabFolder > Composite > ScrolledComposite > Button[style~='SWT.CHECK'],
+Shell > Composite > Composite > Button[style~='SWT.CHECK'],
+Composite > Composite > Composite > Group > Button[style~='SWT.CHECK'],
+Shell > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
+ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
+Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.CHECK'] {
     /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
     /* so, css rules applied to Button have to be overridden for non-Button matches */
     color: #ddd;
 }
 Button[style~='SWT.RADIO'],
-Group > Button[style~='SWT.RADIO'],
+Composite > Button[style~='SWT.RADIO'],
+TabFolder > Composite > Button[style~='SWT.RADIO'],
+TabFolder > Composite > * > Button[style~='SWT.RADIO'],
 DocCommentOwnerComposite > Group > Button[style~='SWT.RADIO'],
-Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'] {
+TabFolder > Composite > ScrolledComposite > Button[style~='SWT.RADIO'],
+Shell > Composite > Composite > Button[style~='SWT.RADIO'],
+Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'],
+Shell > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
+ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
+Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.RADIO'] {
     /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
     /* so, css rules applied to Button have to be overridden for non-Button matches */
     color: #ddd;
@@ -51,7 +87,9 @@ Shell > Composite > Composite > Combo,
 Composite > Composite > Composite > Group > Combo,
 Shell > Composite > Composite > Composite > Combo,
 ScrolledComposite > Composite > Composite > Composite > Combo,
-Shell > Composite > Composite > Composite > Composite > Composite > Combo {
+Shell > Composite > Composite > Composite > Composite > Composite > Combo,
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo {
     background-color: #41464A; /* ignored */
     color: #222;
 }
@@ -65,7 +103,9 @@ Shell > Composite > Composite > Combo:selected,
 Composite > Composite > Composite > Group > Combo:selected,
 Shell > Composite > Composite > Composite > Combo:selected,
 ScrolledComposite > Composite > Composite > Composite > Combo:selected,
-Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected {
+Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected,
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo:selected, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo:selected {
     background-color: #41464A;
     color: #FFF;
 }
@@ -75,3 +115,4 @@ Text[style~='SWT.SEARCH'] {
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	

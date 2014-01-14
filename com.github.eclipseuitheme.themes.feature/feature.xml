@@ -2,11 +2,11 @@
 <feature
       id="com.github.eclipseuitheme.themes.feature"
       label="Eclipse Moonrise UI Theme"
-      version="0.8.5"
+      version="0.8.6"
       provider-name="Andrea Guarinoni">
 
    <description url="https://github.com/guari/eclipse-ui-theme">
-      MoonRise UI: An early version of a Dark UI theme for Eclipse 4.2+
+      MoonRise UI: An early version of a dark UI theme for Eclipse 4.2+
    </description>
 
    <copyright>
@@ -113,9 +113,9 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <plugin
          id="com.github.eclipseuitheme.themes.moonrise-ui"
-         download-size="0"
-         install-size="0"
-         version="0.8.5"
+         download-size="25"
+         install-size="25"
+         version="0.8.6"
          unpack="false"/>
 
 </feature>

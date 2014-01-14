@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme (standalone)
  * @author: Andrea Guarinoni
- * @version: 0.8.5
+ * @version: 0.8.6
  * @target-platform: Generic
  * @style-type: Main
  * ====================================================================
@@ -127,7 +127,9 @@ Shell > Composite > Composite > List,
 Composite > Composite > Composite > Group > List,
 Shell > Composite > Composite > Composite > List,
 ScrolledComposite > Composite > Composite > Composite > List,
-Shell > Composite > Composite > Composite > Composite > Composite > List {
+Shell > Composite > Composite > Composite > Composite > Composite > List,
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > List, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > List {
     background-color: #41464A;
     color: #dddddd;
 }
@@ -194,7 +196,9 @@ Shell > Composite > Composite > Table,
 Composite > Composite > Composite > Group > Table,
 Shell > Composite > Composite > Composite > Table,
 ScrolledComposite > Composite > Composite > Composite > Table,
-Shell > Composite > Composite > Composite > Composite > Composite > Table {
+Shell > Composite > Composite > Composite > Composite > Composite > Table,
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Table, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Table {
     background-color: #35393C;
     color: #dddddd;
 }
@@ -211,7 +215,9 @@ Shell > Composite > Composite > Tree,
 Composite > Composite > Composite > Group > Tree,
 Shell > Composite > Composite > Composite > Tree,
 ScrolledComposite > Composite > Composite > Composite > Tree,
-Shell > Composite > Composite > Composite > Composite > Composite > Tree {
+Shell > Composite > Composite > Composite > Composite > Composite > Tree,
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Tree, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Tree {
     background-color: #2F2F2F;
     color: #CCC;
 }
@@ -222,7 +228,11 @@ Shell[style~='SWT.CHECK'], Shell[style~='SWT.TITLE'], Shell[style~='SWT.OK'],
 Shell[style~='SWT.CANCEL'], Shell[style~='SWT.ABORT'], Shell[style~='SWT.DROP_DOWN'],
 Shell[style~='SWT.ARROW'], Shell[style~='SWT.RADIO'], Shell[style~='SWT.SINGLE'],
 Shell[style~='SWT.SHADOW_IN'], Shell[style~='SWT.TOOL'], Shell[style~='SWT.RESIZE'],
-Shell[style~='SWT.SHELL_TRIM'], Shell[style~='SWT.FILL'], Shell[style~='SWT.ALPHA']{
+Shell[style~='SWT.SHELL_TRIM'], Shell[style~='SWT.FILL'], Shell[style~='SWT.ALPHA'],
+Shell[style~='SWT.BORDER'], Shell[style~='SWT.DIALOG_TRIM'], Shell[style~='SWT.IGNORE'],
+Shell[style~='SWT.FULL_SELECTION'], Shell[style~='SWT.SMOOTH'], Shell[style~='SWT.VIRTUAL'],
+Shell[style~='SWT.APPLICATION_MODAL'], Shell[style~='SWT.MEDIUM'], Shell[style~='SWT.LONG']
+{
     background-color: #515658;
     color: #cccccc;
 }
@@ -247,7 +257,9 @@ TextSearchControl {
     color: #dddddd;
 }
 
+ViewerPane,
 DrillDownComposite,
+ViewerPane > ToolBar,
 DrillDownComposite > ToolBar {
     background-color: #232323;
     color: #CCC;

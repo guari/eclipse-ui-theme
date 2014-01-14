@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme
  * @author: Andrea Guarinoni
- * @version: 0.8.5
+ * @version: 0.8.6
  * @target-platform: OSX
  * @style-type: Main
  * @requires: Eclipse Chrome Theme by Jeeeyul Lee
@@ -11,7 +11,7 @@
 /* @import url("moonrise-ui.css"); */
 /* @import url("moonrise-ui_[OSX-patch].css"); */
 
-/* SWT-BUG [Eclipse Bug 423744]: 
+/* [Eclipse Bug 423744]: 
  * Importing a local resource throws a MalformedURLException because the
  * resource directory is hard-coded to point to 'platform:/plugin/org.eclipse.platform/'
  * Basic workaround for stylesheet imports: copy-pasting the whole content of the file that should be imported */
@@ -22,14 +22,14 @@
 	 * ====================================================================
 	 * @title: Eclipse MoonRise UI Theme
 	 * @author: Andrea Guarinoni
-	 * @version: 0.8.5
+	 * @version: 0.8.6
 	 * @target-platform: Generic
 	 * @style-type: Main
 	 * @requires: Eclipse Chrome Theme by Jeeeyul Lee
 	 * ====================================================================
 	 */
 	 
-	 /* @import url("/themes/css/moonrise-ui-standalone.css"); */
+	 /* @import url("moonrise-ui-standalone.css"); */
 	
 	/* >>>>>>>>>>>>> content of 'moonrise-ui-standalone.css' >>>>>>>>>>>>>>>>>> */
 		
@@ -37,7 +37,7 @@
 		 * ====================================================================
 		 * @title: Eclipse MoonRise UI Theme (standalone)
 		 * @author: Andrea Guarinoni
-		 * @version: 0.8.5
+		 * @version: 0.8.6
 		 * @target-platform: Generic
 		 * @style-type: Main
 		 * ====================================================================
@@ -162,7 +162,9 @@
 		Composite > Composite > Composite > Group > List,
 		Shell > Composite > Composite > Composite > List,
 		ScrolledComposite > Composite > Composite > Composite > List,
-		Shell > Composite > Composite > Composite > Composite > Composite > List {
+		Shell > Composite > Composite > Composite > Composite > Composite > List,
+		Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > List, 
+		Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > List {
 		    background-color: #41464A;
 		    color: #dddddd;
 		}
@@ -229,7 +231,9 @@
 		Composite > Composite > Composite > Group > Table,
 		Shell > Composite > Composite > Composite > Table,
 		ScrolledComposite > Composite > Composite > Composite > Table,
-		Shell > Composite > Composite > Composite > Composite > Composite > Table {
+		Shell > Composite > Composite > Composite > Composite > Composite > Table,
+		Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Table, 
+		Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Table {
 		    background-color: #35393C;
 		    color: #dddddd;
 		}
@@ -246,7 +250,9 @@
 		Composite > Composite > Composite > Group > Tree,
 		Shell > Composite > Composite > Composite > Tree,
 		ScrolledComposite > Composite > Composite > Composite > Tree,
-		Shell > Composite > Composite > Composite > Composite > Composite > Tree {
+		Shell > Composite > Composite > Composite > Composite > Composite > Tree,
+		Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Tree, 
+		Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Tree {
 		    background-color: #2F2F2F;
 		    color: #CCC;
 		}
@@ -257,7 +263,11 @@
 		Shell[style~='SWT.CANCEL'], Shell[style~='SWT.ABORT'], Shell[style~='SWT.DROP_DOWN'],
 		Shell[style~='SWT.ARROW'], Shell[style~='SWT.RADIO'], Shell[style~='SWT.SINGLE'],
 		Shell[style~='SWT.SHADOW_IN'], Shell[style~='SWT.TOOL'], Shell[style~='SWT.RESIZE'],
-		Shell[style~='SWT.SHELL_TRIM'], Shell[style~='SWT.FILL'], Shell[style~='SWT.ALPHA']{
+		Shell[style~='SWT.SHELL_TRIM'], Shell[style~='SWT.FILL'], Shell[style~='SWT.ALPHA'],
+		Shell[style~='SWT.BORDER'], Shell[style~='SWT.DIALOG_TRIM'], Shell[style~='SWT.IGNORE'],
+	    Shell[style~='SWT.FULL_SELECTION'], Shell[style~='SWT.SMOOTH'], Shell[style~='SWT.VIRTUAL'],
+	    Shell[style~='SWT.APPLICATION_MODAL'], Shell[style~='SWT.MEDIUM'], Shell[style~='SWT.LONG']
+	    {
 		    background-color: #515658;
 		    color: #cccccc;
 		}
@@ -282,8 +292,10 @@
 		    color: #dddddd;
 		}
 		
-		DrillDownComposite,
-		DrillDownComposite > ToolBar {
+		ViewerPane,
+	    DrillDownComposite,
+	    ViewerPane > ToolBar,
+	    DrillDownComposite > ToolBar {
 		    background-color: #232323;
 		    color: #CCC;
 		}
@@ -807,7 +819,7 @@
 	 * ====================================================================
 	 * @title: Eclipse MoonRise UI Theme
 	 * @author: Andrea Guarinoni
-	 * @version: 0.8.5
+	 * @version: 0.8.6
 	 * @target-platform: OSX
 	 * @style-type: Patch
 	 * ====================================================================
@@ -817,7 +829,24 @@
 	
 	/* ++++++ Remove these to have ONLY the main IDE shell dark ++++++ */
 	
-	TabFolder, Button,
+	TabFolder,
+	TabFolder > Composite > TabFolder,
+	TabFolder > Composite > * > TabFolder,
+	DocCommentOwnerComposite > Group > TabFolder,
+	TabFolder > Composite > ScrolledComposite > TabFolder,
+	Shell > Composite > Composite > TabFolder,
+	Composite > Composite > Composite > Group > TabFolder,
+	Shell > Composite > Composite > Composite > TabFolder,
+	ScrolledComposite > Composite > Composite > Composite > TabFolder,
+	Shell > Composite > Composite > Composite > Composite > Composite > TabFolder,
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > TabFolder, 
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > TabFolder {
+	/* background-color is not applied to the whole button,
+	   but text color is changed, so it appear light on light */
+	    background-color: #515658;
+	    color: #222;
+	}
+	Button,
 	Composite > Button,
 	TabFolder > Composite > Button,
 	TabFolder > Composite > * > Button,
@@ -827,23 +856,42 @@
 	Composite > Composite > Composite > Group > Button,
 	Shell > Composite > Composite > Composite > Button,
 	ScrolledComposite > Composite > Composite > Composite > Button,
-	Shell > Composite > Composite > Composite > Composite > Composite > Button {
-	    /* background-color is not applyed to the whole button,
-	       but text color is changed, so it appear light on light */
+	Shell > Composite > Composite > Composite > Composite > Composite > Button,
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button, 
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button {
+	/* background-color is not applied to the whole button,
+	   but text color is changed, so it appear light on light */
 	    background-color: #515658;
 	    color: #222;
 	}
-	Button[style~='SWT.CHECK'] {
-	    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
-	    /* so, css rules applied to Button have to be overridden for non-Button matches */
+	Button[style~='SWT.CHECK'],
+	Composite > Button[style~='SWT.CHECK'],
+	TabFolder > Composite > Button[style~='SWT.CHECK'],
+	TabFolder > Composite > * > Button[style~='SWT.CHECK'],
+	DocCommentOwnerComposite > Group > Button[style~='SWT.CHECK'],
+	TabFolder > Composite > ScrolledComposite > Button[style~='SWT.CHECK'],
+	Shell > Composite > Composite > Button[style~='SWT.CHECK'],
+	Composite > Composite > Composite > Group > Button[style~='SWT.CHECK'],
+	Shell > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
+	ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
+	Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.CHECK'] {
+	/* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
+	/* so, css rules applied to Button have to be overridden for non-Button matches */
 	    color: #ddd;
 	}
 	Button[style~='SWT.RADIO'],
-	Group > Button[style~='SWT.RADIO'],
+	Composite > Button[style~='SWT.RADIO'],
+	TabFolder > Composite > Button[style~='SWT.RADIO'],
+	TabFolder > Composite > * > Button[style~='SWT.RADIO'],
 	DocCommentOwnerComposite > Group > Button[style~='SWT.RADIO'],
-	Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'] {
-	    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
-	    /* so, css rules applied to Button have to be overridden for non-Button matches */
+	TabFolder > Composite > ScrolledComposite > Button[style~='SWT.RADIO'],
+	Shell > Composite > Composite > Button[style~='SWT.RADIO'],
+	Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'],
+	Shell > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
+	ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
+	Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.RADIO'] {
+	/* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
+	/* so, css rules applied to Button have to be overridden for non-Button matches */
 	    color: #ddd;
 	}
 	Combo,
@@ -856,8 +904,10 @@
 	Composite > Composite > Composite > Group > Combo,
 	Shell > Composite > Composite > Composite > Combo,
 	ScrolledComposite > Composite > Composite > Composite > Combo,
-	Shell > Composite > Composite > Composite > Composite > Composite > Combo {
-	    background-color: #41464A; /* ignored */
+	Shell > Composite > Composite > Composite > Composite > Composite > Combo,
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo, 
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo {
+	background-color: #41464A; /* ignored */
 	    color: #222;
 	}
 	Combo:selected,
@@ -870,12 +920,14 @@
 	Composite > Composite > Composite > Group > Combo:selected,
 	Shell > Composite > Composite > Composite > Combo:selected,
 	ScrolledComposite > Composite > Composite > Composite > Combo:selected,
-	Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected {
+	Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected,
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo:selected, 
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo:selected {
 	    background-color: #41464A;
 	    color: #FFF;
 	}
 	Text[style~='SWT.SEARCH'] {
-	    /* search boxes */
+	/* search boxes */
 	    color: #333;
 	}
 	
