@@ -110,6 +110,22 @@ Use *CSS Spy* to inspect widgets properties and *CSS Scratchpad* or *Lightweight
 #### Old releases:
 The packages previously uploaded can be found into ```/com.github.eclipseuitheme.themes.plugin/bin/``` folder.
 
+### Build and Release
+
+Build
+
+	mvn package
+	
+resulted p2 repository arrives in `com.github.eclipseuitheme.themes.updatesite\target` 	
+
+Before release
+
+	mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=0.10.0-SNAPSHOT
+
+	then update versions in `category.xml`
+	
+	
+
 References
 ----------
 
