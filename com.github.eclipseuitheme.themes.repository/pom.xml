@@ -9,6 +9,6 @@
                 <version>0.8.6-SNAPSHOT</version>
         </parent>
         <groupId>com.github.eclipseuitheme.themes</groupId>
-        <artifactId>com.github.eclipseuitheme.themes.moonrise-ui</artifactId>
-        <packaging>eclipse-plugin</packaging>
+        <artifactId>com.github.eclipseuitheme.themes.repository</artifactId>
+        <packaging>eclipse-repository</packaging>
 </project>

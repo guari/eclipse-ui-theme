@@ -1,13 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-        <modelVersion>4.0.0</modelVersion>
-        <groupId>com.github.eclipseuitheme.themes</groupId>
-        <artifactId>com.github.eclipseuitheme.themes.parent</artifactId>
-        <version>0.8.4-SNAPSHOT</version>
-        <packaging>pom</packaging>
-        <modules>
-                <module>com.github.eclipseuitheme.themes.plugin</module>
-                <module>com.github.eclipseuitheme.themes.feature</module>
-                <module>com.github.eclipseuitheme.themes.updatesite</module>
-        </modules>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.eclipseuitheme.themes</groupId>
+    <artifactId>com.github.eclipseuitheme.themes.parent</artifactId>
+    <version>0.8.6-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Eclipse Moonrise UI Theme</name>
+        
+	<developers>
+		<developer>
+			<id>guari</id>
+			<name>Andrea Guarinoni</name>
+			<email></email>
+			<organization></organization>
+			<roles>
+				<role>Lead Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Paul Verest</name>
+			<organization>Nodeclipse organization</organization>
+			<organizationUrl>http://www.nodeclipse.org/</organizationUrl>
+			<timezone>+8</timezone>
+		</contributor>
+	</contributors>
+        
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+	<properties>
+		<tycho-version>0.19.0</tycho-version>
+
+		<!-- PROJECT SETTINGS -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+        
+    <modules>
+            <module>com.github.eclipseuitheme.themes.plugin</module>
+            <module>com.github.eclipseuitheme.themes.feature</module>
+            <module>com.github.eclipseuitheme.themes.repository</module>
+            <!-- --> 
+            <module>com.github.eclipseuitheme.themes.updatesite</module>
+             
+    </modules>
+
+    <repositories>
+            <repository>
+                    <id>juno</id>
+                    <url>http://download.eclipse.org/releases/juno/</url>
+                    <layout>p2</layout>
+            </repository>
+    </repositories>
+    
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
