@@ -1,8 +1,9 @@
 MoonRise UI Theme
 =================
 
-[![Build Status](https://secure.travis-ci.org/guari/eclipse-ui-theme.png)](http://travis-ci.org/guari/eclipse-ui-theme)
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=guari&url=http://github.com/guari/eclipse-ui-theme&title=EclipseUITheme&language=&tags=github&category=software)
+[![Build Status](https://secure.travis-ci.org/guari/eclipse-ui-theme.png)](http://travis-ci.org/guari/eclipse-ui-theme)
+Nodeclipse [![Build Status](https://secure.travis-ci.org/Nodeclipse/eclipse-ui-theme.png)](http://travis-ci.org/Nodeclipse/eclipse-ui-theme)
 
 An early version of a dark UI theme for Eclipse 4+.
 
