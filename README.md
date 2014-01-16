@@ -112,7 +112,11 @@ The packages previously uploaded can be found into ```/com.github.eclipseuitheme
 
 ### Build and Release
 
-Build
+see [#29 [build]](https://github.com/guari/eclipse-ui-theme/issues/29)
+
+a) Manually - in `site.xml` Editor (Site Map Tab) press 'Build All' button
+
+b) Build with Maven/tycho
 
 	mvn package
 	
@@ -122,9 +126,8 @@ Before release
 
 	mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=0.10.0-SNAPSHOT
 
-	then update versions in `category.xml`
-	
-	
+	then update versions in `category.xml`. keep `site.xml` and `categories.xml` the same
+
 
 References
 ----------

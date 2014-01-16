@@ -43,10 +43,7 @@
     <modules>
             <module>com.github.eclipseuitheme.themes.plugin</module>
             <module>com.github.eclipseuitheme.themes.feature</module>
-            <module>com.github.eclipseuitheme.themes.repository</module>
-            <!-- --> 
             <module>com.github.eclipseuitheme.themes.updatesite</module>
-             
     </modules>
 
     <repositories>
