@@ -2,7 +2,7 @@
 <feature
       id="com.github.eclipseuitheme.themes.feature"
       label="Eclipse Moonrise UI Theme"
-      version="0.8.6"
+      version="0.8.6.qualifier"
       provider-name="Andrea Guarinoni">
 
    <description url="https://github.com/guari/eclipse-ui-theme">
