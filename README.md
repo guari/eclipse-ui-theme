@@ -3,7 +3,6 @@ MoonRise UI Theme
 
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=guari&url=http://github.com/guari/eclipse-ui-theme&title=EclipseUITheme&language=&tags=github&category=software)
 [![Build Status](https://secure.travis-ci.org/guari/eclipse-ui-theme.png)](http://travis-ci.org/guari/eclipse-ui-theme)
-Nodeclipse [![Build Status](https://secure.travis-ci.org/Nodeclipse/eclipse-ui-theme.png)](http://travis-ci.org/Nodeclipse/eclipse-ui-theme)
 
 An early version of a dark UI theme for Eclipse 4+.
 
@@ -107,27 +106,26 @@ Debugging and improvements
 
 Use *CSS Spy* to inspect widgets properties and *CSS Scratchpad* or *Lightweight CSS Editor* to apply a quick customization. To test what elements can be modified or not with CSS, drop a line like this one: `* { background-color:red; color:white; }` into *CSS Scratchpad* (restart Eclipse to reset the theme).
 
-#### Old releases:
-The packages previously uploaded can be found into ```/com.github.eclipseuitheme.themes.plugin/bin/``` folder.
+## Build and Release
 
-### Build and Release
+* #### Manually:
+  * Go to ```File > Export...``` then select ```Plug-in Development > Deployable plug-ins and fragments``` and set the output directory to get your plugin .jar;
+  * Open ```site.xml``` with Eclipse Editor (Site Map Tab) then press *Build All* button to refresh the update-site packages;
 
-see [#29 [build]](https://github.com/guari/eclipse-ui-theme/issues/29)
+* #### Build with Maven/Tycho:
 
-a) Manually - in `site.xml` Editor (Site Map Tab) press 'Build All' button
-
-b) Build with Maven/tycho
-
-	mvn package
+        mvn package
 	
-resulted p2 repository arrives in `com.github.eclipseuitheme.themes.updatesite\target` 	
+  resulted p2 repository arrives in `com.github.eclipseuitheme.themes.updatesite\target`. 	
 
-Before release
+  Before release:
 
-	mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=0.10.0-SNAPSHOT
+        mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=0.10.0-SNAPSHOT
 
-	then update versions in `category.xml`. keep `site.xml` and `categories.xml` the same
+  then update versions in `category.xml` (keep `site.xml` and `categories.xml` the same).
 
+#### Old plugin releases:
+The packages previously uploaded can be found into ```/com.github.eclipseuitheme.themes.plugin/bin/``` folder.
 
 References
 ----------
