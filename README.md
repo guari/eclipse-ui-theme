@@ -47,6 +47,23 @@ Or download this plugin by using ```Help > Install New Software...``` and add th
 * Rest your eyes ;)
 
 - - -
+### Syntax highlighting scheme (optional):
+
+![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/sources_syntax_colors.png)
+
+You can find the one used in the screenshot below:
+
+**WARNING:** Take a backup of your preferences before importing so you can safely restore them if you need (```File > Export...``` then select ```General > Preferences```);
+
+* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (most accurate, download by right-clicking the link and selecting ```Save link as...``` then import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
+
+* or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true) (download by right-clicking the link and selecting ```Save link as...``` then import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
+
+* or [here](http://eclipsecolorthemes.org/?view=theme&id=20025);
+
+**NOTE:** Syntax highlighting settings and UI theme are separated, you can import your own scheme or customize it in Eclipse Preferences if you like.
+
+- - -
 ### Fine-tuning:
 
 There are some settings that can be changed only from the Eclipse Preferences window and that override the theme's settings by default:
@@ -86,20 +103,6 @@ This plugin has been tested with the main Eclipse Development Tool packages on L
 
 It works best with a dark system theme since currently the look of some GUI widgets cannot be overriden directly in Eclipse. The more noticeable issues related to SWT are the `ScrollBar` widgets, the `Table` headers/lines and the arrows to fold/unfold contents that cannot be styled. As minor issues there are `Button` background color on Windows and OSX that cannot be customized (on Windows checkboxes/radio controls do not inherit font color) and some other little bugs related to the CSS engine that makes the customizations harder and unwieldy.
 Aside from that, the theme currently might not look perfect on each platform, but should be fully useable on all of them. The Eclipse CSS engine is still under improvement.
-
-#### Syntax highlighting scheme:
-
-![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/sources_syntax_colors.png)
-
-You can find the one used in the screenshot below:
-
-**WARNING:** Take a backup of your preferences before importing so you can safely restore them if you need (```File > Export...``` then select ```General > Preferences```);
-
-* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (most accurate, download and import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
-
-* or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true) (download and import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
-
-* or [here](http://eclipsecolorthemes.org/?view=theme&id=20025);
 
 Debugging and improvements
 --------------------------
