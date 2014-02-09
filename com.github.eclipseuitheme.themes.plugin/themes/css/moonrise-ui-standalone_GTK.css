@@ -1,15 +1,14 @@
 /**
  * ====================================================================
- * @title: Eclipse MoonRise UI Theme
+ * @title: Eclipse MoonRise UI Theme (standalone)
  * @author: Andrea Guarinoni
  * @version: 0.8.7
- * @target-platform: Generic
+ * @target-platform: GTK
  * @style-type: Main
- * @requires: Eclipse Chrome Theme by Jeeeyul Lee
  * ====================================================================
  */
- 
- /* @import url("moonrise-ui-standalone.css"); */
+/* @import url("moonrise-ui-standalone.css"); */
+/* @import url("moonrise-ui_[GTK-patch].css"); */
 
 /* [Eclipse Bug 423744]: 
  * Importing a local resource throws a MalformedURLException because the
@@ -807,86 +806,22 @@
 
 /* <<<<<<<<<<<< end of content of 'moonrise-ui-standalone.css' <<<<<<<<<<<< */
 
- 
+/* >>>>>>>>>>>>> content of 'moonrise-ui_[GTK-patch].css' >>>>>>>>>>>>>>>>> */
 
-.MPartStack {
-    swt-tab-renderer:
-        url('bundleclass://net.jeeeyul.eclipse.themes/net.jeeeyul.eclipse.themes.rendering.ChromeTabRendering');
+	/**
+	 * ====================================================================
+	 * @title: Eclipse MoonRise UI Theme
+	 * @author: Andrea Guarinoni
+	 * @version: 0.8.7
+	 * @target-platform: GTK
+	 * @style-type: Patch
+	 * ====================================================================
+	 */
+	
+	CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
+	    /* Need to restore a native basic renderer or the bottom inner tabs won't be displayed */
+	    swt-tab-renderer: null;
+	    swt-simple: true;   
+	}
 
-    chrome-selected-tab-fill-highlight: #3B4042; /* title background for selected tab (gradient top color) */
-
-    chrome-selected-tab-color: #cccccc;
-    chrome-unselected-tab-color: #aaaaaa;
-
-    chrome-shiney-shadow: false;
-}
-
-.MPartStack.active {
-    chrome-selected-tab-fill-highlight: #2B2C2D; /* title background for selected tab (gradient top color) */
-
-    chrome-selected-tab-color: #f9faf7;
-    chrome-unselected-tab-color: #cccccc;
-    chrome-shiney-shadow: false;
-}
-
-#org-eclipse-ui-trim-status{
-    chrome-border-top-visible: false;
-    chrome-padding-top: 0;
-}
-
-.MToolControl.TrimStack {
-    frame-image: url(chrome://frame?background-color=#515658);
-    frame-cuts: 5px 1px 5px 16px;
-
-    handle-image: url(chrome://drag-handle?height=22&background-color=#515658&embossed=false);
-}
-
-.MTrimBar .Draggable {
-    handle-image: url(chrome://drag-handle?height=22&background-color=#515658&embossed=false);
-}
-
-.MTrimBar#org-eclipse-ui-main-toolbar .Draggable {
-    handle-image: url(chrome://drag-handle?height=22&background-color=#515658&embossed=false);
-}
-
-.MTrimBar#org-eclipse-ui-main-toolbar .TrimStack {
-    frame-image: url(chrome://frame?background-color=#515658);
-    handle-image: url(chrome://drag-handle?height=22&background-color=#515658&embossed=false);
-}
-
-
-/* ###################### Global Styles ########################## */
-
-/* ++++++ Remove these to have ONLY the main IDE shell dark ++++++ */
-
-CTabFolder {
-    swt-tab-renderer: url('bundleclass://net.jeeeyul.eclipse.themes/net.jeeeyul.eclipse.themes.rendering.ChromeTabRendering');
-
-    chrome-selected-tab-fill-highlight: #363636; /* title background for selected tab (gradient top color) */
-
-    chrome-selected-tab-color: #f9faf7;
-    chrome-unselected-tab-color: #cccccc;
-
-    chrome-shiney-shadow: false;
-}
-CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
-    /* Need to restore a native renderer or the bottom inner tabs won't be displayed */
-    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
-}
-
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-
-/* ###################### Top Toolbar ########################## */
-
-#org-eclipse-ui-main-toolbar, #PerspectiveSwitcher {
-    chrome-show-perspective-name: true;
-}
-
-
-/* ######################### Views ############################# */
-
-.MPart.Editor StyledText{
-    chrome-line-style: none;
-    chrome-line-color: #535353;
-}
+/* <<<<<<<<<<< end of content of 'moonrise-ui_[GTK-patch].css' <<<<<<<<<<<< */

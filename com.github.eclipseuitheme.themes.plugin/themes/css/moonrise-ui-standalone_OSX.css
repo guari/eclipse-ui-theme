@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme (standalone)
  * @author: Andrea Guarinoni
- * @version: 0.8.6
+ * @version: 0.8.7
  * @target-platform: OSX
  * @style-type: Main
  * ====================================================================
@@ -21,7 +21,7 @@
 	 * ====================================================================
 	 * @title: Eclipse MoonRise UI Theme (standalone)
 	 * @author: Andrea Guarinoni
-	 * @version: 0.8.6
+	 * @version: 0.8.7
 	 * @target-platform: Generic
 	 * @style-type: Main
 	 * ====================================================================
@@ -39,7 +39,6 @@
 	    color: #f7f8f8;
 	    font-size: 9;
 	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
-	    swt-simple: true;
 	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 	
 	    padding: 2px 7px 9px 7px; /* top left bottom right */
@@ -101,6 +100,11 @@
 	    frame-cuts: 5px 1px 5px 16px;
 	}
 	
+	CTabItem.busy {
+		color: #888888;
+	}
+	
+	
 	
 	/* ###################### Global Styles ########################## */
 	
@@ -110,8 +114,10 @@
 	ToolItem, Sash, Group, Hyperlink, RefactoringLocationControl, Link, FilteredTree,
 	ProxyEntriesComposite, NonProxyHostsComposite, DelayedFilterCheckboxTree,
 	Splitter, ScrolledPageContent, ViewForm, LaunchConfigurationFilteredTree,
-	ContainerSelectionGroup, BrowseCatalogItem, EncodingSettings, MessageLine,
-	ProgressMonitorPart, DocCommentOwnerComposite,
+	ContainerSelectionGroup, BrowseCatalogItem, EncodingSettings,
+	ProgressMonitorPart, DocCommentOwnerComposite, NewServerComposite, 
+	NewManualServerComposite, ServerTypeComposite, FigureCanvas,
+	DependenciesComposite, ListEditorComposite, WrappedPageBook,
 	Button /* SWT-BUG: checkbox inner label font color is not accessible */,
 	ViewForm > ToolBar, /* SWT-BUG: ToolBar do not inherit rules from ViewForm */
 	Shell [style~='SWT.DROP_DOWN'] > GradientCanvas, /* ignored */
@@ -153,6 +159,19 @@
 	    color: #dddddd;
 	}
 	
+	/* Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.MENU'][style~='SWT.DATE'][style~='SWT.RESIZE'][style~='SWT.TITLE'][style~='SWT.APPLICATION_MODAL'][style~='SWT.FULL_SELECTION'][style~='SWT.SMOOTH'] > Composite[style~='SWT.LEFT_TO_RIGHT'], */
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.MENU'][style~='SWT.DATE'][style~='SWT.RESIZE'][style~='SWT.TITLE'][style~='SWT.APPLICATION_MODAL'][style~='SWT.FULL_SELECTION'][style~='SWT.SMOOTH'] > Composite[style~='SWT.LEFT_TO_RIGHT'] > Text[style~='SWT.READ_ONLY'],
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.MENU'][style~='SWT.DATE'][style~='SWT.RESIZE'][style~='SWT.TITLE'][style~='SWT.APPLICATION_MODAL'][style~='SWT.FULL_SELECTION'][style~='SWT.SMOOTH'] > Composite[style~='SWT.LEFT_TO_RIGHT'] > ToolBar {
+		/* Dialog windows title */
+		/*background-color: #4D5765;*/ /* There is no way to change the background-color of the title of a Dialog without introducing artifacts in some other Dialog windows */
+	    color: #9ac9d8;
+	}
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.MENU'][style~='SWT.DATE'][style~='SWT.RESIZE'][style~='SWT.TITLE'][style~='SWT.APPLICATION_MODAL'][style~='SWT.FULL_SELECTION'][style~='SWT.SMOOTH'] > Composite[style~='SWT.LEFT_TO_RIGHT'] > Label[style~='SWT.NO_FOCUS'] {
+		/* Dialog windows title */
+		/*background-color: #4D5765;*/
+	    color: #EEEEEE;
+	}
+	
 	Text {
 	    background-color: #515658;
 	    color: #cccccc;
@@ -184,7 +203,16 @@
 	      color: #FF9997;
 	} */
 	
-	StyledText {
+	MessageLine,
+	/* It might be useless but currently it's needed due to a strange priority
+	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
+	Shell > Composite > Composite > MessageLine,
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Composite > MessageLine {
+		background-color:#515658; /* SWT-BUG: background color is hard-coded */
+		color: #E39898;
+	}
+	
+	StyledText, Spinner {
 	    background-color: #383C3E;
 	    color: #dddddd;
 	}
@@ -201,6 +229,11 @@
 	ScrolledFormText, FormText {
 	    background-color: #687174;
 	    color: #eeeeee;
+	}
+	
+	ToolItem:selected {
+	    background-color: #313538;
+	    color: #dddddd;	
 	}
 	
 	Table,
@@ -223,6 +256,7 @@
 	}
 	
 	Tree,
+	RegistryFilteredTree,
 	/* It might be useless but currently it's needed due to a strange priority
 	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
 	Composite > Tree,
@@ -249,9 +283,9 @@
 	Shell[style~='SWT.SHADOW_IN'], Shell[style~='SWT.TOOL'], Shell[style~='SWT.RESIZE'],
 	Shell[style~='SWT.SHELL_TRIM'], Shell[style~='SWT.FILL'], Shell[style~='SWT.ALPHA'],
 	Shell[style~='SWT.BORDER'], Shell[style~='SWT.DIALOG_TRIM'], Shell[style~='SWT.IGNORE'],
-    Shell[style~='SWT.FULL_SELECTION'], Shell[style~='SWT.SMOOTH'], Shell[style~='SWT.VIRTUAL'],
-    Shell[style~='SWT.APPLICATION_MODAL'], Shell[style~='SWT.MEDIUM'], Shell[style~='SWT.LONG']
-    {
+	Shell[style~='SWT.FULL_SELECTION'], Shell[style~='SWT.SMOOTH'], Shell[style~='SWT.VIRTUAL'],
+	Shell[style~='SWT.APPLICATION_MODAL'], Shell[style~='SWT.MEDIUM'], Shell[style~='SWT.LONG']
+	{
 	    background-color: #515658;
 	    color: #cccccc;
 	}
@@ -277,9 +311,9 @@
 	}
 	
 	ViewerPane,
-    DrillDownComposite,
-    ViewerPane > ToolBar,
-    DrillDownComposite > ToolBar {
+	DrillDownComposite,
+	ViewerPane > ToolBar,
+	DrillDownComposite > ToolBar {
 	    background-color: #232323;
 	    color: #CCC;
 	}
@@ -332,7 +366,6 @@
 	    color: #f7f8f8;
 	    font-size: 9;
 	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
-	    swt-simple: true;
 	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 	
 	    padding: 2px 7px 9px 7px; /* top left bottom right */
@@ -351,7 +384,7 @@
 	}
 	CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
 	    /* Need to restore a native renderer or the bottom inner tabs won't be displayed */
-	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
+	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');   
 	}
 	
 	/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -392,8 +425,7 @@
 	}
 	
 	Form,
-	TitleRegion,
-	TitleRegion > * {
+	FormHeading {
 	    background-color: #505F70;
 	    color: #9AC9D8;
 	}
@@ -410,8 +442,7 @@
 	
 	LayoutComposite, LayoutComposite > FormText,
 	LayoutComposite > Label,
-	LayoutComposite > Button,
-	LayoutComposite > * > LayoutComposite > Section > LayoutComposite > * /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/{
+	LayoutComposite > Button {
 	    background-color: #4F5355;
 	    color: #F4F7F7;
 	}
@@ -455,6 +486,12 @@
 	/* Button[style~='SWT.CHECK'] { */
 	    /* currently, Button object isn't consistent (eg. also a checkbox/radio is seen as Button) */
 	    /* so, css rules applied to Button have to be overridden for non-Button matches */
+	/* } 
+	   Button:disabled {
+	      /* SWT-BUG: currently, a disabled button cannot be styled with any window manager (gtk, win32, cocoa) */
+	/* } 
+	   Button:hover {
+	      /* SWT-BUG: currently, an hovered button cannot be styled with any window manager (gtk, win32, cocoa) */
 	/* } */
 	
 	.MPartSashContainer {
@@ -467,6 +504,11 @@
 	}
 	PageSiteComposite > PropertyTable {
 	    background-color: #333;
+	    color: #EEEEEE;
+	}
+	PageSiteComposite > PropertyTable:disabled {
+	/* SWT-BUG: event is triggered but styles for PropertyTable are hard-coded */	
+	    background-color: #444;
 	    color: #EEEEEE;
 	}
 	
@@ -487,39 +529,212 @@
 	
 	/* ######################### Views ############################# */
 	
-	#org-eclipse-jdt-ui-PackageExplorer.MPart {
-	    background-color: #313538;
+	.MPart {
+	    background-color: #323435;
 	    color: #DDDDDD;
+	}
+	.MPartStack.active .MPart {
+	    background-color: #292929;
+	    color: #DDDDDD;
+	}
+	
+	.MPart Composite,
+	.MPart LayoutComposite,
+	.MPart Label,
+	.MPart Hyperlink,
+	.MPart ScrolledForm,
+	.MPart Form,
+	.MPart Section,
+	.MPart FormText,
+	.MPart Link,
+	.MPart Sash,
+	.MPart Button,
+	.MPart Group,
+	.MPart SashForm,
+	.MPart FilteredTree,
+	.MPart RegistryFilteredTree,
+	.MPart PageSiteComposite,
+	.MPart DependenciesComposite,
+	.MPart Text[style~='SWT.READ_ONLY'],
+	.MPart FigureCanvas,
+	.MPart ListEditorComposite,
+	.MPart ScrolledComposite,
+	.MPart ScrolledComposite ToolBar,
+	.Mpart ScrolledComposite ProgressInfoItem,
+	.MPart Form ScrolledPageBook,
+	.MPart DependenciesComposite > SashForm > Section > * /* Section > DependenciesComposite$... */,
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > * /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/ {
+	    background-color: #2F2F2F;
+	    color: #AAAAAA;
+	}
+	.MPartStack.active .MPart Composite,
+	.MPartStack.active .MPart LayoutComposite,
+	.MPartStack.active .MPart Label,
+	.MPartStack.active .MPart Hyperlink,
+	.MPartStack.active .MPart ScrolledForm,
+	.MPartStack.active .MPart Form,
+	.MPartStack.active .MPart Section,
+	.MPartStack.active .MPart FormText,
+	.MPartStack.active .MPart Link,
+	.MPartStack.active .MPart Sash,
+	.MPartStack.active .MPart Button,
+	.MPartStack.active .MPart Group,
+	.MPartStack.active .MPart SashForm,
+	.MPartStack.active .MPart FilteredTree,
+	.MPartStack.active .MPart RegistryFilteredTree,
+	.MPartStack.active .MPart PageSiteComposite,
+	.MPartStack.active .MPart DependenciesComposite,
+	.MPartStack.active .MPart Text[style~='SWT.READ_ONLY'],
+	.MPartStack.active .MPart FigureCanvas,
+	.MPartStack.active .MPart ListEditorComposite,
+	.MPartStack.active .MPart ScrolledComposite,
+	.MPartStack.active .MPart ScrolledComposite ToolBar,
+	.MPartStack.active .Mpart ScrolledComposite ProgressInfoItem,
+	.MPartStack.active .MPart Form ScrolledPageBook,
+	.MPartStack.active .MPart DependenciesComposite > SashForm > Section > * /* Section > DependenciesComposite$... */,
+	.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > * /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/ {
+	    background-color: #262626;
+	    color: #999999;
+	}
+	
+	.MPart Section > Label {
+		background-color: #2F2F2F;
+	    color: #ABCEDA;
+	}
+	.MPartStack.active .MPart Section > Label {
+		background-color: #262626;
+	    color: #9EC1CE;
+	}
+	
+	.MPart Table,
+	.MPart Browser,
+	.Mpart OleFrame,
+	.MPart ViewForm,
+	.MPart ViewForm > ToolBar,
+	.MPart ViewForm > CLabel,
+	.MPart PageBook > Label,
+	.MPart PageBook > SashForm,
+	#org-eclipse-help-ui-HelpView LayoutComposite > LayoutComposite,
+	#org-eclipse-help-ui-HelpView LayoutComposite > LayoutComposite > * {
+		background-color: #313538;
+	    color: #CCC;
+	}
+	.MPartStack.active .MPart Table,
+	.MPartStack.active .MPart Browser,
+	.MPartStack.active .Mpart OleFrame,
+	.MPartStack.active .MPart ViewForm,
+	.MPartStack.active .MPart ViewForm > ToolBar,
+	.MPartStack.active .MPart ViewForm > CLabel,
+	.MPartStack.active .MPart PageBook > Label,
+	.MPartStack.active .MPart PageBook > SashForm,
+	.MPartStack.active #org-eclipse-help-ui-HelpView LayoutComposite > LayoutComposite,
+	.MPartStack.active #org-eclipse-help-ui-HelpView LayoutComposite > LayoutComposite > * {
+		background-color: #333;
+	    color: #DDDDDD;
+	}
+	
+	.MPart > Label,
+	#com-android-ide-eclipse-adt-internal-lint-LintViewPart > Composite > Label {
+	    background-color: #313538;
+	    color: #7DC2BD;
+	}
+	.MPartStack.active .MPart > Label,
+	.MPartStack.active #com-android-ide-eclipse-adt-internal-lint-LintViewPart > Composite > Label {
+	    background-color: #2F3235;
+	    color: #B1E8F7;
+	}
+	
+	.MPart Section Tree,
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Tree {
+	    background-color: #383A3B;
+	    color: #DDDDDD;
+	}
+	.MPartStack.active .MPart Section Tree,
+	.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Tree {
+	    background-color: #353636;
+	    color: #CCCCCC;
+	}
+	 
+	.MPart StyledText,
+	.MPart PageBook > SashForm Label,
+	.MPart SashForm > Text[style~='SWT.BORDER'] {
+	    background-color: #3f4447;
+	    color: #BBBBBB;
+	}
+	.MPartStack.active .MPart StyledText,
+	.MPartStack.active .MPart PageBook > SashForm Label,
+	.MPartStack.active .MPart SashForm > Text[style~='SWT.BORDER'] {
+	    background-color: #313538;
+	    color: #AAAAAA;
+	}
+	
+	.MPart FormHeading,
+	.MPart FormHeading > ToolBar
+	.MPart FormHeading > TitleRegion,
+	.MPart FormHeading > TitleRegion > Label {
+	    background-color: #505f70;
+	    color: #9ac9d8;
+	}
+	.MPartStack.active .MPart FormHeading,
+	.MPartStack.active .MPart FormHeading > ToolBar
+	.MPartStack.active .MPart FormHeading > TitleRegion,
+	.MPartStack.active .MPart FormHeading > TitleRegion > Label {
+	    background-color: #415062;
+	    color: #9ac9d8;
+	}
+	.MPart FormHeading,
+	.MPart FormHeading > TitleRegion {
+	    swt-background-mode: none; 
+	}
+	.MPart FormHeading > CLabel {
+		background-color: #505f70;
+	    color: #E98787;
+	}
+	.MPartStack.active .MPart FormHeading > CLabel {
+		background-color: #415062;
+	    color: #E98787;
 	}
 	
 	/* ------------------------------------------------------------- */
 	
-	#org-eclipse-jdt-ui-TypeHierarchy Label, #org-eclipse-jdt-ui-TypeHierarchy CLabel {
-	    background-color: #313538;
-	    color: #DDDDDD;
+	#org-eclipse-jdt-ui-SourceView StyledText,
+	#org-eclipse-wst-jsdt-ui-SourceView StyledText {
+	    background-color: #252525;
 	}
-	#org-eclipse-jdt-ui-TypeHierarchy Table {
+	
+	/* ------------------------------------------------------------- */
+	
+	#org-eclipse-ui-console-ConsoleView .MPart > Composite,
+	#org-eclipse-ui-console-ConsoleView .MPart StyledText,
+	#org-eclipse-ui-console-ConsoleView .MPart PageBook Label,
+	#org-eclipse-dltk-debug-ui-ScriptDisplayView SashForm > * {
+	    background-color: #2F2F2F;
+	    color: #CCCCCC;
+	}
+	.MPartStack.active #org-eclipse-ui-console-ConsoleView .MPart > Composite,
+	.MPartStack.active #org-eclipse-ui-console-ConsoleView .MPart StyledText,
+	.MPartStack.active #org-eclipse-ui-console-ConsoleView .MPart PageBook Label,
+	.MPartStack.active #org-eclipse-dltk-debug-ui-ScriptDisplayView SashForm > * {
+	    background-color: #262626;
+	    color: #CCCCCC;
+	}
+	
+	/* ------------------------------------------------------------- */
+	
+	#org-eclipse-pde-runtime-LogView Text {
 	    background-color: #333;
-	    color: #DDDDDD;
+	    color: #F4F7F7;
 	}
 	
 	/* ------------------------------------------------------------- */
 	
-	#org-eclipse-ui-views-ContentOutline.MPart {
-	    background-color: #313538;
-	    color: #DDDDDD;
-	}
-	#org-eclipse-ui-views-ContentOutline Label { /* SWT-BUG workaround: 'color' is not inherited */
-	    background-color: #333;
-	    color: #DDDDDD;
+	#org-eclipse-pde-ui-TargetPlatformState PageBook > Composite > * {
+		background-color: #2F2F2F;
+	    color: #CCC;
 	}
 	
 	/* ------------------------------------------------------------- */
 	
-	/* not triggered */
-	/*.MPartStack.active #org-eclipse-e4-primaryDataStack {
-	    background-color: #202020;
-	} */
 	#org-eclipse-e4-ui-compatibility-editor Canvas,
 	#org-eclipse-e4-ui-compatibility-editor Canvas > *,
 	/* Workaround for CDT folding column SWT-BUG (styles aren't inherited) */
@@ -548,15 +763,19 @@
 	    color: #EEEEEE;
 	}
 	#org-eclipse-e4-ui-compatibility-editor PaletteControl ScrolledComposite > Composite > * {
-	    background-color: #515658;
-	    color: #eeeeee;
+	    background-color: #2F2F2F;
+	    color: #BBBBBB;
+	}
+	.MPartStack.active #org-eclipse-e4-ui-compatibility-editor PaletteControl ScrolledComposite > Composite > * {
+	    background-color: #262626;
+	    color: #CCCCCC;
 	}
 	#org-eclipse-e4-ui-compatibility-editor PaletteControl CLabel {
 	    background-color: #383838;
 	    color: #dddddd;
 	}
-	#org-eclipse-e4-ui-compatibility-editor PaletteControl CLabel :hover {
-	/* SWT-BUG: The event is never triggered so the native rule cannot be overridden (for hover event) */
+	#org-eclipse-e4-ui-compatibility-editor PaletteControl CLabel:hover {
+	/* SWT-BUG #362532: The event is never triggered so the native rule cannot be overridden (for hover event) */
 	    background-color: #252525;
 	    color: #dddddd;
 	}
@@ -567,130 +786,6 @@
 	#org-eclipse-e4-ui-compatibility-editor LayoutCanvas {
 	    background-color: #252525;
 	    color: #CCCCCC;
-	}
-	
-	#org-eclipse-help-ui-HelpView Composite,
-	#org-eclipse-help-ui-HelpView LayoutComposite,
-	#org-eclipse-help-ui-HelpView Label,
-	#org-eclipse-help-ui-HelpView Hyperlink,
-	#org-eclipse-help-ui-HelpView ScrolledForm,
-	#org-eclipse-help-ui-HelpView Form,
-	#org-eclipse-help-ui-HelpView FormHeading,
-	#org-eclipse-help-ui-HelpView Section,
-	#org-eclipse-help-ui-HelpView FormText {
-	    background-color: #2F2F2F;
-	    color: #CCC;
-	}
-	.MPartStack.active #org-eclipse-help-ui-HelpView Composite,
-	.MPartStack.active #org-eclipse-help-ui-HelpView LayoutComposite,
-	.MPartStack.active #org-eclipse-help-ui-HelpView Label,
-	.MPartStack.active #org-eclipse-help-ui-HelpView Hyperlink,
-	.MPartStack.active #org-eclipse-help-ui-HelpView ScrolledForm,
-	.MPartStack.active #org-eclipse-help-ui-HelpView Form,
-	.MPartStack.active #org-eclipse-help-ui-HelpView FormHeading,
-	.MPartStack.active #org-eclipse-help-ui-HelpView Section,
-	.MPartStack.active #org-eclipse-help-ui-HelpView FormText{
-	    background-color: #262626;
-	    color: #CCC;
-	}
-	
-	/* ------------------------------------------------------------- */
-	
-	#org-eclipse-pde-runtime-LogView.MPart {
-	    background-color: #313538;
-	    color: #DDDDDD;
-	}
-	#org-eclipse-pde-runtime-LogView .MPart > Label,
-	#org-eclipse-ui-views-ProblemView .MPart > Label,
-	#org-eclipse-ui-views-TaskList .MPart > Label{
-	    background-color: #313538;
-	    color: #DDDDDD;
-	}
-	#org-eclipse-jdt-ui-JavadocView .MPart,
-	#org-eclipse-jdt-ui-JavadocView .MPart Browser,
-	#org-eclipse-jdt-ui-JavadocView .MPart OleFrame {
-	    background-color: #313538;
-	    color: #DDDDDD;
-	}
-	#org-eclipse-pde-runtime-LogView FilteredTree Composite {
-	    background-color: #262B2D;
-	}
-	#org-eclipse-pde-runtime-LogView Text {
-	    background-color: #333;
-	    color: #F4F7F7;
-	}
-	#org-eclipse-jdt-ui-SourceView .MPart > Label,
-	#org-eclipse-ui-console-ConsoleView .MPart > Label {
-	    background-color: #313538;
-	    color: #DDDDDD;
-	}
-	#org-eclipse-jdt-ui-SourceView .MPart > Composite {
-	    background-color: #4D565B;
-	    color: #EEEEEE;
-	}
-	#org-eclipse-jdt-ui-SourceView StyledText {
-	    background-color: #252525;
-	}
-	#org-eclipse-ui-console-ConsoleView .MPart > Composite,
-	#org-eclipse-ui-console-ConsoleView .MPart StyledText,
-	#org-eclipse-ui-console-ConsoleView .MPart PageBook Label {
-	    background-color: #333;
-	    color: #EEEEEE;
-	}
-	#org-eclipse-ui-views-ProgressView Composite,
-	#org-eclipse-ui-views-ProgressView ScrolledComposite,
-	#org-eclipse-ui-views-ProgressView Composite Text,
-	#org-eclipse-ui-views-ProgressView ScrolledComposite ProgressInfoItem,
-	#org-eclipse-ui-views-ProgressView ScrolledComposite Label,
-	#org-eclipse-ui-views-ProgressView ScrolledComposite ToolBar,
-	#org-eclipse-ui-views-ProgressView ScrolledComposite Link {
-	    background-color: #333;
-	    color: #EEEEEE;
-	}
-	#org-eclipse-search-ui-views-SearchView Composite,
-	#org-eclipse-search-ui-views-SearchView Composite Link {
-	    background-color: #333;
-	    color: #EEEEEE
-	}
-	#org-eclipse-ui-texteditor-TemplatesView CLabel {
-	    background-color: #313538;
-	    color: #DDDDDD;
-	}
-	#org-eclipse-debug-ui-VariableView Label, #org-eclipse-debug-ui-VariableView StyledText,
-	#org-eclipse-debug-ui-BreakpointView Label, #org-eclipse-debug-ui-BreakpointView StyledText {
-	    background-color: #3f4447;
-	    color: #EEEEEE;
-	}
-	#org-eclipse-debug-ui-VariableView SashForm, #org-eclipse-debug-ui-VariableView Sash,
-	#org-eclipse-debug-ui-BreakpointView SashForm, #org-eclipse-debug-ui-BreakpointView Sash {
-	    background-color: #333;
-	    color: #EEEEEE;
-	}
-	#com-android-ide-eclipse-ddms-views-LogCatView .MPart {
-	    background-color: #313538;
-	    color: #DDDDDD;
-	}
-	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Label {
-	    color: #EEEEEE;
-	}
-	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Table {
-	    background-color: #555;
-	    color: #EEEEEE;
-	}
-	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Combo,
-	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Text {
-	    background-color: #333;
-	    color: #EEEEEE;
-	}
-	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Composite,
-	#com-android-ide-eclipse-ddms-views-LogCatView .MPart Sash {
-	    background-color: #444;
-	    color: #DDDDDD;
-	}
-	.MPartStack.active #com-android-ide-eclipse-ddms-views-LogCatView .MPart Composite,
-	.MPartStack.active #com-android-ide-eclipse-ddms-views-LogCatView .MPart Sash {
-	    background-color: #313538;
-	    color: #DDDDDD;
 	}
 	
 	
@@ -717,7 +812,7 @@
 	 * ====================================================================
 	 * @title: Eclipse MoonRise UI Theme
 	 * @author: Andrea Guarinoni
-	 * @version: 0.8.6
+	 * @version: 0.8.7
 	 * @target-platform: OSX
 	 * @style-type: Patch
 	 * ====================================================================
@@ -744,6 +839,7 @@
 	    background-color: #515658;
 	    color: #222;
 	}
+	
 	Button,
 	Composite > Button,
 	TabFolder > Composite > Button,
@@ -756,7 +852,12 @@
 	ScrolledComposite > Composite > Composite > Composite > Button,
 	Shell > Composite > Composite > Composite > Composite > Composite > Button,
 	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button, 
-	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button {
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button,
+	Form > LayoutComposite > LayoutComposite > Button,
+	.MPart Button,
+	.MPartStack.active .MPart Button,
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button,
+	.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button {
 	    /* background-color is not applied to the whole button,
 	       but text color is changed, so it appear light on light */
 	    background-color: #515658;
@@ -772,7 +873,14 @@
 	Composite > Composite > Composite > Group > Button[style~='SWT.CHECK'],
 	Shell > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
 	ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
-	Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.CHECK'] {
+	Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button[style~='SWT.CHECK'], 
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button[style~='SWT.CHECK'],
+	Form > LayoutComposite > LayoutComposite > Button[style~='SWT.CHECK'],
+	.MPart Button[style~='SWT.CHECK'],
+	.MPartStack.active .MPart Button[style~='SWT.CHECK'],
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.CHECK'],
+	.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.CHECK'] {
 	    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
 	    /* so, css rules applied to Button have to be overridden for non-Button matches */
 	    color: #ddd;
@@ -787,11 +895,19 @@
 	Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'],
 	Shell > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
 	ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
-	Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.RADIO'] {
+	Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button[style~='SWT.RADIO'], 
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button[style~='SWT.RADIO'],
+	Form > LayoutComposite > LayoutComposite > Button[style~='SWT.RADIO'],
+	.MPart Button[style~='SWT.RADIO'],
+	.MPartStack.active .MPart Button[style~='SWT.RADIO'],
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.RADIO'],
+	.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.RADIO'] {
 	    /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
 	    /* so, css rules applied to Button have to be overridden for non-Button matches */
 	    color: #ddd;
 	}
+	
 	Combo,
 	Composite > Combo,
 	TabFolder > Composite > Combo,
@@ -804,7 +920,9 @@
 	ScrolledComposite > Composite > Composite > Composite > Combo,
 	Shell > Composite > Composite > Composite > Composite > Composite > Combo,
 	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo, 
-	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo {
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo,
+	Form > LayoutComposite > LayoutComposite > Combo,
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Combo {
 	    background-color: #41464A; /* ignored */
 	    color: #222;
 	}
@@ -820,15 +938,34 @@
 	ScrolledComposite > Composite > Composite > Composite > Combo:selected,
 	Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected,
 	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo:selected, 
-	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo:selected {
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo:selected,
+	Form > LayoutComposite > LayoutComposite > Combo:selected,
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Combo:selected {
 	    background-color: #41464A;
 	    color: #FFF;
 	}
-	Text[style~='SWT.SEARCH'] {
+	
+	Text[style~='SWT.SEARCH'],
+	Composite > Text[style~='SWT.SEARCH'],
+	TabFolder > Composite > Text[style~='SWT.SEARCH'],
+	TabFolder > Composite > * > Text[style~='SWT.SEARCH'],
+	DocCommentOwnerComposite > Group > Text[style~='SWT.SEARCH'],
+	TabFolder > Composite > ScrolledComposite > Text[style~='SWT.SEARCH'],
+	Shell > Composite > Composite > Text[style~='SWT.SEARCH'],
+	Composite > Composite > Composite > Group > Text[style~='SWT.SEARCH'],
+	Shell > Composite > Composite > Composite > Text[style~='SWT.SEARCH'],
+	ScrolledComposite > Composite > Composite > Composite > Text[style~='SWT.SEARCH'],
+	Shell > Composite > Composite > Composite > Composite > Composite > Text[style~='SWT.SEARCH'],
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Text[style~='SWT.SEARCH'], 
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Text[style~='SWT.SEARCH'],
+	#org-eclipse-pde-runtime-LogView Text[style~='SWT.SEARCH'],
+	Form > LayoutComposite > LayoutComposite > Text[style~='SWT.SEARCH'],
+	.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Text[style~='SWT.SEARCH'] {
 	    /* search boxes */
+	    background-color: #949da5; /* background-color is hard-coded */
 	    color: #333;
 	}
 	
-	/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */	
 
 /* <<<<<<<<<<< end of content of 'moonrise-ui_[OSX-patch].css' <<<<<<<<<<<< */

@@ -4,25 +4,25 @@
    <extension
          point="org.eclipse.e4.ui.css.swt.theme">
       <theme
-            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
+            basestylesheeturi="themes/css/moonrise-ui-standalone_WIN.css"
             id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
             label="MoonRise (standalone)"
             os="win32">
       </theme>
       <theme
-            basestylesheeturi="themes/css/moonrise-ui.css"
+            basestylesheeturi="themes/css/moonrise-ui_WIN.css"
             id="com.github.eclipseuitheme.themes.moonrise-ui"
             label="MoonRise"
             os="win32">
       </theme>
       <theme
-            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
+            basestylesheeturi="themes/css/moonrise-ui-standalone_GTK.css"
             id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
             label="MoonRise (standalone)"
             os="linux">
       </theme>
       <theme
-            basestylesheeturi="themes/css/moonrise-ui.css"
+            basestylesheeturi="themes/css/moonrise-ui_GTK.css"
             id="com.github.eclipseuitheme.themes.moonrise-ui"
             label="MoonRise"
             os="linux">
@@ -77,7 +77,7 @@
       </theme>
       <property
             name="applicationCSSResources"
-            value="platform:/plugin/com.github.eclipseuitheme.themes/themes.images/">
+            value="platform:/plugin/com.github.eclipseuitheme.themes.moonrise-ui/themes/images/">
       </property>
    </extension>
 

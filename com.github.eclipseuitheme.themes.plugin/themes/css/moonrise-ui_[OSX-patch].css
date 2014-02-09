@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme
  * @author: Andrea Guarinoni
- * @version: 0.8.6
+ * @version: 0.8.7
  * @target-platform: OSX
  * @style-type: Patch
  * ====================================================================
@@ -29,6 +29,7 @@ Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][s
     background-color: #515658;
     color: #222;
 }
+
 Button,
 Composite > Button,
 TabFolder > Composite > Button,
@@ -41,7 +42,12 @@ Shell > Composite > Composite > Composite > Button,
 ScrolledComposite > Composite > Composite > Composite > Button,
 Shell > Composite > Composite > Composite > Composite > Composite > Button,
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button, 
-Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button {
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button,
+Form > LayoutComposite > LayoutComposite > Button,
+.MPart Button,
+.MPartStack.active .MPart Button,
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button,
+.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button {
     /* background-color is not applied to the whole button,
        but text color is changed, so it appear light on light */
     background-color: #515658;
@@ -57,7 +63,14 @@ Shell > Composite > Composite > Button[style~='SWT.CHECK'],
 Composite > Composite > Composite > Group > Button[style~='SWT.CHECK'],
 Shell > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
 ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
-Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.CHECK'] {
+Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.CHECK'],
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button[style~='SWT.CHECK'], 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button[style~='SWT.CHECK'],
+Form > LayoutComposite > LayoutComposite > Button[style~='SWT.CHECK'],
+.MPart Button[style~='SWT.CHECK'],
+.MPartStack.active .MPart Button[style~='SWT.CHECK'],
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.CHECK'],
+.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.CHECK'] {
     /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
     /* so, css rules applied to Button have to be overridden for non-Button matches */
     color: #ddd;
@@ -72,11 +85,19 @@ Shell > Composite > Composite > Button[style~='SWT.RADIO'],
 Composite > Composite > Composite > Group > Button[style~='SWT.RADIO'],
 Shell > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
 ScrolledComposite > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
-Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.RADIO'] {
+Shell > Composite > Composite > Composite > Composite > Composite > Button[style~='SWT.RADIO'],
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Button[style~='SWT.RADIO'], 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Button[style~='SWT.RADIO'],
+Form > LayoutComposite > LayoutComposite > Button[style~='SWT.RADIO'],
+.MPart Button[style~='SWT.RADIO'],
+.MPartStack.active .MPart Button[style~='SWT.RADIO'],
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.RADIO'],
+.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Button[style~='SWT.RADIO'] {
     /* currently, Button object isn't consistent (eg. also a checkbox is seen as Button) */
     /* so, css rules applied to Button have to be overridden for non-Button matches */
     color: #ddd;
 }
+
 Combo,
 Composite > Combo,
 TabFolder > Composite > Combo,
@@ -89,7 +110,9 @@ Shell > Composite > Composite > Composite > Combo,
 ScrolledComposite > Composite > Composite > Composite > Combo,
 Shell > Composite > Composite > Composite > Composite > Composite > Combo,
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo, 
-Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo {
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo,
+Form > LayoutComposite > LayoutComposite > Combo,
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Combo {
     background-color: #41464A; /* ignored */
     color: #222;
 }
@@ -105,12 +128,31 @@ Shell > Composite > Composite > Composite > Combo:selected,
 ScrolledComposite > Composite > Composite > Composite > Combo:selected,
 Shell > Composite > Composite > Composite > Composite > Composite > Combo:selected,
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo:selected, 
-Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo:selected {
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo:selected,
+Form > LayoutComposite > LayoutComposite > Combo:selected,
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Combo:selected {
     background-color: #41464A;
     color: #FFF;
 }
-Text[style~='SWT.SEARCH'] {
+
+Text[style~='SWT.SEARCH'],
+Composite > Text[style~='SWT.SEARCH'],
+TabFolder > Composite > Text[style~='SWT.SEARCH'],
+TabFolder > Composite > * > Text[style~='SWT.SEARCH'],
+DocCommentOwnerComposite > Group > Text[style~='SWT.SEARCH'],
+TabFolder > Composite > ScrolledComposite > Text[style~='SWT.SEARCH'],
+Shell > Composite > Composite > Text[style~='SWT.SEARCH'],
+Composite > Composite > Composite > Group > Text[style~='SWT.SEARCH'],
+Shell > Composite > Composite > Composite > Text[style~='SWT.SEARCH'],
+ScrolledComposite > Composite > Composite > Composite > Text[style~='SWT.SEARCH'],
+Shell > Composite > Composite > Composite > Composite > Composite > Text[style~='SWT.SEARCH'],
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Text[style~='SWT.SEARCH'], 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Text[style~='SWT.SEARCH'],
+#org-eclipse-pde-runtime-LogView Text[style~='SWT.SEARCH'],
+Form > LayoutComposite > LayoutComposite > Text[style~='SWT.SEARCH'],
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Text[style~='SWT.SEARCH'] {
     /* search boxes */
+    background-color: #949da5; /* background-color is hard-coded */
     color: #333;
 }
 

@@ -1,0 +1,111 @@
+/**
+ * ====================================================================
+ * @title: Eclipse MoonRise UI Theme
+ * @author: Andrea Guarinoni
+ * @version: 0.8.7
+ * @target-platform: WIN
+ * @style-type: Patch
+ * ====================================================================
+ */
+
+/* ######################### Views ############################# */
+
+/* Make the content of the Form brighter because the color of
+   the font of some widgets is hard-coded to be black on Window */
+
+.MPart Form,
+.MPart Form Sash,
+.MPart Form Label,
+.MPart Form Section,
+.MPart Form FormText,
+.MPart Form Link,
+.MPart Form Hyperlink,
+.MPart Form Button,
+.MPart Form Group,
+.MPart Form SashForm,
+.MPart Form LayoutComposite,
+.MPart Form ScrolledPageBook,
+.MPart Form DependenciesComposite,
+.MPart Form ListEditorComposite,
+.MPart Form Text[style~='SWT.READ_ONLY'],
+.MPart Form DependenciesComposite > SashForm > Section > *, /* Section > DependenciesComposite$... */
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > *, /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/
+.MPartStack.active .MPart Form,
+.MPartStack.active .MPart Form Sash,
+.MPartStack.active .MPart Form Label,
+.MPartStack.active .MPart Form Section,
+.MPartStack.active .MPart Form FormText,
+.MPartStack.active .MPart Form Link,
+.MPartStack.active .MPart Form Hyperlink,
+.MPartStack.active .MPart Form Button,
+.MPartStack.active .MPart Form Group,
+.MPartStack.active .MPart Form SashForm,
+.MPartStack.active .MPart Form LayoutComposite,
+.MPartStack.active .MPart Form ScrolledPageBook,
+.MPartStack.active .MPart Form DependenciesComposite,
+.MPartStack.active .MPart Form ListEditorComposite,
+.MPartStack.active .MPart Form Text[style~='SWT.READ_ONLY'],
+.MPartStack.active .MPart Form DependenciesComposite > SashForm > Section > *, /* Section > DependenciesComposite$... */
+.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > * /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/ {
+    background-color: #4f5355;
+    color: #f4f7f7;
+}
+#org-eclipse-help-ui-HelpView Form,
+#org-eclipse-help-ui-HelpView Form Sash,
+#org-eclipse-help-ui-HelpView Form Label,
+#org-eclipse-help-ui-HelpView Form Section,
+#org-eclipse-help-ui-HelpView Form FormText,
+#org-eclipse-help-ui-HelpView Form Hyperlink,
+#org-eclipse-help-ui-HelpView Form Button,
+#org-eclipse-help-ui-HelpView Form Group,
+#org-eclipse-help-ui-HelpView Form LayoutComposite,
+#org-eclipse-help-ui-HelpView Form ScrolledPageBook,
+#org-eclipse-help-ui-HelpView Form Text[style~='SWT.READ_ONLY'] {
+    background-color: #2F2F2F;
+    color: #CCCCCC;
+}
+.MPartStack.active #org-eclipse-help-ui-HelpView Form,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Sash,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Label,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Section,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form FormText,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Hyperlink,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Button,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Group,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form LayoutComposite,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form ScrolledPageBook,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Text[style~='SWT.READ_ONLY'] {
+    background-color: #262626;
+    color: #BBBBBB;
+}
+.MPart FormHeading,
+.MPart FormHeading > ToolBar
+.MPart FormHeading > TitleRegion,
+.MPart FormHeading > TitleRegion > Label,
+.MPartStack.active .MPart FormHeading,
+.MPartStack.active .MPart FormHeading > ToolBar
+.MPartStack.active .MPart FormHeading > TitleRegion,
+.MPartStack.active .MPart FormHeading > TitleRegion > Label {
+    background-color: #505f70;
+    color: #9ac9d8;
+}
+.MPart FormHeading > CLabel,
+.MPartStack.active .MPart FormHeading > CLabel {
+	background-color: #505f70;
+    color: #E98787;
+}
+.MPart Form Section Tree,
+.MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Tree,
+.MPartStack.active .MPart Form Section Tree,
+.MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Tree {
+    background-color: #313538;
+    color: #DDDDDD;
+}
+.MPart PageBook > Form > LayoutComposite {
+    background-color: #2F2F2F;
+    color: #CCC; 
+}
+.MPartStack.active .MPart PageBook > Form > LayoutComposite {
+    background-color: #262626;
+    color: #BBBBBB; 
+}
