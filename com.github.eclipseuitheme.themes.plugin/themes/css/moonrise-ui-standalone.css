@@ -96,9 +96,11 @@ ToolItem, Sash, Group, Hyperlink, RefactoringLocationControl, Link, FilteredTree
 ProxyEntriesComposite, NonProxyHostsComposite, DelayedFilterCheckboxTree,
 Splitter, ScrolledPageContent, ViewForm, LaunchConfigurationFilteredTree,
 ContainerSelectionGroup, BrowseCatalogItem, EncodingSettings,
-ProgressMonitorPart, DocCommentOwnerComposite, NewServerComposite, 
+ProgressMonitorPart, DocCommentOwnerComposite, NewServerComposite,
 NewManualServerComposite, ServerTypeComposite, FigureCanvas,
 DependenciesComposite, ListEditorComposite, WrappedPageBook,
+CompareStructureViewerSwitchingPane, CompareContentViewerSwitchingPane,
+QualifiedNameComponent, RefactoringStatusViewer,
 Button /* SWT-BUG: checkbox inner label font color is not accessible */,
 ViewForm > ToolBar, /* SWT-BUG: ToolBar do not inherit rules from ViewForm */
 Shell [style~='SWT.DROP_DOWN'] > GradientCanvas, /* ignored */
@@ -134,7 +136,7 @@ Composite > Composite > Composite > Group > List,
 Shell > Composite > Composite > Composite > List,
 ScrolledComposite > Composite > Composite > Composite > List,
 Shell > Composite > Composite > Composite > Composite > Composite > List,
-Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > List, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > List,
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > List {
     background-color: #41464A;
     color: #dddddd;
@@ -214,7 +216,7 @@ ScrolledFormText, FormText {
 
 ToolItem:selected {
     background-color: #313538;
-    color: #dddddd;	
+    color: #dddddd;
 }
 
 Table,
@@ -230,7 +232,7 @@ Composite > Composite > Composite > Group > Table,
 Shell > Composite > Composite > Composite > Table,
 ScrolledComposite > Composite > Composite > Composite > Table,
 Shell > Composite > Composite > Composite > Composite > Composite > Table,
-Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Table, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Table,
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Table {
     background-color: #35393C;
     color: #dddddd;
@@ -250,7 +252,7 @@ Composite > Composite > Composite > Group > Tree,
 Shell > Composite > Composite > Composite > Tree,
 ScrolledComposite > Composite > Composite > Composite > Tree,
 Shell > Composite > Composite > Composite > Composite > Composite > Tree,
-Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Tree, 
+Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Tree,
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Tree {
     background-color: #2F2F2F;
     color: #CCC;
@@ -365,7 +367,7 @@ CTabFolder {
 }
 CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
     /* Need to restore a native renderer or the bottom inner tabs won't be displayed */
-    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');   
+    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -467,10 +469,10 @@ Twistie {
 /* Button[style~='SWT.CHECK'] { */
     /* currently, Button object isn't consistent (eg. also a checkbox/radio is seen as Button) */
     /* so, css rules applied to Button have to be overridden for non-Button matches */
-/* } 
+/* }
    Button:disabled {
       /* SWT-BUG: currently, a disabled button cannot be styled with any window manager (gtk, win32, cocoa) */
-/* } 
+/* }
    Button:hover {
       /* SWT-BUG: currently, an hovered button cannot be styled with any window manager (gtk, win32, cocoa) */
 /* } */
@@ -488,7 +490,7 @@ PageSiteComposite > PropertyTable {
     color: #EEEEEE;
 }
 PageSiteComposite > PropertyTable:disabled {
-/* SWT-BUG: event is triggered but styles for PropertyTable are hard-coded */	
+/* SWT-BUG: event is triggered but styles for PropertyTable are hard-coded */
     background-color: #444;
     color: #EEEEEE;
 }
@@ -635,7 +637,7 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
     background-color: #353636;
     color: #CCCCCC;
 }
- 
+
 .MPart StyledText,
 .MPart PageBook > SashForm Label,
 .MPart SashForm > Text[style~='SWT.BORDER'] {
@@ -665,7 +667,7 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
 }
 .MPart FormHeading,
 .MPart FormHeading > TitleRegion {
-    swt-background-mode: none; 
+    swt-background-mode: none;
 }
 .MPart FormHeading > CLabel {
 	background-color: #505f70;

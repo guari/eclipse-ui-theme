@@ -118,6 +118,8 @@
 	ProgressMonitorPart, DocCommentOwnerComposite, NewServerComposite, 
 	NewManualServerComposite, ServerTypeComposite, FigureCanvas,
 	DependenciesComposite, ListEditorComposite, WrappedPageBook,
+	CompareStructureViewerSwitchingPane, CompareContentViewerSwitchingPane,
+	QualifiedNameComponent, RefactoringStatusViewer,
 	Button /* SWT-BUG: checkbox inner label font color is not accessible */,
 	ViewForm > ToolBar, /* SWT-BUG: ToolBar do not inherit rules from ViewForm */
 	Shell [style~='SWT.DROP_DOWN'] > GradientCanvas, /* ignored */

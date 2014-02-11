@@ -103,7 +103,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <url>
-      <update label="Eclipse Moonrise UI Theme" url="http://guari.github.io/updatesite"/>
+      <update label="Eclipse Moonrise UI Theme" url="https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite"/>
    </url>
 
    <requires>
