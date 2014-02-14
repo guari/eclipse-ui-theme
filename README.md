@@ -107,6 +107,8 @@ Aside from that, the theme currently might not look perfect on each platform, bu
 Debugging and improvements
 --------------------------
 
+Please vote on Eclipse [Bug 425646 - Support for black and inverted color UI themes](https://bugs.eclipse.org/bugs/show_bug.cgi?id=425646). It is definite that something is to be done on Eclipse platform side.
+
 Use *CSS Spy* to inspect widgets properties and *CSS Scratchpad* or *Lightweight CSS Editor* to apply a quick customization. To test what elements can be modified or not with CSS, drop a line like this one: `* { background-color:red; color:white; }` into *CSS Scratchpad* (restart Eclipse to reset the theme).
 
 ## Build and Release
