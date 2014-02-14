@@ -18,7 +18,7 @@ Installation
 ------------
 
 * #### Manual:
-Download [moonrise_0.8.7.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.7.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
+Download [moonrise_0.8.8.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.8.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
 * #### Update site:
 Or download this plugin by using ```Help > Install New Software...``` and add the update site:
@@ -130,8 +130,8 @@ Use *CSS Spy* to inspect widgets properties and *CSS Scratchpad* or *Lightweight
 * #### Build with Maven/Tycho:
 
         mvn package
-	
-  resulted p2 repository arrives in `com.github.eclipseuitheme.themes.updatesite\target`. 	
+
+  resulted p2 repository arrives in `com.github.eclipseuitheme.themes.updatesite\target`.
 
   Before release:
 
