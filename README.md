@@ -107,7 +107,17 @@ Aside from that, the theme currently might not look perfect on each platform, bu
 Debugging and improvements
 --------------------------
 
-Please vote on Eclipse [Bug 425646 - Support for black and inverted color UI themes](https://bugs.eclipse.org/bugs/show_bug.cgi?id=425646). It is definite that something is to be done on Eclipse platform side.
+A fork of this plugin has been merged with the main Eclipse platform, you should find it pre-installed in the future Eclipse builds. If you want to contribute to its development you can send me a pull request on this repository or commits a patch to the main Eclipse repository.
+If you found an issue linked to this plugin but that is related to the Eclipse/SWT engine you can report it to [Bugzilla](https://bugs.eclipse.org/bugs/buglist.cgi?component=UI&product=Platform&resolution=---) then add a link of it to this README by sending a pull request. The following Eclipse bugs are affecting this plugin, you can vote for it to gain more visibility from Eclipse platform developers:
+* *Solved* [Bug 423744 - Importing a local resource throws a MalformedURLException](https://bugs.eclipse.org/bugs/show_bug.cgi?id=423744);
+* *Solved* [Bug 419016 - Provide some reasonable bridge interactions between CSS and our older Colors and Fonts properties](https://bugs.eclipse.org/bugs/show_bug.cgi?id=419016);
+* [Bug 425646 - Support for black and inverted color UI themes](https://bugs.eclipse.org/bugs/show_bug.cgi?id=425646);
+* [Bug 419482 - Cascading policy used to apply rules is broken](https://bugs.eclipse.org/bugs/show_bug.cgi?id=419482);
+* [Bug 396780 - CTabRendering doesn't draw bottom tabs correctly](https://bugs.eclipse.org/bugs/show_bug.cgi?id=396780);
+* [Bug 384906 - Allow styling of table headers via CSS](https://bugs.eclipse.org/bugs/show_bug.cgi?id=384906);
+* [Bug 264531 - Provide css styling for SWT menu bar](https://bugs.eclipse.org/bugs/show_bug.cgi?id=264531);
+* [Bug 401015 - Add support for styling hyperlinks in Links](https://bugs.eclipse.org/bugs/show_bug.cgi?id=401015);
+* [Bug 419377 - Setting a property to 'inherit' fires an IllegalStateException](https://bugs.eclipse.org/bugs/show_bug.cgi?id=419377);
 
 Use *CSS Spy* to inspect widgets properties and *CSS Scratchpad* or *Lightweight CSS Editor* to apply a quick customization. To test what elements can be modified or not with CSS, drop a line like this one: `* { background-color:red; color:white; }` into *CSS Scratchpad* (restart Eclipse to reset the theme).
 
