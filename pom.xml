@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.eclipseuitheme.themes</groupId>
     <artifactId>com.github.eclipseuitheme.themes.parent</artifactId>
-    <version>0.8.7-SNAPSHOT</version>
+    <version>0.8.8-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Eclipse Moonrise UI Theme</name>
-        
+
 	<developers>
 		<developer>
 			<id>guari</id>
@@ -27,7 +27,7 @@
 			<timezone>+8</timezone>
 		</contributor>
 	</contributors>
-        
+
 	<prerequisites>
 		<maven>3.0</maven>
 	</prerequisites>
@@ -39,7 +39,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-        
+
     <modules>
             <module>com.github.eclipseuitheme.themes.plugin</module>
             <module>com.github.eclipseuitheme.themes.feature</module>
@@ -53,7 +53,7 @@
                     <layout>p2</layout>
             </repository>
     </repositories>
-    
+
 	<build>
 		<plugins>
 			<plugin>

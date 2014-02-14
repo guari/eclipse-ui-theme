@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme
  * @author: Andrea Guarinoni
- * @version: 0.8.7
+ * @version: 0.8.8
  * @target-platform: WIN
  * @style-type: Patch
  * ====================================================================
@@ -20,6 +20,7 @@
 .MPart Form FormText,
 .MPart Form Link,
 .MPart Form Hyperlink,
+.MPart Form ImageHyperlink,
 .MPart Form Button,
 .MPart Form Group,
 .MPart Form SashForm,
@@ -28,6 +29,7 @@
 .MPart Form DependenciesComposite,
 .MPart Form ListEditorComposite,
 .MPart Form Text[style~='SWT.READ_ONLY'],
+.MPart Form > LayoutComposite > LayoutComposite > ToolBar,
 .MPart Form DependenciesComposite > SashForm > Section > *, /* Section > DependenciesComposite$... */
 .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > *, /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/
 .MPartStack.active .MPart Form,
@@ -37,6 +39,7 @@
 .MPartStack.active .MPart Form FormText,
 .MPartStack.active .MPart Form Link,
 .MPartStack.active .MPart Form Hyperlink,
+.MPartStack.active .MPart Form ImageHyperlink,
 .MPartStack.active .MPart Form Button,
 .MPartStack.active .MPart Form Group,
 .MPartStack.active .MPart Form SashForm,
@@ -45,6 +48,7 @@
 .MPartStack.active .MPart Form DependenciesComposite,
 .MPartStack.active .MPart Form ListEditorComposite,
 .MPartStack.active .MPart Form Text[style~='SWT.READ_ONLY'],
+.MPartStack.active .MPart Form > LayoutComposite > LayoutComposite > ToolBar,
 .MPartStack.active .MPart Form DependenciesComposite > SashForm > Section > *, /* Section > DependenciesComposite$... */
 .MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > * /*LayoutComposite > MasterDetailBlock$... > LayoutComposite > Section > LayoutComposite > ExtensionsSection$...*/ {
     background-color: #4f5355;
@@ -78,28 +82,22 @@
     background-color: #262626;
     color: #BBBBBB;
 }
-.MPart FormHeading,
-.MPart FormHeading > ToolBar
-.MPart FormHeading > TitleRegion,
-.MPart FormHeading > TitleRegion > Label,
-.MPartStack.active .MPart FormHeading,
-.MPartStack.active .MPart FormHeading > ToolBar
-.MPartStack.active .MPart FormHeading > TitleRegion,
-.MPartStack.active .MPart FormHeading > TitleRegion > Label {
-    background-color: #505f70;
-    color: #9ac9d8;
-}
-.MPart FormHeading > CLabel,
-.MPartStack.active .MPart FormHeading > CLabel {
-	background-color: #505f70;
-    color: #E98787;
-}
 .MPart Form Section Tree,
 .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Tree,
 .MPartStack.active .MPart Form Section Tree,
 .MPartStack.active .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Tree {
     background-color: #313538;
     color: #DDDDDD;
+}
+.MPart Form DatePicker > ImageHyperlink,
+.MPart Form ScheduleDatePicker > ImageHyperlink {
+    background-color: #3f4447;
+    color: #BBBBBB;
+}
+.MPartStack.active .MPart Form DatePicker > ImageHyperlink,
+.MPartStack.active .MPart Form ScheduleDatePicker > ImageHyperlink {
+    background-color: #313538;
+    color: #AAAAAA;
 }
 .MPart PageBook > Form > LayoutComposite {
     background-color: #2F2F2F;
@@ -108,4 +106,14 @@
 .MPartStack.active .MPart PageBook > Form > LayoutComposite {
     background-color: #262626;
     color: #BBBBBB; 
+}
+.MPart Form FormHeading LayoutComposite,
+.MPart Form FormHeading ImageHyperlink {
+    background-color: #505f70;
+    color: #9ac9d8;
+}
+.MPartStack.active .MPart Form FormHeading LayoutComposite,
+.MPartStack.active .MPart Form FormHeading ImageHyperlink {
+    background-color: #415062;
+    color: #9ac9d8;
 }
