@@ -19,7 +19,7 @@
     background-color: #313538;
     color: #f7f8f8;
     font-size: 9;
-    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
     swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 
     padding: 2px 7px 9px 7px; /* top left bottom right */
@@ -382,7 +382,7 @@ CTabFolder {
     background-color: #222;
     color: #f7f8f8;
     font-size: 9;
-    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
     swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 
     padding: 2px 7px 9px 7px; /* top left bottom right */
@@ -815,12 +815,12 @@ FlyoutControlComposite, FlyoutControlComposite ToolBar, FlyoutControlComposite C
 #org-eclipse-e4-ui-compatibility-editor CTabItem {
     color: #EEEEEE;
     font-weight: normal;
-    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
 }
 #org-eclipse-e4-ui-compatibility-editor CTabItem:selected {
     background-color: #262626;
     font-weight: bold;
-    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
+    font-family: 'Segoe Print'; /* currently, there is no way to define a fallback for font-family */
 }
 #org-eclipse-e4-ui-compatibility-editor .MPart {
     color: #EEEEEE;
