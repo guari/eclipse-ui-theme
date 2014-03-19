@@ -63,6 +63,8 @@ You can find the one used in the screenshot below:
 
 **NOTE:** Syntax highlighting settings and UI theme are separated, you can import your own scheme or customize it in Eclipse Preferences if you like.
 
+**EditBox support:** Download [RainbowDrops.eb](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.eb?raw=true) (by right-clicking the link and selecting ```Save link as...```), then import it with the [Eclipse EditBox Plugin](http://editbox.sourceforge.net/).
+
 - - -
 ### Fine-tuning:
 
