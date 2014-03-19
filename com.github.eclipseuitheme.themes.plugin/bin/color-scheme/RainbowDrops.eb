@@ -1,0 +1,27 @@
+#Editbox Eclipse Plugin Settings
+#Made for the MoonRise UI Theme
+HighlightOne=true
+FillGradient=false
+FillSelected=false
+RoundBox=false
+BorderColorType=0
+Name=MoonRise
+ExpandBox=false
+BorderDrawLine=false
+FillOnMove=false
+Alpha=0
+HighlightWidth=1
+BorderWidth=1
+HighlightColor=00ff00
+BorderColor=00bbbb
+FillKeyModifier=Alt
+HighlightColorType=0
+FillGradientColor=null
+Builder=Java
+HighlightDrawLine=false
+FillSelectedColor=202020
+BorderLineStyle=1
+Colors=202020-null
+HighlightLineStyle=0
+NoBackground=false
+CirculateLevelColors=false
