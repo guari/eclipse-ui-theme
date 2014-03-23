@@ -161,3 +161,4 @@ This is open source software, licensed under the Eclipse Public License. See the
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/guari/eclipse-ui-theme/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+<a href="http://with-eclipse.github.io/" target="_blank"><img alt="with-Eclipse logo" src="http://with-eclipse.github.io/with-eclipse-1.jpg" /></a>
