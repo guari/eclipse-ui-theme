@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme (standalone)
  * @author: Andrea Guarinoni
- * @version: 0.8.8
+ * @version: 0.8.9
  * @target-platform: WIN
  * @style-type: Main
  * ====================================================================
@@ -21,14 +21,14 @@
 	 * ====================================================================
 	 * @title: Eclipse MoonRise UI Theme (standalone)
 	 * @author: Andrea Guarinoni
-	 * @version: 0.8.8
+	 * @version: 0.8.9
 	 * @target-platform: Generic
 	 * @style-type: Main
 	 * ====================================================================
 	 */
 	
 	.MTrimmedWindow.topLevel {
-	    margin-top: 6px;
+	    margin-top: 4px;
 	    margin-bottom: 2px;
 	    margin-left: 2px;
 	    margin-right: 2px;
@@ -37,19 +37,18 @@
 	.MPartStack {
 	    background-color: #313538;
 	    color: #f7f8f8;
-	    font-size: 9;
-	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
 	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 	
-	    padding: 2px 7px 9px 7px; /* top left bottom right */
+	    swt-tab-height: 32px;
+	    
+	    padding: 1px 6px 6px 6px; /* top left bottom right */
 	    swt-tab-outline: #3B4042; /* border color for selected tab */
 	    swt-outer-keyline-color: #515658; /* border color for whole tabs container */
 	    swt-unselected-tabs-color: #515658 #464649 #313538 99% 100%; /* title background for unselected tab */
-	    swt-shadow-visible: true;
-	
-	    swt-selected-tab-fill: #313538; /* title background for selected tab (gradient bottom color) */
+	    swt-selected-tab-fill: #313538; /* title background for selected tab (gradient bottom color) */		
 	
 	    swt-shadow-color: #0b0b0b;
+	    swt-shadow-visible: true;
 	
 	    swt-mru-visible: true;
 	
@@ -62,7 +61,6 @@
 	    swt-tab-outline: #484848; /* border color for selected tab */
 	    swt-outer-keyline-color: #4B4C4F; /* border color for whole tabs container */
 	    swt-unselected-tabs-color: #494A4D #404043 #272727 99% 100%; /* title background for unselected tab */
-	
 	    swt-selected-tab-fill: #292929; /* title background for selected tab (gradient bottom color) */
 	}
 	.MPartStack.active > * {
@@ -76,11 +74,33 @@
 	    swt-outer-keyline-color: #515658; /* border color for whole tabs container */
 	}
 	
+	CTabItem,
+	CTabItem CLabel {
+	    background-color: #313538; /* HACK for background of CTabFolder inner Toolbars */
+	    color: #999999;
+	    /*font-family: 'Segoe Print';*/ /* currently, there is no way to define a fallback for font-family */
+	    /*font-size: 8;*/
+	}
+	CTabItem:selected,
+	CTabItem:selected CLabel {
+	    color: #DDDDDD;
+	}
+	
+	.MPartStack.active > CTabItem,
+	.MPartStack.active > CTabItem CLabel {
+	    background-color: #292929; /* HACK for background of CTabFolder inner Toolbars */
+	    color: #AAAAAA;
+	}
+	.MPartStack.active > CTabItem:selected,
+	.MPartStack.active > CTabItem:selected CLabel {
+	    color: #FFFFFF;
+	}
+	
+	CTabItem.busy {
+		color: #888888;
+	}
+	
 	.MTrimmedWindow {
-	    margin-top: 5px;
-	    margin-bottom: 2px;
-	    margin-left: 0px;
-	    margin-right: 0px;
 	    background-color: #515658;
 	}
 	
@@ -88,9 +108,14 @@
 	    background-color: #515658;
 	}
 	
-	/* .MTrimBar#org-eclipse-ui-main-toolbar {
-	    background-color: #676767 #6b6b6b;
-	} */
+	.MTrimBar .Draggable {
+	    handle-image: url('./dragHandle.png');
+	}
+	
+	.TrimStack {
+	    frame-cuts: 4px 2px 5px 16px;
+	    handle-image: url('./dragHandle.png');
+	}
 	
 	CTabFolder.MArea .MPartStack,CTabFolder.MArea .MPartStack.active {
 	    swt-shadow-visible: false;
@@ -99,11 +124,6 @@
 	.MToolControl.TrimStack {
 	    frame-cuts: 5px 1px 5px 16px;
 	}
-	
-	CTabItem.busy {
-		color: #888888;
-	}
-	
 	
 	
 	/* ###################### Global Styles ########################## */
@@ -142,7 +162,7 @@
 	    color:#eeeeee;
 	}
 	
-	Combo, List,
+	List,
 	/* It might be useless but currently it's needed due to a strange priority
 	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
 	Composite > List,
@@ -157,6 +177,25 @@
 	Shell > Composite > Composite > Composite > Composite > Composite > List,
 	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > List,
 	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > List {
+	    background-color: #41464A;
+	    color: #dddddd;
+	}
+	
+	Combo,
+	/* It might be useless but currently it's needed due to a strange priority
+	   policy used by the E4 platform to apply CSS rules to SWT widgets (see <1>): */
+	Composite > Combo,
+	TabFolder > Composite > Combo,
+	TabFolder > Composite > * > Combo,
+	DocCommentOwnerComposite > Group > Combo,
+	TabFolder > Composite > ScrolledComposite > Combo,
+	Shell > Composite > Composite > Combo,
+	Composite > Composite > Composite > Group > Combo,
+	Shell > Composite > Composite > Composite > Combo,
+	ScrolledComposite > Composite > Composite > Composite > Combo,
+	Shell > Composite > Composite > Composite > Composite > Composite > Combo,
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > Combo,
+	Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo {
 	    background-color: #41464A;
 	    color: #dddddd;
 	}
@@ -398,21 +437,20 @@
 	}
 	
 	CTabFolder {
-	    background-color: #222;
+	    background-color: #292929;
 	    color: #f7f8f8;
-	    font-size: 9;
-	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
 	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
 	
-	    padding: 2px 7px 9px 7px; /* top left bottom right */
+		swt-tab-height: 32px;
+	
+	    padding: 0px 6px 6px 6px; /* top left bottom right */
 	    swt-tab-outline: #484848; /* border color for selected tab */
 	    swt-outer-keyline-color: #4B4C4F; /* border color for whole tabs container */
 	    swt-unselected-tabs-color: #494A4D #404043 #272727 99% 100%; /* title background for unselected tab */
-	    swt-shadow-visible: true;
-	
 	    swt-selected-tab-fill: #292929; /* title background for selected tab (gradient bottom color) */
 	
 	    swt-shadow-color: #0b0b0b;
+	    swt-shadow-visible: true;
 	
 	    swt-mru-visible: true;
 	
@@ -420,7 +458,21 @@
 	}
 	CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] {
 	    /* Need to restore a native renderer or the bottom inner tabs won't be displayed */
-	    swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
+	  	swt-tab-renderer: null;
+	    swt-simple: true;
+	  	swt-tab-height: 29px;
+	}
+	
+	CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] CTabItem {
+	    color: #888888;
+	    font-weight: normal;
+	    /*font-family: 'Segoe Print';*/ /* currently, there is no way to define a fallback for font-family */
+	    /*font-size: 8;*/
+	}
+	CTabFolder[style~='SWT.DOWN'][style~='SWT.BOTTOM'] CTabItem:selected {
+	    background-color: #262626;
+	    color: #EEEEEE;
+	    /*font-weight: bold;*/
 	}
 	
 	/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -449,16 +501,6 @@
 	.View.active {
 	    background-color: #333;
 	} */
-	
-	CTabItem,
-	CTabItem CLabel{
-	    background-color: #333;
-	    color: #BBB;
-	}
-	CTabItem:selected,
-	CTabItem:selected CLabel {
-	    color: #FFF;
-	}
 	
 	Form,
 	FormHeading {
@@ -831,16 +873,6 @@
 	    background-color: #202020;
 	    /* SWT-BUG: background-color rule for LineNumberRulerColumn is ignored */
 	}
-	#org-eclipse-e4-ui-compatibility-editor CTabItem {
-	    color: #EEEEEE;
-	    font-weight: normal;
-	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
-	}
-	#org-eclipse-e4-ui-compatibility-editor CTabItem:selected {
-	    background-color: #262626;
-	    font-weight: bold;
-	    font-family: 'Calibri'; /* currently, there is no way to define a fallback for font-family */
-	}
 	#org-eclipse-e4-ui-compatibility-editor .MPart {
 	    color: #EEEEEE;
 	}
@@ -894,7 +926,7 @@
 	 * ====================================================================
 	 * @title: Eclipse MoonRise UI Theme
 	 * @author: Andrea Guarinoni
-	 * @version: 0.8.8
+	 * @version: 0.8.9
 	 * @target-platform: WIN
 	 * @style-type: Patch
 	 * ====================================================================

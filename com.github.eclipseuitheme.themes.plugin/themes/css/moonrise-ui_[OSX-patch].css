@@ -2,7 +2,7 @@
  * ====================================================================
  * @title: Eclipse MoonRise UI Theme
  * @author: Andrea Guarinoni
- * @version: 0.8.8
+ * @version: 0.8.9
  * @target-platform: OSX
  * @style-type: Patch
  * ====================================================================
@@ -113,8 +113,8 @@ Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][s
 Shell[style~='SWT.RADIO'][style~='SWT.CASCADE'][style~='SWT.SHADOW_ETCHED_IN'][style~='SWT.SHADOW_ETCHED_OUT'][style~='SWT.RESIZE'][style~='SWT.MENU'][style~='SWT.FULL_SELECTION'][style~='SWT.DATE'] > Composite > * > Combo,
 Form > LayoutComposite > LayoutComposite > Combo,
 .MPart LayoutComposite > * > LayoutComposite > Section > LayoutComposite > Combo {
-    background-color: #41464A; /* ignored */
-    color: #222;
+    background-color: #949da5; 
+    color: #222; /* background of drop-drown list is hard-coded to white */
 }
 Combo:selected,
 Composite > Combo:selected,

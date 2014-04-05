@@ -16,13 +16,13 @@
             os="win32">
       </theme>
       <theme
-            basestylesheeturi="themes/css/moonrise-ui-standalone_GTK.css"
+            basestylesheeturi="themes/css/moonrise-ui-standalone.css"
             id="com.github.eclipseuitheme.themes.moonrise-ui.standalone"
             label="MoonRise (standalone)"
             os="linux">
       </theme>
       <theme
-            basestylesheeturi="themes/css/moonrise-ui_GTK.css"
+            basestylesheeturi="themes/css/moonrise-ui.css"
             id="com.github.eclipseuitheme.themes.moonrise-ui"
             label="MoonRise"
             os="linux">

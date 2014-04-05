@@ -6,7 +6,7 @@
         <parent>
                 <groupId>com.github.eclipseuitheme.themes</groupId>
                 <artifactId>com.github.eclipseuitheme.themes.parent</artifactId>
-                <version>0.8.8-SNAPSHOT</version>
+                <version>0.8.9-SNAPSHOT</version>
         </parent>
         <groupId>com.github.eclipseuitheme.themes</groupId>
         <artifactId>com.github.eclipseuitheme.themes.updatesite</artifactId>

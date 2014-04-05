@@ -2,7 +2,7 @@
 <feature
       id="com.github.eclipseuitheme.themes.feature"
       label="Eclipse Moonrise UI Theme"
-      version="0.8.8.qualifier"
+      version="0.8.9.qualifier"
       provider-name="Andrea Guarinoni">
 
    <description url="https://github.com/guari/eclipse-ui-theme">
@@ -113,9 +113,9 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <plugin
          id="com.github.eclipseuitheme.themes.moonrise-ui"
-         download-size="55"
-         install-size="55"
-         version="0.8.8.qualifier"
+         download-size="50"
+         install-size="50"
+         version="0.8.9.qualifier"
          unpack="false"/>
 
 </feature>

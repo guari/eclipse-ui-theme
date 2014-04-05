@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<colorTheme id="20025" name="Rainbow Drops" modified="2013-09-12 19:39:08" author="Andrea Guarinoni">
+<colorTheme id="24587" name="RainbowDrops" modified="2014-02-19 15:47:49" author="guari" website="https://github.com/guari/eclipse-ui-theme">
     <searchResultIndication color="#D8D8D8" />
     <filteredSearchResultIndication color="#D8D8D8" />
     <occurrenceIndication color="#484848" />
@@ -17,12 +17,12 @@
     <class color="#1290C3" bold="true" />
     <interface color="#80F2F6" />
     <method color="#A7EC21" />
-    <methodDeclaration color="#0DD140" bold="true" />
+    <methodDeclaration color="#1EB540" bold="true" />
     <bracket color="#F9FAF4" />
     <number color="#6897BB" />
     <string color="#17C6A3" italic="true" />
     <operator color="#E6E6FA" />
-    <keyword color="#DD2867" />
+    <keyword color="#DD2867" bold="true" />
     <annotation color="#BFBFBF" />
     <staticMethod color="#96EC3F" />
     <localVariable color="#FFBF26" />
@@ -43,5 +43,5 @@
     <foreground color="#D9E8F7" />
     <lineNumber color="#626262" />
     <selectionBackground color="#3E515D" />
-    <selectionForeground color="#44CEEF" />
+    <selectionForeground color="#94CEEF" />
 </colorTheme>
