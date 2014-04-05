@@ -17,13 +17,6 @@ Requirements
 Installation
 ------------
 
-* #### Manual:
-Download [moonrise_0.8.8.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.8.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
-
-* #### Update site:
-Or download this plugin by using ```Help > Install New Software...``` and add the update site:
-<pre>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre>
-
 * #### Eclipse Marketplace:
 <table style="border: none;">
   <tbody>
@@ -34,11 +27,18 @@ Or download this plugin by using ```Help > Install New Software...``` and add th
         </a>
       </td>
       <td style="vertical-align: middle; text-align: left; border: none;">
-        ← Or drag this button to your Eclipse workbench to install;
+        ← Drag this button to your Eclipse workbench to install;
       </td>
     </tr>
   </tbody>
 </table>
+
+* #### Update site:
+Or download this plugin by using ```Help > Install New Software...``` and add the update site:
+<pre>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</pre>
+
+* #### Manual:
+Or download [moonrise_0.8.9.jar](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/com.github.eclipseuitheme.moonrise_0.8.9.jar?raw=true) package and put it into your Eclipse ```\dropins\plugins\``` folder;
 
 * Restart Eclipse and go to ```Window > Preferences > General > Appearance```;
 
@@ -55,11 +55,11 @@ You can find the one used in the screenshot below:
 
 **WARNING:** Take a backup of your preferences before importing so you can safely restore them if you need (```File > Export...``` then select ```General > Preferences```);
 
-* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (most accurate, download by right-clicking the link and selecting ```Save link as...``` then import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
+* [RainbowDrops.epf](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.epf?raw=true) (most accurate and recommended, download by right-clicking the link and selecting ```Save link as...``` then import it with Eclipse built-in Preferences import: ```File > Import...``` then select ```General > Preferences```);
 
 * or [RainbowDrops.xml](https://github.com/guari/eclipse-ui-theme/blob/master/com.github.eclipseuitheme.themes.plugin/bin/color-scheme/RainbowDrops.xml?raw=true) (download by right-clicking the link and selecting ```Save link as...``` then import it with [Eclipse Color Theme Plugin](http://eclipsecolorthemes.org/?view=plugin));
 
-* or [here](http://eclipsecolorthemes.org/?view=theme&id=20025);
+* or [here](http://eclipsecolorthemes.org/?view=theme&id=24587);
 
 **NOTE:** Syntax highlighting settings and UI theme are separated, you can import your own scheme or customize it in Eclipse Preferences if you like.
 
