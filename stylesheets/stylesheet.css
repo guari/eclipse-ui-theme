@@ -446,6 +446,16 @@ Full-Width Styles
   padding-top: 40px;
 }
 
+.info-banner {
+  background-color: #D2E3F0;
+  color: rgb(75, 118, 184);
+  padding: 0.75em 5%;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(67, 91, 115, 0.3);
+  text-shadow: #FFF 0px 0px 2px;
+}
+
 #footer_wrap {
   background: #212121;
   font-size: 16px;
