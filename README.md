@@ -9,6 +9,8 @@ An early version of a dark UI theme for Eclipse 4+.
 ![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/screenshot-ubuntu_v0.8.2.png)
 ![screenshot](https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.plugin/screenshot/screenshot-windows_v0.8.2.png)
 
+Moonrise arrived on Eclipse Marketplace in January 2014 and is now [TOP12 plugin](http://marketplace.eclipse.org/metrics/successful_installs/last30days). See also lightweitght [Maven](http://marketplace.eclipse.org/content/maven) plugin that just arrived.
+
 Requirements
 ------------
 
